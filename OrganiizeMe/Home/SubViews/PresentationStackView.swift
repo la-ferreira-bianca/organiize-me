@@ -14,6 +14,8 @@ class PresentationStackView: UIStackView {
         let label = UILabel()
         label.text = "WelcomeUser".localized
         label.textColor = .white
+        label.font = UIFont.italicSystemFont(ofSize: 22)
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -21,6 +23,8 @@ class PresentationStackView: UIStackView {
         let label = UILabel()
         label.text = "Ester B."
         label.textColor = .white
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -36,17 +40,23 @@ class PresentationStackView: UIStackView {
     
     func setupStackView() {
         self.axis = .vertical
-        self.spacing = Constants.Home.tenValue
         self.alignment = .leading
         self.distribution = .fillProportionally
         self.backgroundColor = .purple
+        self.preservesSuperviewLayoutMargins = true
         self.layer.cornerRadius = Constants.Home.tenValue
+        self.layoutSubviews()
     }
     
     func setupConstraints() {
         self.addArrangedSubview(titleLabel)
         self.addArrangedSubview(nameLabel)
         
+        
+        NSLayoutConstraint.activate([
+            titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            nameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+        ])
         //MARK: - SubViews
     }
 }

@@ -54,13 +54,13 @@ class HomeViewController: UIViewController {
     
     private func setupCollectionView() {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 100, height: 40)
+        layout.itemSize = CGSize(width: 140, height: 40)
         layout.scrollDirection = .horizontal
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        let frame = CGRect(x: view.bounds.minX, y: 200, width: view.bounds.width, height: 70)
+        let frame = CGRect(x: 10, y: 200, width: view.bounds.width, height: 60)
         
         collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
-        collectionView?.backgroundColor = .gray
+        collectionView?.backgroundColor = .clear
         collectionView?.dataSource = self
         collectionView?.delegate = self
         collectionView?.register(CarrosselCollectionCell.self, forCellWithReuseIdentifier: "Cell")
@@ -80,11 +80,11 @@ class HomeViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: Constants.Home.tenValue),
+            collectionView.topAnchor.constraint(equalTo: stackView.bottomAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: Constants.Home.tenValue),
+            tableView.topAnchor.constraint(equalTo: collectionView.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.Home.tenValue),
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.Home.tenValue),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -Constants.Home.tenValue),

@@ -8,14 +8,22 @@
 import UIKit
 
 class CarrosselCollectionCell: UICollectionViewCell {
+    //MARK: - Views
+    lazy var stackView: UIStackView = {
+        let stack = UIStackView(frame: .zero)
+        stack.spacing = 10
+        return stack
+    }()
+    
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
         return label
     }()
     
-    lazy var addIcon: UIImage = {
-        let image: UIImage = UIImage(systemName: "plus.viewfinder")!
+    lazy var addIcon: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(systemName: "plus.viewfinder")!
         return image
     }()
     
@@ -27,6 +35,8 @@ class CarrosselCollectionCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.layer.cornerRadius = 10
+        setupView()
     }
     
     required init?(coder: NSCoder) {
@@ -39,5 +49,11 @@ class CarrosselCollectionCell: UICollectionViewCell {
         } else {
             titleLabel.text = nil
         }
+    }
+    
+    func setupView() {
+        self.addSubview(titleLabel)
+        stackView.addArrangedSubview(titleLabel)
+        stackView.addArrangedSubview(addIcon)
     }
 }
