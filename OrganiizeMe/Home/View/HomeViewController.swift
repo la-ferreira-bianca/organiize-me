@@ -11,10 +11,13 @@ class HomeViewController: UIViewController {
     
     //MARK: - Variables
     var coordinator: HomeBaseCoordinator?
+    let carrossel = CarrosselModel.fetchCarrossel()
+    let layout = UICollectionViewFlowLayout()
     
     //MARK: - Views
-    let tableView = UITableView()
-    let stackView = PresentationStackView(frame: .zero)
+    var tableView = UITableView()
+    var collectionView: UICollectionView?
+    var stackView = PresentationStackView(frame: .zero)
     
     //MARK: - Life Cycle
     init(coordinator: HomeBaseCoordinator) {
@@ -30,13 +33,14 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        tableView.backgroundColor = .gray
+        tableView.backgroundColor = .blue
         setupViews()
+        setupCollectionView()
         setupConstraints()
     }
     
-    //MARK: - Functions
-    func setupViews() {
+    //MARK: - Private Functions
+    private func setupViews() {
         //MARK: - Views
         view.addSubview(stackView)
         view.addSubview(tableView)
@@ -48,7 +52,26 @@ class HomeViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    func setupConstraints() {
+    private func setupCollectionView() {
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 100, height: 40)
+        layout.scrollDirection = .horizontal
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        let frame = CGRect(x: view.bounds.minX, y: 200, width: view.bounds.width, height: 70)
+        
+        collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
+        collectionView?.backgroundColor = .gray
+        collectionView?.dataSource = self
+        collectionView?.delegate = self
+        collectionView?.register(CarrosselCollectionCell.self, forCellWithReuseIdentifier: "Cell")
+        collectionView?.alwaysBounceHorizontal = true
+
+        view.isMultipleTouchEnabled = true
+        view.addSubview(collectionView ?? UICollectionView())
+    }
+    
+    private func setupConstraints() {
+        guard let collectionView = collectionView else { return }
         //MARK: - Views
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -57,7 +80,11 @@ class HomeViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: Constants.Home.tenValue),
+            collectionView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: Constants.Home.tenValue),
+        ])
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: Constants.Home.tenValue),
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.Home.tenValue),
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.Home.tenValue),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -Constants.Home.tenValue),

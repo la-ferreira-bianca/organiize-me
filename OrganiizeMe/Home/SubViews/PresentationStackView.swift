@@ -48,11 +48,6 @@ class PresentationStackView: UIStackView {
         self.addArrangedSubview(nameLabel)
         
         //MARK: - SubViews
-        NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Constants.Home.tenValue),
-            titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: Constants.Home.tenValue),
-            nameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Constants.Home.tenValue),
-        ])
     }
 }
 
