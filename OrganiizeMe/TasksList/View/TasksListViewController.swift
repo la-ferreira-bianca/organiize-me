@@ -7,9 +7,14 @@
 
 import UIKit
 
-class TasksListViewController: UITableViewController {
+class TasksListTableViewController: UITableViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .purple
     }
+}
+
+class TaskTableViewCell: UITableViewCell {
+    
 }
