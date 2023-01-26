@@ -18,11 +18,11 @@ class HomeViewController: UIViewController {
     lazy var stackView: UIStackView = {
         let stack = UIStackView(frame: .zero)
         stack.axis = .vertical
-        stack.spacing = 10
+        stack.spacing = Constants.Home.tenValue
         stack.alignment = .leading
         stack.distribution = .fillProportionally
         stack.backgroundColor = .purple
-        stack.layer.cornerRadius = 10
+        stack.layer.cornerRadius = Constants.Home.tenValue
         return stack
     }()
     
@@ -79,22 +79,22 @@ class HomeViewController: UIViewController {
         //MARK: - Views
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.Home.tenValue),
+            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.Home.tenValue),
         ])
         
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 10),
-            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
-            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
+            tableView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: Constants.Home.tenValue),
+            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.Home.tenValue),
+            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.Home.tenValue),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -Constants.Home.tenValue),
         ])
         
         //MARK: - SubViews
         NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 10),
-            titleLabel.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 10),
-            nameLabel.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 10),
+            titleLabel.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: Constants.Home.tenValue),
+            titleLabel.topAnchor.constraint(equalTo: stackView.topAnchor, constant: Constants.Home.tenValue),
+            nameLabel.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: Constants.Home.tenValue),
         ])
     }
 }
