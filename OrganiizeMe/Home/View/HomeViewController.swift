@@ -17,10 +17,24 @@ class HomeViewController: UIViewController {
         let stack = UIStackView(frame: .zero)
         stack.axis = .vertical
         stack.spacing = 10.0
-        stack.alignment = .fill
+        stack.alignment = .leading
         stack.distribution = .fillProportionally
-        
-        return stackView
+        stack.backgroundColor = .purple
+        return stack
+    }()
+    
+    lazy var nameLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Name"
+        label.textColor = .white
+        return label
+    }()
+    
+    lazy var emailLabel: UILabel = {
+        let label = UILabel()
+        label.text = "E-mail"
+        label.textColor = .white
+        return label
     }()
     
     //MARK: - Life Cycle
@@ -37,43 +51,25 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        setupViews()
         setupConstraints()
     }
     
     //MARK: - Functions
-    func setupViews() {
-        view.addSubview(stackView)
-    }
-    
     func setupConstraints() {
+        view.addSubview(stackView)
+        stackView.addArrangedSubview(nameLabel)
+        stackView.addArrangedSubview(emailLabel)
         stackView.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
             stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
-            stackView.heightAnchor.constraint(equalToConstant: 50.0)
+        ])
+        
+        NSLayoutConstraint.activate([
+            nameLabel.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 10),
+            emailLabel.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 10),
         ])
     }
 }
-
-#if DEBUG
-import SwiftUI
-
-struct HomeViewControllerRepresentable: UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> some UIViewController {
-        lazy var homeCoordinator: HomeBaseCoordinator = HomeCoordinator()
-        return HomeViewController(coordinator: homeCoordinator)
-    }
-    
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
-}
-
-struct HomeViewController_Preview: PreviewProvider {
-    static var previews: some View {
-        HomeViewControllerRepresentable()
-            .previewDevice("iPhone SE (3rd generation)")
-    }
-}
-
-#endif
