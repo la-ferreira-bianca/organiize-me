@@ -21,6 +21,7 @@
 		D724A71D29805CB700FC38F4 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724A71C29805CB700FC38F4 /* HomeCoordinator.swift */; };
 		D724A72129805EB200FC38F4 /* TasksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724A72029805EB200FC38F4 /* TasksListViewController.swift */; };
 		D7F19F372982F47D0099B2BC /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F19F362982F47D0099B2BC /* GlobalConstants.swift */; };
+		D7F19F3A2982F8650099B2BC /* PresentationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F19F392982F8650099B2BC /* PresentationStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		D724A71C29805CB700FC38F4 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		D724A72029805EB200FC38F4 /* TasksListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListViewController.swift; sourceTree = "<group>"; };
 		D7F19F362982F47D0099B2BC /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
+		D7F19F392982F8650099B2BC /* PresentationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 		D724A71029804A1400FC38F4 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				D7F19F382982F8530099B2BC /* SubViews */,
 				D724A719298051FC00FC38F4 /* Coordinator */,
 				D724A718298051F400FC38F4 /* View */,
 			);
@@ -196,6 +199,14 @@
 				D724A72029805EB200FC38F4 /* TasksListViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D7F19F382982F8530099B2BC /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				D7F19F392982F8650099B2BC /* PresentationStackView.swift */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,6 +348,7 @@
 				D724A6E2298047E200FC38F4 /* SceneDelegate.swift in Sources */,
 				D724A71D29805CB700FC38F4 /* HomeCoordinator.swift in Sources */,
 				D724A717298051BC00FC38F4 /* HomeBaseCoordinator.swift in Sources */,
+				D7F19F3A2982F8650099B2BC /* PresentationStackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
