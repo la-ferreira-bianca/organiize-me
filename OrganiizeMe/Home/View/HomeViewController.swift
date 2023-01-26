@@ -20,7 +20,7 @@ class HomeViewController: UIViewController {
     init(coordinator: HomeBaseCoordinator) {
         super.init(nibName: nil, bundle: nil)
         self.coordinator = coordinator
-        title = "Home"
+        title = "HomeTitle".localized
     }
     
     required init?(coder: NSCoder) {

@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  OrganiizeMe
+
+  Created by Bianca Ferreira on 26/01/23.
+  
+*/
+
+//MARK: - Home Strings
+"HomeTitle" = "OrganiizeMe";
+
+"WelcomeUser" = "Bem Vindo(a):";

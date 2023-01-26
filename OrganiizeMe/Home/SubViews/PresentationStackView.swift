@@ -12,7 +12,7 @@ class PresentationStackView: UIStackView {
     //MARK: - Views
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Bem Vindo(a): "
+        label.text = "WelcomeUser".localized
         label.textColor = .white
         return label
     }()
