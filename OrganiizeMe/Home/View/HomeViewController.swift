@@ -12,7 +12,6 @@ class HomeViewController: UIViewController {
     //MARK: - Variables
     var coordinator: HomeBaseCoordinator?
     let carrossel = CarrosselModel.fetchCarrossel()
-    let layout = UICollectionViewFlowLayout()
     
     //MARK: - Views
     var tableView = UITableView()
@@ -35,7 +34,6 @@ class HomeViewController: UIViewController {
         view.backgroundColor = .white
         tableView.backgroundColor = .blue
         setupViews()
-        setupCollectionView()
         setupConstraints()
     }
     
@@ -50,21 +48,27 @@ class HomeViewController: UIViewController {
         
         //MARK: - TableView
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        //MARK: - CollectionView
+        setupCollectionView()
+        
+        //MARK: - DataSources/Delegates
+        collectionView?.dataSource = self
+        collectionView?.delegate = self
     }
     
     private func setupCollectionView() {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 140, height: 40)
         layout.scrollDirection = .horizontal
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        let frame = CGRect(x: 10, y: 200, width: view.bounds.width, height: 60)
+//        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+//        let frame = CGRect(x: 10, y: 200, width: view.bounds.width, height: 60)
         
-        collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView?.backgroundColor = .clear
-        collectionView?.dataSource = self
-        collectionView?.delegate = self
         collectionView?.register(CarrosselCollectionCell.self, forCellWithReuseIdentifier: "Cell")
         collectionView?.alwaysBounceHorizontal = true
+        collectionView?.translatesAutoresizingMaskIntoConstraints = false
 
         view.isMultipleTouchEnabled = true
         view.addSubview(collectionView ?? UICollectionView())
@@ -77,14 +81,18 @@ class HomeViewController: UIViewController {
             stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.Home.tenValue),
             stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.Home.tenValue),
+            stackView.heightAnchor.constraint(equalToConstant: 80)
         ])
         
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: stackView.bottomAnchor)
+            collectionView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 5),
+            collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.Home.tenValue),
+            collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.Home.tenValue),
+            collectionView.heightAnchor.constraint(equalToConstant: 50)
         ])
         
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: collectionView.bottomAnchor),
+            tableView.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 5),
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.Home.tenValue),
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.Home.tenValue),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -Constants.Home.tenValue),

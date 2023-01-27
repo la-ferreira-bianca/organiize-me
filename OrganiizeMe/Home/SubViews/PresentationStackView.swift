@@ -28,6 +28,7 @@ class PresentationStackView: UIStackView {
         return label
     }()
     
+    //MARK: - Life Cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupStackView()
@@ -51,13 +52,6 @@ class PresentationStackView: UIStackView {
     func setupConstraints() {
         self.addArrangedSubview(titleLabel)
         self.addArrangedSubview(nameLabel)
-        
-        
-        NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            nameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-        ])
-        //MARK: - SubViews
     }
 }
 

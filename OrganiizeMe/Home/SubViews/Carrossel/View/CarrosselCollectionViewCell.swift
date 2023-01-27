@@ -12,18 +12,29 @@ class CarrosselCollectionCell: UICollectionViewCell {
     lazy var stackView: UIStackView = {
         let stack = UIStackView(frame: .zero)
         stack.spacing = 10
+        stack.contentMode = .scaleToFill
+        stack.clipsToBounds = true
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.sizeToFit()
         return stack
     }()
     
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
+        label.contentMode = .scaleToFill
+        label.clipsToBounds = true
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
         return label
     }()
-    
+
     lazy var addIcon: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(systemName: "plus.viewfinder")!
+        image.contentMode = .scaleToFill
+        image.clipsToBounds = true
+        image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
     
@@ -36,6 +47,7 @@ class CarrosselCollectionCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.layer.cornerRadius = 10
+        self.backgroundColor = .yellow
         setupView()
     }
     
@@ -52,8 +64,14 @@ class CarrosselCollectionCell: UICollectionViewCell {
     }
     
     func setupView() {
-        self.addSubview(titleLabel)
-        stackView.addArrangedSubview(titleLabel)
+        self.addSubview(stackView)
         stackView.addArrangedSubview(addIcon)
+        stackView.addArrangedSubview(titleLabel)
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
+            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+        ])
     }
 }

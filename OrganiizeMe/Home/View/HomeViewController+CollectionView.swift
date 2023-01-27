@@ -17,8 +17,6 @@ extension HomeViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CarrosselCollectionCell
         let carrossel = carrossel[indexPath.item]
         cell.carrosel = carrossel
-        cell.updateUI()
-        cell.backgroundColor = .brown
         return cell
         
     }
@@ -26,7 +24,7 @@ extension HomeViewController: UICollectionViewDataSource {
 
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("selected at \(indexPath.row)")
+        print("selected at \(indexPath.item)")
     }
 }
 
