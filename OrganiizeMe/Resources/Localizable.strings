@@ -10,3 +10,6 @@
 "HomeTitle" = "OrganiizeMe";
 
 "WelcomeUser" = "Olá, ";
+
+//MARK: - AddTask Strings
+"TaskNamePlaceholder" = "Nome da Tarefa";

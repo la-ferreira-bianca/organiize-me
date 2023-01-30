@@ -7,11 +7,14 @@
 
 import UIKit
 
-class TasksListTableViewController: UITableViewController {
+class TasksListTableViewController: UITableView {
+    override init(frame: CGRect, style: UITableView.Style) {
+        super.init(frame: frame, style: .plain)
+        backgroundColor = .yellow
+    }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .purple
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 

@@ -24,6 +24,7 @@ class CarrosselCollectionCell: UICollectionViewCell {
         label.textColor = .black
         label.contentMode = .scaleToFill
         label.clipsToBounds = true
+        label.font = UIFont.italicSystemFont(ofSize: 16)
         label.translatesAutoresizingMaskIntoConstraints = false
         
         return label
@@ -48,7 +49,7 @@ class CarrosselCollectionCell: UICollectionViewCell {
         super.init(frame: frame)
         self.layer.cornerRadius = 10
         self.backgroundColor = .yellow
-        setupView()
+        setupViews()
     }
     
     required init?(coder: NSCoder) {
@@ -63,7 +64,7 @@ class CarrosselCollectionCell: UICollectionViewCell {
         }
     }
     
-    func setupView() {
+    func setupViews() {
         self.addSubview(stackView)
         stackView.addArrangedSubview(addIcon)
         stackView.addArrangedSubview(titleLabel)

@@ -27,6 +27,7 @@
 		D7F19F4229831D430099B2BC /* CarrosselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F19F4129831D430099B2BC /* CarrosselCollectionViewCell.swift */; };
 		D7F19F4629831D9C0099B2BC /* CarrosselModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F19F4529831D9C0099B2BC /* CarrosselModel.swift */; };
 		D7F19F4829831DDF0099B2BC /* HomeViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F19F4729831DDE0099B2BC /* HomeViewController+CollectionView.swift */; };
+		D7F3B47E29884D3600FF15C1 /* AddNewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F3B47D29884D3600FF15C1 /* AddNewTaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		D7F19F4129831D430099B2BC /* CarrosselCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrosselCollectionViewCell.swift; sourceTree = "<group>"; };
 		D7F19F4529831D9C0099B2BC /* CarrosselModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrosselModel.swift; sourceTree = "<group>"; };
 		D7F19F4729831DDE0099B2BC /* HomeViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+CollectionView.swift"; sourceTree = "<group>"; };
+		D7F3B47D29884D3600FF15C1 /* AddNewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 		D724A6DE298047E200FC38F4 /* OrganiizeMe */ = {
 			isa = PBXGroup;
 			children = (
+				D7F3B47C29884D2000FF15C1 /* AddTask */,
 				D724A71E29805E8B00FC38F4 /* TasksList */,
 				D724A71129804B7000FC38F4 /* Coordinators */,
 				D724A71029804A1400FC38F4 /* Home */,
@@ -254,6 +257,14 @@
 				D7F19F4529831D9C0099B2BC /* CarrosselModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D7F3B47C29884D2000FF15C1 /* AddTask */ = {
+			isa = PBXGroup;
+			children = (
+				D7F3B47D29884D3600FF15C1 /* AddNewTaskViewController.swift */,
+			);
+			path = AddTask;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -400,6 +411,7 @@
 				D7F19F4629831D9C0099B2BC /* CarrosselModel.swift in Sources */,
 				D724A71D29805CB700FC38F4 /* HomeCoordinator.swift in Sources */,
 				D724A717298051BC00FC38F4 /* HomeBaseCoordinator.swift in Sources */,
+				D7F3B47E29884D3600FF15C1 /* AddNewTaskViewController.swift in Sources */,
 				D7F19F3A2982F8650099B2BC /* PresentationStackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

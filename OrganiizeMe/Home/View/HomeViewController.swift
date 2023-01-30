@@ -14,11 +14,11 @@ class HomeViewController: UIViewController {
     let carrossel = CarrosselModel.fetchCarrossel()
     
     //MARK: - Views
-    var tableView = UITableView()
+    var tableView = TasksListTableViewController()
     var collectionView: UICollectionView?
     var stackView = PresentationStackView(frame: .zero)
     
-    //MARK: - Life Cycle
+    //MARK: - LifeCycle
     init(coordinator: HomeBaseCoordinator) {
         super.init(nibName: nil, bundle: nil)
         self.coordinator = coordinator
@@ -32,7 +32,6 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        tableView.backgroundColor = .blue
         setupViews()
         setupConstraints()
     }
@@ -61,8 +60,6 @@ class HomeViewController: UIViewController {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 140, height: 40)
         layout.scrollDirection = .horizontal
-//        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-//        let frame = CGRect(x: 10, y: 200, width: view.bounds.width, height: 60)
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView?.backgroundColor = .clear

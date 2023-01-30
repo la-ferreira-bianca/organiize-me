@@ -24,7 +24,8 @@ extension HomeViewController: UICollectionViewDataSource {
 
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("selected at \(indexPath.item)")
+        navigationController?.present(AddNewTaskViewController(), animated: true)
+        
     }
 }
 
