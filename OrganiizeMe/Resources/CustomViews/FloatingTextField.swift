@@ -9,16 +9,19 @@ import UIKit
 
 class FloatingTextField: UITextField {
     //MARK: - Variables
-    lazy var floatingLabel: UILabel = {
-        let label = UILabel(frame: .zero)
-        return label
-    }()
-    
+    var floatingLabel: UILabel!
     let floatingLabelHeight: CGFloat = 14.0
     
     //MARK: - @IBInspectable
     @IBInspectable
     var _placeHolder: String?
+    
+    @IBInspectable
+    var _backgroundColor: UIColor = UIColor.white {
+        didSet {
+            self.layer.backgroundColor = self._backgroundColor.cgColor
+        }
+    }
     
     @IBInspectable
     var floatingLabelColor: UIColor = .black {
@@ -40,6 +43,13 @@ class FloatingTextField: UITextField {
         }
     }
     
+    var floatingLabelBackground: UIColor = UIColor.white.withAlphaComponent(1) {
+        didSet {
+            self.floatingLabel.backgroundColor = self.floatingLabelBackground
+            self.setNeedsDisplay()
+        }
+    }
+    
     //MARK: - LifeCycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -57,22 +67,21 @@ class FloatingTextField: UITextField {
     //MARK: - OBJC Functions
     @objc func addFloatingLabel() {
         if self.text == "" {
+            self.addSubview(floatingLabel)
             floatingLabel.textColor = floatingLabelColor
             floatingLabel.font = floatingLabelFont
             floatingLabel.text = self._placeHolder
             floatingLabel.layer.backgroundColor = UIColor.white.cgColor
             floatingLabel.translatesAutoresizingMaskIntoConstraints = false
             floatingLabel.clipsToBounds = true
+            floatingLabel.frame = CGRect(x: 0, y: 0, width: floatingLabel.frame.width+4, height: floatingLabel.frame.height+2)
+            floatingLabel.textAlignment = .center
+            floatingLabel.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: -10).isActive = true
+            
             self.layer.borderColor = activeBorderColor.cgColor
-            self.addSubview(floatingLabel)
-            
-            
-            NSLayoutConstraint.activate([
-                floatingLabel.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 10),
-                floatingLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 10),
-            ])
             self.placeholder = ""
         }
+        self.bringSubviewToFront(subviews.last!)
         self.setNeedsDisplay()
     }
     

@@ -28,7 +28,7 @@ class PresentationStackView: UIStackView {
         return label
     }()
     
-    //MARK: - Life Cycle
+    //MARK: - LifeCycle
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupStackView()
@@ -39,6 +39,7 @@ class PresentationStackView: UIStackView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - Functions
     func setupStackView() {
         self.axis = .vertical
         self.alignment = .leading
