@@ -20,6 +20,7 @@
 		D724A71B2980553200FC38F4 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724A71A2980553200FC38F4 /* MainCoordinator.swift */; };
 		D724A71D29805CB700FC38F4 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724A71C29805CB700FC38F4 /* HomeCoordinator.swift */; };
 		D724A72129805EB200FC38F4 /* TasksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724A72029805EB200FC38F4 /* TasksListViewController.swift */; };
+		D72B0B362989755C00414E93 /* FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72B0B352989755C00414E93 /* FloatingTextField.swift */; };
 		D7F19F372982F47D0099B2BC /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F19F362982F47D0099B2BC /* GlobalConstants.swift */; };
 		D7F19F3A2982F8650099B2BC /* PresentationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F19F392982F8650099B2BC /* PresentationStackView.swift */; };
 		D7F19F3C2982F9BC0099B2BC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D7F19F3B2982F9BC0099B2BC /* Localizable.strings */; };
@@ -65,6 +66,7 @@
 		D724A71A2980553200FC38F4 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		D724A71C29805CB700FC38F4 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		D724A72029805EB200FC38F4 /* TasksListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListViewController.swift; sourceTree = "<group>"; };
+		D72B0B352989755C00414E93 /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTextField.swift; sourceTree = "<group>"; };
 		D7F19F362982F47D0099B2BC /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 		D7F19F392982F8650099B2BC /* PresentationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationStackView.swift; sourceTree = "<group>"; };
 		D7F19F3B2982F9BC0099B2BC /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -123,13 +125,13 @@
 		D724A6DE298047E200FC38F4 /* OrganiizeMe */ = {
 			isa = PBXGroup;
 			children = (
-				D7F3B47C29884D2000FF15C1 /* AddTask */,
-				D724A71E29805E8B00FC38F4 /* TasksList */,
+				D724A6ED298047E400FC38F4 /* Info.plist */,
 				D724A71129804B7000FC38F4 /* Coordinators */,
 				D724A71029804A1400FC38F4 /* Home */,
+				D7F3B47C29884D2000FF15C1 /* AddTask */,
+				D724A71E29805E8B00FC38F4 /* TasksList */,
 				D724A70F29804A0500FC38F4 /* Resources */,
 				D724A6EA298047E400FC38F4 /* LaunchScreen.storyboard */,
-				D724A6ED298047E400FC38F4 /* Info.plist */,
 			);
 			path = OrganiizeMe;
 			sourceTree = "<group>";
@@ -159,6 +161,7 @@
 				D7F19F362982F47D0099B2BC /* GlobalConstants.swift */,
 				D724A6E1298047E200FC38F4 /* SceneDelegate.swift */,
 				D724A6E8298047E400FC38F4 /* Assets.xcassets */,
+				D72B0B34298974F800414E93 /* CustomViews */,
 				D7F19F3D2982FA3E0099B2BC /* Extensions */,
 			);
 			path = Resources;
@@ -215,6 +218,14 @@
 				D724A72029805EB200FC38F4 /* TasksListViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D72B0B34298974F800414E93 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				D72B0B352989755C00414E93 /* FloatingTextField.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		D7F19F382982F8530099B2BC /* SubViews */ = {
@@ -413,6 +424,7 @@
 				D724A717298051BC00FC38F4 /* HomeBaseCoordinator.swift in Sources */,
 				D7F3B47E29884D3600FF15C1 /* AddNewTaskViewController.swift in Sources */,
 				D7F19F3A2982F8650099B2BC /* PresentationStackView.swift in Sources */,
+				D72B0B362989755C00414E93 /* FloatingTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

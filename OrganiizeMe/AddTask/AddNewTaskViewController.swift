@@ -10,8 +10,8 @@ import UIKit
 class AddNewTaskViewController: UIViewController {
     
     //MARK: - Views
-    lazy var taskNameTextField: UITextField = {
-        let textField = UITextField()
+    lazy var taskNameTextField: FloatingTextField = {
+        let textField = FloatingTextField(frame: .zero)
         textField.placeholder = "TaskNamePlaceholder".localized
         textField.textColor = .black
         textField.contentMode = .scaleToFill
@@ -31,7 +31,7 @@ class AddNewTaskViewController: UIViewController {
     func setupViews() {
         view.addSubview(taskNameTextField)
         NSLayoutConstraint.activate([
-            taskNameTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            taskNameTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
             taskNameTextField.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
             taskNameTextField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
         ])
