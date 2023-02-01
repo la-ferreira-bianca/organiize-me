@@ -9,35 +9,40 @@ import UIKit
 
 class CarrosselCollectionCell: UICollectionViewCell {
     //MARK: - Views
-    lazy var stackView: UIStackView = {
-        let stack = UIStackView(frame: .zero)
-        stack.spacing = 10
-        stack.contentMode = .scaleToFill
-        stack.clipsToBounds = true
-        stack.alignment = .center
-        stack.distribution = .fill
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        return stack
-    }()
-    
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
         label.contentMode = .scaleToFill
         label.clipsToBounds = true
-        label.font = UIFont.italicSystemFont(ofSize: 22)
+        label.font = UIFont.preferredFont(forTextStyle: .title2)
         label.translatesAutoresizingMaskIntoConstraints = false
         
         return label
     }()
-
+    
     lazy var addIcon: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(systemName: "plus.viewfinder")!
         image.contentMode = .scaleToFill
         image.clipsToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
+        
         return image
+    }()
+    
+    lazy var stackView: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [
+            addIcon,
+            titleLabel
+        ])
+        stack.spacing = 10
+        stack.contentMode = .scaleToFill
+        stack.clipsToBounds = true
+        stack.alignment = .center
+        stack.distribution = .fill
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        
+        return stack
     }()
     
     var carrosel: CarrosselModel! {
@@ -68,12 +73,10 @@ class CarrosselCollectionCell: UICollectionViewCell {
     //MARK: - Private Functions
     private func setupViews() {
         self.addSubview(stackView)
-        stackView.addArrangedSubview(addIcon)
-        stackView.addArrangedSubview(titleLabel)
+        
         NSLayoutConstraint.activate([
             stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             stackView.heightAnchor.constraint(equalToConstant: 64)
         ])
     }
-   
 }

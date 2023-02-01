@@ -28,6 +28,7 @@ class HomeViewController: UIViewController {
         button.layer.masksToBounds = false
         button.backgroundColor = #colorLiteral(red: 0.2549019608, green: 0.7490196078, blue: 0.7019607843, alpha: 1)
         button.translatesAutoresizingMaskIntoConstraints = false
+        
         return button
     }()
     
@@ -42,6 +43,7 @@ class HomeViewController: UIViewController {
         button.layer.masksToBounds = false
         button.backgroundColor = #colorLiteral(red: 0.2549019608, green: 0.7490196078, blue: 0.7019607843, alpha: 1)
         button.translatesAutoresizingMaskIntoConstraints = false
+        
         return button
     }()
     
@@ -103,12 +105,12 @@ class HomeViewController: UIViewController {
     
     private func setupConstraints() {
         guard let collectionView = collectionView else { return }
+        
         //MARK: - Views
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.Home.tenValue),
             stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.Home.tenValue),
-            stackView.heightAnchor.constraint(equalToConstant: 80)
         ])
         
         NSLayoutConstraint.activate([

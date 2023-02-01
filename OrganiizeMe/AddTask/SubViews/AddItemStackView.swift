@@ -22,6 +22,7 @@ class AddItemStackView: UIStackView {
         textField.backgroundColor = .white
         textField.borderStyle = .roundedRect
         textField.translatesAutoresizingMaskIntoConstraints = false
+        
         return textField
     }()
     
@@ -35,6 +36,7 @@ class AddItemStackView: UIStackView {
         textField.backgroundColor = .white
         textField.borderStyle = .roundedRect
         textField.translatesAutoresizingMaskIntoConstraints = false
+        
         return textField
     }()
     
@@ -50,6 +52,7 @@ class AddItemStackView: UIStackView {
         button.backgroundColor = #colorLiteral(red: 0.2549019608, green: 0.7490196078, blue: 0.7019607843, alpha: 1)
         button.addTarget(self, action: #selector(tapChooseMenuItem), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
+        
         return button
     }()
     
@@ -66,6 +69,7 @@ class AddItemStackView: UIStackView {
         let datePicker = UIDatePicker(frame: .zero)
         datePicker.timeZone = NSTimeZone.local
         datePicker.datePickerMode = .date
+        
         return datePicker
     }()
     
@@ -80,13 +84,14 @@ class AddItemStackView: UIStackView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc func tapChooseMenuItem(_ sender: UIButton) {//3
+    @objc func tapChooseMenuItem(_ sender: UIButton) {
         //TODO: Pass categories that will be populated by the user
-        categoriesDropDown.dataSource = ["Tomato soup", "Mini burgers", "Onion rings", "Baked potato", "Salad"]//4
-        categoriesDropDown.anchorView = sender //5
-        categoriesDropDown.bottomOffset = CGPoint(x: 0, y: sender.frame.size.height) //6
-        categoriesDropDown.show() //7
-        categoriesDropDown.selectionAction = { [weak self] (index: Int, item: String) in //8
+        //TODO: Change layout
+        categoriesDropDown.dataSource = ["Tomato soup", "Mini burgers", "Onion rings", "Baked potato", "Salad"]
+        categoriesDropDown.anchorView = sender
+        categoriesDropDown.bottomOffset = CGPoint(x: 0, y: sender.frame.size.height)
+        categoriesDropDown.show()
+        categoriesDropDown.selectionAction = { [weak self] (index: Int, item: String) in
           guard let _ = self else { return }
           sender.setTitle(item, for: .normal) //9
         }
