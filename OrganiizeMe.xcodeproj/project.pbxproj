@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D82D8CB2D5667EC86C9A32E /* Pods_OrganiizeMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBD9FC8CB0D57C82471FF667 /* Pods_OrganiizeMe.framework */; };
 		D724A6E0298047E200FC38F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724A6DF298047E200FC38F4 /* AppDelegate.swift */; };
 		D724A6E2298047E200FC38F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724A6E1298047E200FC38F4 /* SceneDelegate.swift */; };
 		D724A6E4298047E200FC38F4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724A6E3298047E200FC38F4 /* HomeViewController.swift */; };
@@ -26,7 +27,7 @@
 		D7F19F3A2982F8650099B2BC /* PresentationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F19F392982F8650099B2BC /* PresentationStackView.swift */; };
 		D7F19F3C2982F9BC0099B2BC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D7F19F3B2982F9BC0099B2BC /* Localizable.strings */; };
 		D7F19F3F2982FA5A0099B2BC /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F19F3E2982FA5A0099B2BC /* String+Extensions.swift */; };
-		D7F19F4229831D430099B2BC /* CarrosselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F19F4129831D430099B2BC /* CarrosselCollectionViewCell.swift */; };
+		D7F19F4229831D430099B2BC /* CarrosselCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F19F4129831D430099B2BC /* CarrosselCollectionCell.swift */; };
 		D7F19F4629831D9C0099B2BC /* CarrosselModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F19F4529831D9C0099B2BC /* CarrosselModel.swift */; };
 		D7F19F4829831DDF0099B2BC /* HomeViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F19F4729831DDE0099B2BC /* HomeViewController+CollectionView.swift */; };
 		D7F3B47E29884D3600FF15C1 /* AddNewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F3B47D29884D3600FF15C1 /* AddNewTaskViewController.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A6C1FC8C16B0888804BAE6EA /* Pods-OrganiizeMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrganiizeMe.debug.xcconfig"; path = "Target Support Files/Pods-OrganiizeMe/Pods-OrganiizeMe.debug.xcconfig"; sourceTree = "<group>"; };
 		D724A6DC298047E200FC38F4 /* OrganiizeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrganiizeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D724A6DF298047E200FC38F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D724A6E1298047E200FC38F4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,10 +75,12 @@
 		D7F19F392982F8650099B2BC /* PresentationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationStackView.swift; sourceTree = "<group>"; };
 		D7F19F3B2982F9BC0099B2BC /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		D7F19F3E2982FA5A0099B2BC /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
-		D7F19F4129831D430099B2BC /* CarrosselCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrosselCollectionViewCell.swift; sourceTree = "<group>"; };
+		D7F19F4129831D430099B2BC /* CarrosselCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrosselCollectionCell.swift; sourceTree = "<group>"; };
 		D7F19F4529831D9C0099B2BC /* CarrosselModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrosselModel.swift; sourceTree = "<group>"; };
 		D7F19F4729831DDE0099B2BC /* HomeViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+CollectionView.swift"; sourceTree = "<group>"; };
 		D7F3B47D29884D3600FF15C1 /* AddNewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskViewController.swift; sourceTree = "<group>"; };
+		DCA0637E0915A83B259472E7 /* Pods-OrganiizeMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrganiizeMe.release.xcconfig"; path = "Target Support Files/Pods-OrganiizeMe/Pods-OrganiizeMe.release.xcconfig"; sourceTree = "<group>"; };
+		EBD9FC8CB0D57C82471FF667 /* Pods_OrganiizeMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrganiizeMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D82D8CB2D5667EC86C9A32E /* Pods_OrganiizeMe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +109,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D36928A927EEFFDC8054A93 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EBD9FC8CB0D57C82471FF667 /* Pods_OrganiizeMe.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D724A6D3298047E200FC38F4 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +124,8 @@
 				D724A6F5298047E500FC38F4 /* OrganiizeMeTests */,
 				D724A6FF298047E500FC38F4 /* OrganiizeMeUITests */,
 				D724A6DD298047E200FC38F4 /* Products */,
+				FBBC6E752DF9BE6879F17DE2 /* Pods */,
+				1D36928A927EEFFDC8054A93 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -275,7 +290,7 @@
 		D7F19F4329831D800099B2BC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D7F19F4129831D430099B2BC /* CarrosselCollectionViewCell.swift */,
+				D7F19F4129831D430099B2BC /* CarrosselCollectionCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -297,6 +312,15 @@
 			path = AddTask;
 			sourceTree = "<group>";
 		};
+		FBBC6E752DF9BE6879F17DE2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A6C1FC8C16B0888804BAE6EA /* Pods-OrganiizeMe.debug.xcconfig */,
+				DCA0637E0915A83B259472E7 /* Pods-OrganiizeMe.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -304,9 +328,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D724A706298047E500FC38F4 /* Build configuration list for PBXNativeTarget "OrganiizeMe" */;
 			buildPhases = (
+				1C4FB6FD1762ADAD56B582A6 /* [CP] Check Pods Manifest.lock */,
 				D724A6D8298047E200FC38F4 /* Sources */,
 				D724A6D9298047E200FC38F4 /* Frameworks */,
 				D724A6DA298047E200FC38F4 /* Resources */,
+				C455EB163A25ADEFC367D7C8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -423,6 +449,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1C4FB6FD1762ADAD56B582A6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OrganiizeMe-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C455EB163A25ADEFC367D7C8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OrganiizeMe/Pods-OrganiizeMe-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OrganiizeMe/Pods-OrganiizeMe-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OrganiizeMe/Pods-OrganiizeMe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D724A6D8298047E200FC38F4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -435,7 +503,7 @@
 				D724A72129805EB200FC38F4 /* TasksListViewController.swift in Sources */,
 				D724A71B2980553200FC38F4 /* MainCoordinator.swift in Sources */,
 				D724A6E4298047E200FC38F4 /* HomeViewController.swift in Sources */,
-				D7F19F4229831D430099B2BC /* CarrosselCollectionViewCell.swift in Sources */,
+				D7F19F4229831D430099B2BC /* CarrosselCollectionCell.swift in Sources */,
 				D7F19F3F2982FA5A0099B2BC /* String+Extensions.swift in Sources */,
 				D724A6E0298047E200FC38F4 /* AppDelegate.swift in Sources */,
 				D724A6E2298047E200FC38F4 /* SceneDelegate.swift in Sources */,
@@ -608,6 +676,7 @@
 		};
 		D724A707298047E500FC38F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6C1FC8C16B0888804BAE6EA /* Pods-OrganiizeMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -639,6 +708,7 @@
 		};
 		D724A708298047E500FC38F4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCA0637E0915A83B259472E7 /* Pods-OrganiizeMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

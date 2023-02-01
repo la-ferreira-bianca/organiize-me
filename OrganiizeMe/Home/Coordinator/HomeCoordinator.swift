@@ -14,7 +14,7 @@ class HomeCoordinator: HomeBaseCoordinator {
     
     //MARK: - Functions
     func start() -> UIViewController {
-        rootViewController = UINavigationController(rootViewController: HomeViewController(coordinator: self))
+        rootViewController = UINavigationController(rootViewController: HomeViewController())
         return rootViewController
     }
     

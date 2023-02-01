@@ -1,5 +1,5 @@
 //
-//  CarrosselCollectionViewCell.swift
+//  CarrosselCollectionCell.swift
 //  OrganiizeMe
 //
 //  Created by Bianca Ferreira on 26/01/23.
@@ -14,8 +14,9 @@ class CarrosselCollectionCell: UICollectionViewCell {
         stack.spacing = 10
         stack.contentMode = .scaleToFill
         stack.clipsToBounds = true
+        stack.alignment = .center
+        stack.distribution = .fill
         stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.sizeToFit()
         return stack
     }()
     
@@ -24,7 +25,7 @@ class CarrosselCollectionCell: UICollectionViewCell {
         label.textColor = .black
         label.contentMode = .scaleToFill
         label.clipsToBounds = true
-        label.font = UIFont.italicSystemFont(ofSize: 16)
+        label.font = UIFont.italicSystemFont(ofSize: 22)
         label.translatesAutoresizingMaskIntoConstraints = false
         
         return label
@@ -48,7 +49,7 @@ class CarrosselCollectionCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.layer.cornerRadius = 10
-        self.backgroundColor = .yellow
+        self.backgroundColor = #colorLiteral(red: 0.7152295709, green: 0.8760627508, blue: 0.8506777883, alpha: 1)
         setupViews()
     }
     
@@ -64,15 +65,15 @@ class CarrosselCollectionCell: UICollectionViewCell {
         }
     }
     
-    func setupViews() {
+    //MARK: - Private Functions
+    private func setupViews() {
         self.addSubview(stackView)
         stackView.addArrangedSubview(addIcon)
         stackView.addArrangedSubview(titleLabel)
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+            stackView.heightAnchor.constraint(equalToConstant: 64)
         ])
     }
+   
 }

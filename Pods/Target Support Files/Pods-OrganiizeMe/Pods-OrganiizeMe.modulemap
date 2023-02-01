@@ -1,0 +1,6 @@
+framework module Pods_OrganiizeMe {
+  umbrella header "Pods-OrganiizeMe-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -10,24 +10,51 @@ import UIKit
 class HomeViewController: UIViewController {
     
     //MARK: - Variables
-    var coordinator: HomeBaseCoordinator?
+//    var coordinator: HomeBaseCoordinator?
     let carrossel = CarrosselModel.fetchCarrossel()
     
     //MARK: - Views
-    var tableView = TasksListTableViewController()
     var collectionView: UICollectionView?
     var stackView = PresentationStackView(frame: .zero)
     
-    //MARK: - LifeCycle
-    init(coordinator: HomeBaseCoordinator) {
-        super.init(nibName: nil, bundle: nil)
-        self.coordinator = coordinator
-        title = "HomeTitle".localized
-    }
+    lazy var myTasksButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Minhas Tarefas", for: .normal)
+        button.layer.cornerRadius = 10
+        button.layer.shadowColor = #colorLiteral(red: 0.1529411765, green: 0.3490196078, blue: 0.3137254902, alpha: 1)
+        button.layer.shadowOpacity = 1
+        button.layer.shadowOffset = CGSize(width: 1.5, height: 4)
+        button.layer.shadowRadius = 0.5
+        button.layer.masksToBounds = false
+        button.backgroundColor = #colorLiteral(red: 0.2549019608, green: 0.7490196078, blue: 0.7019607843, alpha: 1)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    lazy var myCategoriesButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Minha Categorias", for: .normal)
+        button.layer.cornerRadius = 10
+        button.layer.shadowColor = #colorLiteral(red: 0.1529411765, green: 0.3490196078, blue: 0.3137254902, alpha: 1)
+        button.layer.shadowOpacity = 1
+        button.layer.shadowOffset = CGSize(width: 1.5, height: 4)
+        button.layer.shadowRadius = 0.5
+        button.layer.masksToBounds = false
+        button.backgroundColor = #colorLiteral(red: 0.2549019608, green: 0.7490196078, blue: 0.7019607843, alpha: 1)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    //MARK: - LifeCycle
+//    init(coordinator: HomeBaseCoordinator) {
+//        super.init(nibName: nil, bundle: nil)
+//        self.coordinator = coordinator
+//        title = "HomeTitle".localized
+//    }
+//
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,13 +67,11 @@ class HomeViewController: UIViewController {
     private func setupViews() {
         //MARK: - Views
         view.addSubview(stackView)
-        view.addSubview(tableView)
+        view.addSubview(myTasksButton)
+        view.addSubview(myCategoriesButton)
         
         //MARK: - StackView
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        
-        //MARK: - TableView
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         
         //MARK: - CollectionView
         setupCollectionView()
@@ -58,13 +83,18 @@ class HomeViewController: UIViewController {
     
     private func setupCollectionView() {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 140, height: 40)
+        layout.itemSize = CGSize(width: 222, height: 64)
         layout.scrollDirection = .horizontal
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView?.backgroundColor = .clear
         collectionView?.register(CarrosselCollectionCell.self, forCellWithReuseIdentifier: "Cell")
         collectionView?.alwaysBounceHorizontal = true
+        collectionView?.layer.shadowColor = #colorLiteral(red: 0.1529411765, green: 0.3490196078, blue: 0.3137254902, alpha: 1)
+        collectionView?.layer.shadowOpacity = 0.5
+        collectionView?.layer.shadowOffset = CGSize(width: 6, height: 5)
+        collectionView?.layer.shadowRadius = 4
+        collectionView?.layer.masksToBounds = false
         collectionView?.translatesAutoresizingMaskIntoConstraints = false
 
         view.isMultipleTouchEnabled = true
@@ -82,17 +112,45 @@ class HomeViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 5),
+            collectionView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 15),
             collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.Home.tenValue),
             collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.Home.tenValue),
-            collectionView.heightAnchor.constraint(equalToConstant: 50)
+            collectionView.heightAnchor.constraint(equalToConstant: 64)
         ])
         
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 5),
-            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.Home.tenValue),
-            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.Home.tenValue),
-            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -Constants.Home.tenValue),
+            myTasksButton.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 15),
+            myTasksButton.heightAnchor.constraint(equalToConstant: 150),
+            myTasksButton.widthAnchor.constraint(equalToConstant: 200),
+            myTasksButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.Home.tenValue),
+            myTasksButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.Home.tenValue),
+        ])
+        
+        NSLayoutConstraint.activate([
+            myCategoriesButton.topAnchor.constraint(equalTo: myTasksButton.bottomAnchor, constant: 10),
+            myCategoriesButton.heightAnchor.constraint(equalToConstant: 150),
+            myCategoriesButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.Home.tenValue),
+            myCategoriesButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.Home.tenValue),
         ])
     }
 }
+
+#if DEBUG
+import SwiftUI
+
+struct HomeViewControllerRepresentable: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> some UIViewController {
+        return HomeViewController()
+    }
+
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
+}
+
+struct HomeViewController_Preview: PreviewProvider {
+    static var previews: some View {
+        HomeViewControllerRepresentable()
+            .previewDevice("iPhone SE (3rd generation)")
+    }
+}
+
+#endif
