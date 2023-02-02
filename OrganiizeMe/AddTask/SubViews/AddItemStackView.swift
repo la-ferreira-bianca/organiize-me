@@ -102,10 +102,12 @@ class AddItemStackView: UIStackView {
         self.axis = .vertical
         self.alignment = .center
         self.distribution = .fill
-        self.backgroundColor = .clear
+        self.backgroundColor = #colorLiteral(red: 0.1529411765, green: 0.3490196078, blue: 0.3137254902, alpha: 1).withAlphaComponent(0.3)
         self.preservesSuperviewLayoutMargins = true
         self.layer.cornerRadius = 10
         self.spacing = 20
+        self.isLayoutMarginsRelativeArrangement = true
+        self.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 20, leading: 10, bottom: 30, trailing: 10)
         self.layoutSubviews()
     }
     

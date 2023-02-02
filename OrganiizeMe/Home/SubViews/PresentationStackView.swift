@@ -65,6 +65,7 @@ class PresentationStackView: UIStackView {
         self.alignment = .trailing
         self.distribution = .fill
         self.backgroundColor = .purple
+        
         self.spacing = 3
         self.preservesSuperviewLayoutMargins = true
         self.layer.cornerRadius = Constants.Home.tenValue
