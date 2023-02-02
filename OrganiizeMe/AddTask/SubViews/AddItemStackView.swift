@@ -9,9 +9,9 @@ import UIKit
 import DropDown
 
 class AddItemStackView: UIStackView {
+    //MARK: - Views
     let categoriesDropDown = DropDown()
     
-    //MARK: - Views
     lazy var taskNameTextField: UITextField = {
         let textField = UITextField(frame: .zero)
         textField.placeholder = "TaskNamePlaceholder".localized
@@ -56,26 +56,63 @@ class AddItemStackView: UIStackView {
         return button
     }()
     
-    //TODO: Put the date picker with label
-    lazy var taskIntialDate: UIDatePicker = {
-        let datePicker = UIDatePicker(frame: .zero)
-        datePicker.timeZone = NSTimeZone.local
-        datePicker.datePickerMode = .date
+    lazy var initalDateTextField: UITextField = {
+        let textField = UITextField(frame: .zero)
+        textField.attributedPlaceholder = NSAttributedString(string: "Data Inicio", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        textField.textColor = .white
+        textField.textAlignment = .center
+        textField.contentMode = .scaleAspectFit
+        textField.clipsToBounds = true
+        textField.font = UIFont.systemFont(ofSize: 16)
+        textField.borderStyle = .roundedRect
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.layer.cornerRadius = 10
+        textField.layer.shadowColor = #colorLiteral(red: 0.1529411765, green: 0.3490196078, blue: 0.3137254902, alpha: 1)
+        textField.layer.shadowOpacity = 1
+        textField.layer.shadowOffset = CGSize(width: 1.5, height: 4)
+        textField.layer.shadowRadius = 0.5
+        textField.layer.masksToBounds = false
+        textField.backgroundColor = #colorLiteral(red: 0.2549019608, green: 0.7490196078, blue: 0.7019607843, alpha: 1)
+        textField.datePicker(
+            target: self,
+            doneAction: #selector(doneAction),
+            cancelAction: #selector(cancelAction),
+            datePickerMode: .date
+        )
         
-        return datePicker
+        return textField
     }()
     
-    lazy var taskFinalDate: UIDatePicker = {
-        let datePicker = UIDatePicker(frame: .zero)
-        datePicker.timeZone = NSTimeZone.local
-        datePicker.datePickerMode = .date
+    lazy var finalDateTextField: UITextField = {
+        let textField = UITextField(frame: .zero)
+        textField.attributedPlaceholder = NSAttributedString(string: "Data Limite", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        textField.textAlignment = .center
+        textField.contentMode = .scaleAspectFit
+        textField.clipsToBounds = true
+        textField.font = UIFont.systemFont(ofSize: 16)
+        textField.borderStyle = .roundedRect
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.layer.cornerRadius = 10
+        textField.layer.shadowColor = #colorLiteral(red: 0.1529411765, green: 0.3490196078, blue: 0.3137254902, alpha: 1)
+        textField.layer.shadowOpacity = 1
+        textField.layer.shadowOffset = CGSize(width: 1.5, height: 4)
+        textField.layer.shadowRadius = 0.5
+        textField.layer.masksToBounds = false
+        textField.backgroundColor = #colorLiteral(red: 0.2549019608, green: 0.7490196078, blue: 0.7019607843, alpha: 1)
+        textField.datePicker(
+            target: self,
+            doneAction: #selector(finalDoneAction),
+            cancelAction: #selector(finalCancelAction),
+            datePickerMode: .date
+        )
         
-        return datePicker
+        return textField
     }()
     
     //MARK: - LifeCycle
     override init(frame: CGRect) {
         super.init(frame: frame)
+        addSubviews()
         setupStackView()
         setupConstraints()
     }
@@ -84,6 +121,7 @@ class AddItemStackView: UIStackView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - Ojbc Functions
     @objc func tapChooseMenuItem(_ sender: UIButton) {
         //TODO: Pass categories that will be populated by the user
         //TODO: Change layout
@@ -92,10 +130,44 @@ class AddItemStackView: UIStackView {
         categoriesDropDown.bottomOffset = CGPoint(x: 0, y: sender.frame.size.height)
         categoriesDropDown.show()
         categoriesDropDown.selectionAction = { [weak self] (index: Int, item: String) in
-          guard let _ = self else { return }
-          sender.setTitle(item, for: .normal) //9
+            guard let _ = self else { return }
+            sender.setTitle(item, for: .normal) //9
         }
-      }
+    }
+    
+    @objc
+    func cancelAction() {
+        initalDateTextField.resignFirstResponder()
+    }
+    
+    @objc
+    func doneAction() {
+        if let datePickerView = initalDateTextField.inputView as? UIDatePicker {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            let dateString = dateFormatter.string(from: datePickerView.date)
+            initalDateTextField.text = dateString
+            
+            initalDateTextField.resignFirstResponder()
+        }
+    }
+    
+    @objc
+    func finalCancelAction() {
+        finalDateTextField.resignFirstResponder()
+    }
+    
+    @objc
+    func finalDoneAction() {
+        if let datePickerView = finalDateTextField.inputView as? UIDatePicker {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            let dateString = dateFormatter.string(from: datePickerView.date)
+            finalDateTextField.text = dateString
+            
+            finalDateTextField.resignFirstResponder()
+        }
+    }
     
     //MARK: - Private Functions
     private func setupStackView() {
@@ -111,22 +183,29 @@ class AddItemStackView: UIStackView {
         self.layoutSubviews()
     }
     
-    private func setupConstraints() {
+    private func addSubviews() {
         self.addArrangedSubview(taskNameTextField)
         self.addArrangedSubview(taskDescriptionTextField)
         self.addArrangedSubview(categoriesButton)
-        self.addArrangedSubview(taskIntialDate)
-        self.addArrangedSubview(taskFinalDate)
-        
+        self.addArrangedSubview(initalDateTextField)
+        self.addArrangedSubview(finalDateTextField)
+    }
+    
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
             taskDescriptionTextField.heightAnchor.constraint(equalToConstant: 100),
+            taskDescriptionTextField.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -20),
+            
+            taskNameTextField.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -20),
+            
             categoriesButton.heightAnchor.constraint(equalToConstant: 40),
             categoriesButton.widthAnchor.constraint(equalToConstant: 200),
-        ])
-        
-        NSLayoutConstraint.activate([
-            taskNameTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            taskDescriptionTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            
+            initalDateTextField.widthAnchor.constraint(equalToConstant: 200),
+            initalDateTextField.heightAnchor.constraint(equalToConstant: 40),
+            
+            finalDateTextField.widthAnchor.constraint(equalToConstant: 200),
+            finalDateTextField.heightAnchor.constraint(equalToConstant: 40),
         ])
     }
 }

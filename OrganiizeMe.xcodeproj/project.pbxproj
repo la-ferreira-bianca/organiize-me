@@ -23,6 +23,7 @@
 		D724A72129805EB200FC38F4 /* TasksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724A72029805EB200FC38F4 /* TasksListViewController.swift */; };
 		D72B0B362989755C00414E93 /* FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72B0B352989755C00414E93 /* FloatingTextField.swift */; };
 		D7B7FA042989BECB006EC7D8 /* AddItemStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B7FA032989BECB006EC7D8 /* AddItemStackView.swift */; };
+		D7E2DB95298C385300FF02C2 /* TextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E2DB94298C385300FF02C2 /* TextField+Extensions.swift */; };
 		D7F19F372982F47D0099B2BC /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F19F362982F47D0099B2BC /* GlobalConstants.swift */; };
 		D7F19F3A2982F8650099B2BC /* PresentationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F19F392982F8650099B2BC /* PresentationStackView.swift */; };
 		D7F19F3C2982F9BC0099B2BC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D7F19F3B2982F9BC0099B2BC /* Localizable.strings */; };
@@ -71,6 +72,7 @@
 		D724A72029805EB200FC38F4 /* TasksListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListViewController.swift; sourceTree = "<group>"; };
 		D72B0B352989755C00414E93 /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTextField.swift; sourceTree = "<group>"; };
 		D7B7FA032989BECB006EC7D8 /* AddItemStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemStackView.swift; sourceTree = "<group>"; };
+		D7E2DB94298C385300FF02C2 /* TextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extensions.swift"; sourceTree = "<group>"; };
 		D7F19F362982F47D0099B2BC /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 		D7F19F392982F8650099B2BC /* PresentationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationStackView.swift; sourceTree = "<group>"; };
 		D7F19F3B2982F9BC0099B2BC /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				D7F19F3E2982FA5A0099B2BC /* String+Extensions.swift */,
+				D7E2DB94298C385300FF02C2 /* TextField+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 				D7F19F3F2982FA5A0099B2BC /* String+Extensions.swift in Sources */,
 				D724A6E0298047E200FC38F4 /* AppDelegate.swift in Sources */,
 				D724A6E2298047E200FC38F4 /* SceneDelegate.swift in Sources */,
+				D7E2DB95298C385300FF02C2 /* TextField+Extensions.swift in Sources */,
 				D7F19F4629831D9C0099B2BC /* CarrosselModel.swift in Sources */,
 				D724A71D29805CB700FC38F4 /* HomeCoordinator.swift in Sources */,
 				D724A717298051BC00FC38F4 /* HomeBaseCoordinator.swift in Sources */,
