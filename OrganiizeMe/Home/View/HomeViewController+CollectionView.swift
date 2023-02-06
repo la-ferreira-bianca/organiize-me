@@ -24,8 +24,10 @@ extension HomeViewController: UICollectionViewDataSource {
 
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let carrossel = carrossel[indexPath.item]
+        //TODO: - Change name for add task view controller
+        AddNewTaskViewController().viewModel = carrossel
         navigationController?.present(AddNewTaskViewController(), animated: true)
-        
     }
 }
 

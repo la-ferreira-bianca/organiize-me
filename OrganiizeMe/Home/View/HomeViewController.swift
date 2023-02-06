@@ -10,7 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
     
     //MARK: - Variables
-//    var coordinator: HomeBaseCoordinator?
+    var coordinator: HomeBaseCoordinator?
     let carrossel = CarrosselModel.fetchCarrossel()
     
     //MARK: - Views
@@ -48,15 +48,15 @@ class HomeViewController: UIViewController {
     }()
     
     //MARK: - LifeCycle
-//    init(coordinator: HomeBaseCoordinator) {
-//        super.init(nibName: nil, bundle: nil)
-//        self.coordinator = coordinator
-//        title = "HomeTitle".localized
-//    }
-//
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
+    init(coordinator: HomeBaseCoordinator) {
+        super.init(nibName: nil, bundle: nil)
+        self.coordinator = coordinator
+        title = "HomeTitle".localized
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -123,7 +123,6 @@ class HomeViewController: UIViewController {
         NSLayoutConstraint.activate([
             myTasksButton.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 15),
             myTasksButton.heightAnchor.constraint(equalToConstant: 150),
-            myTasksButton.widthAnchor.constraint(equalToConstant: 200),
             myTasksButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.Home.tenValue),
             myTasksButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.Home.tenValue),
         ])
@@ -137,22 +136,22 @@ class HomeViewController: UIViewController {
     }
 }
 
-#if DEBUG
-import SwiftUI
-
-struct HomeViewControllerRepresentable: UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> some UIViewController {
-        return HomeViewController()
-    }
-
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
-}
-
-struct HomeViewController_Preview: PreviewProvider {
-    static var previews: some View {
-        HomeViewControllerRepresentable()
-            .previewDevice("iPhone SE (3rd generation)")
-    }
-}
-
-#endif
+//#if DEBUG
+//import SwiftUI
+//
+//struct HomeViewControllerRepresentable: UIViewControllerRepresentable {
+//    func makeUIViewController(context: Context) -> some UIViewController {
+//        return HomeViewController()
+//    }
+//
+//    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
+//}
+//
+//struct HomeViewController_Preview: PreviewProvider {
+//    static var previews: some View {
+//        HomeViewControllerRepresentable()
+//            .previewDevice("iPhone SE (3rd generation)")
+//    }
+//}
+//
+//#endif

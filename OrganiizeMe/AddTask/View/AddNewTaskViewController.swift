@@ -9,8 +9,26 @@ import UIKit
 
 class AddNewTaskViewController: UIViewController {
     
+    var viewModel: CarrosselModel?
+    
     //MARK: - Views
     var stackView = AddItemStackView(frame: .zero)
+    
+    lazy var titleImage: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "task-retangle"))
+        imageView.frame = CGRect(x: -30, y: 0, width: 230, height: 70)
+        return imageView
+    }()
+    
+    lazy var viewTitleLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.textColor = .white
+        label.font = UIFont.boldSystemFont(ofSize: 25)
+        label.frame = CGRect(x: -30, y: 0, width: 230, height: 70)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     lazy var addButton: UIButton = {
         let button = UIButton()
         button.setTitle("Adicionar", for: .normal)
@@ -33,9 +51,20 @@ class AddNewTaskViewController: UIViewController {
         setupConstraints()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.viewTitleLabel.text = viewModel?.title
+    }
+    
     //MARK: - Functions
+//    func setupView(with title: String) {
+//        self.viewTitleLabel.text = title.uppercased()
+//    }
+//    
     func setupViews() {
         //MARK: Setup StackView
+        view.addSubview(titleImage)
+        view.addSubview(viewTitleLabel)
         view.addSubview(stackView)
         view.addSubview(addButton)
         stackView.layer.cornerRadius = 10
@@ -45,7 +74,17 @@ class AddNewTaskViewController: UIViewController {
     //MARK: - Private Functions
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100),
+            titleImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: -20),
+            titleImage.heightAnchor.constraint(equalToConstant: 55)
+        ])
+        
+        NSLayoutConstraint.activate([
+            viewTitleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            viewTitleLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20)
+        ])
+        
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: titleImage.bottomAnchor, constant: 50),
             stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
             stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
         ])
@@ -59,22 +98,21 @@ class AddNewTaskViewController: UIViewController {
     }
 }
 
-#if DEBUG
-import SwiftUI
-
-struct AddNewTaskViewControllerRepresentable: UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> some UIViewController {
-        return AddNewTaskViewController()
-    }
-
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
-}
-
-struct AddNewTaskViewController_Preview: PreviewProvider {
-    static var previews: some View {
-        AddNewTaskViewControllerRepresentable()
-            .previewDevice("iPhone SE (3rd generation)")
-    }
-}
-
-#endif
+//#if DEBUG
+//import SwiftUI
+//
+//struct AddNewTaskViewControllerRepresentable: UIViewControllerRepresentable {
+//    func makeUIViewController(context: Context) -> some UIViewController {
+//        return AddNewTaskViewController()
+//    }
+//
+//    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
+//}
+//
+//struct AddNewTaskViewController_Preview: PreviewProvider {
+//    static var previews: some View {
+//        AddNewTaskViewControllerRepresentable()
+//            .previewDevice("iPhone SE (3rd generation)")
+//    }
+//}
+//#endif
