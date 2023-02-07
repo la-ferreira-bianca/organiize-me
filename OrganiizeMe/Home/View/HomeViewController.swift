@@ -27,6 +27,7 @@ class HomeViewController: UIViewController {
         button.layer.shadowRadius = 0.5
         button.layer.masksToBounds = false
         button.backgroundColor = #colorLiteral(red: 0.2549019608, green: 0.7490196078, blue: 0.7019607843, alpha: 1)
+        button.addTarget(self, action: #selector(didTapMyTasks), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         
         return button
@@ -67,6 +68,11 @@ class HomeViewController: UIViewController {
     }
     
     //MARK: - Functions
+    @objc func didTapMyTasks() {
+        //TODO: CHANGE THIS comportament TO COORDINATOR
+        navigationController?.pushViewController(TasksListTableViewController(), animated: true)
+    }
+    
     @objc func didTapMyCategories() {
         //TODO: CHANGE THIS comportament TO COORDINATOR
         navigationController?.pushViewController(CategoriesListTableViewController(), animated: true)

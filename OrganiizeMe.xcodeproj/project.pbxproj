@@ -158,7 +158,7 @@
 				D724A71029804A1400FC38F4 /* Home */,
 				D724A6EA298047E400FC38F4 /* LaunchScreen.storyboard */,
 				D724A70F29804A0500FC38F4 /* Resources */,
-				D724A71E29805E8B00FC38F4 /* TasksList */,
+				D724A71E29805E8B00FC38F4 /* Tasks */,
 			);
 			path = OrganiizeMe;
 			sourceTree = "<group>";
@@ -231,12 +231,12 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
-		D724A71E29805E8B00FC38F4 /* TasksList */ = {
+		D724A71E29805E8B00FC38F4 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
 				D724A71F29805EA100FC38F4 /* View */,
 			);
-			path = TasksList;
+			path = Tasks;
 			sourceTree = "<group>";
 		};
 		D724A71F29805EA100FC38F4 /* View */ = {
