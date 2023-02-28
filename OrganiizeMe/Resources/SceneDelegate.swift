@@ -48,6 +48,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
+    //MARK: - Private Functions
+    private func setupUserDefaults() {
+        var userDefaults = UserDefaults.standard
+        userDefaults.set([], forKey: "UserTasksArray")
+    }
 
 }
 

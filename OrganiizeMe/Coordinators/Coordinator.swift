@@ -7,27 +7,26 @@
 
 import UIKit
 
+//MARK: - FlowCoordinator
 protocol FlowCoordinator: AnyObject {
-    //MARK: - Variables
     var parentCoordinator: MainBaseCoordinator? { get set }
 }
 
+//MARK: - Coordinator
 protocol Coordinator: FlowCoordinator {
-    //MARK: - Variables
     var rootViewController: UIViewController { get set }
     func start() -> UIViewController
     @discardableResult func resetToRoot() -> Self
 }
 
+//MARK: - Extensions
 extension Coordinator {
-    //MARK: - Variables
     var navigationController: UINavigationController? {
         get {
             (rootViewController as? UINavigationController)
         }
     }
     
-    //MARK: - Functions
     func resetToRoot() -> Self {
         navigationController?.popToRootViewController(animated: false)
         return self

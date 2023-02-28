@@ -8,7 +8,8 @@
 import UIKit
 
 enum AppFlow  {
-    case TasksList
+    case Home
+    case Categories
 }
 
 class MainCoordinator: MainBaseCoordinator {
@@ -31,14 +32,19 @@ class MainCoordinator: MainBaseCoordinator {
     
     func moveTo(flow: AppFlow) {
         switch flow {
-        case .TasksList:
+        case .Home:
             (rootViewController as? UITabBarController)?.selectedIndex = 0
+        case .Categories:
+            let categoryVC = CategoriesListTableViewController()
+            categoryVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house.circle"), tag: 1)
+            (rootViewController as? UITabBarController)?.viewControllers?.append(categoryVC)
+            (rootViewController as? UITabBarController)?.selectedIndex = 1
         }
     }
     
     func resetToRoot() -> Self {
         homeCoordinator.resetToRoot()
-        moveTo(flow: .TasksList)
+        moveTo(flow: .Home)
         return self
     }
     

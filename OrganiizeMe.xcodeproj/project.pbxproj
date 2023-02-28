@@ -20,11 +20,17 @@
 		D724A717298051BC00FC38F4 /* HomeBaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724A716298051BC00FC38F4 /* HomeBaseCoordinator.swift */; };
 		D724A71B2980553200FC38F4 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724A71A2980553200FC38F4 /* MainCoordinator.swift */; };
 		D724A71D29805CB700FC38F4 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724A71C29805CB700FC38F4 /* HomeCoordinator.swift */; };
-		D724A72129805EB200FC38F4 /* TasksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724A72029805EB200FC38F4 /* TasksListViewController.swift */; };
+		D724A72129805EB200FC38F4 /* TasksListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724A72029805EB200FC38F4 /* TasksListTableViewController.swift */; };
 		D72B0B362989755C00414E93 /* FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72B0B352989755C00414E93 /* FloatingTextField.swift */; };
 		D737369129928B1100821219 /* CategoriesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D737369029928B1100821219 /* CategoriesListTableViewController.swift */; };
 		D73736942992A49D00821219 /* AddNewCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73736932992A49D00821219 /* AddNewCategoryViewController.swift */; };
 		D73736992992A51600821219 /* AddCategoryStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73736982992A51500821219 /* AddCategoryStackView.swift */; };
+		D78704D729AE595F0023B129 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78704D629AE595F0023B129 /* APIError.swift */; };
+		D78704D929AE59810023B129 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78704D829AE59810023B129 /* HTTPClient.swift */; };
+		D78704DB29AE59B50023B129 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78704DA29AE59B50023B129 /* Request.swift */; };
+		D78704DD29AE59DC0023B129 /* TasksRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78704DC29AE59DC0023B129 /* TasksRequest.swift */; };
+		D78704E029AE87CE0023B129 /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78704DF29AE87CE0023B129 /* Tasks.swift */; };
+		D78704E429AE8ED60023B129 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78704E329AE8ED60023B129 /* Task.swift */; };
 		D7B7FA042989BECB006EC7D8 /* AddItemStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B7FA032989BECB006EC7D8 /* AddItemStackView.swift */; };
 		D7E2DB95298C385300FF02C2 /* TextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E2DB94298C385300FF02C2 /* TextField+Extensions.swift */; };
 		D7F19F372982F47D0099B2BC /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F19F362982F47D0099B2BC /* GlobalConstants.swift */; };
@@ -72,11 +78,17 @@
 		D724A716298051BC00FC38F4 /* HomeBaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBaseCoordinator.swift; sourceTree = "<group>"; };
 		D724A71A2980553200FC38F4 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		D724A71C29805CB700FC38F4 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
-		D724A72029805EB200FC38F4 /* TasksListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListViewController.swift; sourceTree = "<group>"; };
+		D724A72029805EB200FC38F4 /* TasksListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListTableViewController.swift; sourceTree = "<group>"; };
 		D72B0B352989755C00414E93 /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTextField.swift; sourceTree = "<group>"; };
 		D737369029928B1100821219 /* CategoriesListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesListTableViewController.swift; sourceTree = "<group>"; };
 		D73736932992A49D00821219 /* AddNewCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCategoryViewController.swift; sourceTree = "<group>"; };
 		D73736982992A51500821219 /* AddCategoryStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryStackView.swift; sourceTree = "<group>"; };
+		D78704D629AE595F0023B129 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		D78704D829AE59810023B129 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		D78704DA29AE59B50023B129 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		D78704DC29AE59DC0023B129 /* TasksRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksRequest.swift; sourceTree = "<group>"; };
+		D78704DF29AE87CE0023B129 /* Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
+		D78704E329AE8ED60023B129 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		D7B7FA032989BECB006EC7D8 /* AddItemStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemStackView.swift; sourceTree = "<group>"; };
 		D7E2DB94298C385300FF02C2 /* TextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extensions.swift"; sourceTree = "<group>"; };
 		D7F19F362982F47D0099B2BC /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
@@ -150,6 +162,7 @@
 		D724A6DE298047E200FC38F4 /* OrganiizeMe */ = {
 			isa = PBXGroup;
 			children = (
+				D78704D229AE592A0023B129 /* Networking */,
 				D724A6ED298047E400FC38F4 /* Info.plist */,
 				D73736952992A4E600821219 /* AddCategory */,
 				D7F3B47C29884D2000FF15C1 /* AddTask */,
@@ -234,6 +247,8 @@
 		D724A71E29805E8B00FC38F4 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
+				D78704E529AE91C10023B129 /* Subviews */,
+				D78704DE29AE87C20023B129 /* Model */,
 				D724A71F29805EA100FC38F4 /* View */,
 			);
 			path = Tasks;
@@ -242,7 +257,7 @@
 		D724A71F29805EA100FC38F4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D724A72029805EB200FC38F4 /* TasksListViewController.swift */,
+				D724A72029805EB200FC38F4 /* TasksListTableViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -302,6 +317,64 @@
 				D73736982992A51500821219 /* AddCategoryStackView.swift */,
 			);
 			path = SubViews;
+			sourceTree = "<group>";
+		};
+		D78704D229AE592A0023B129 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D78704D529AE594F0023B129 /* Resources */,
+				D78704D429AE593C0023B129 /* Response */,
+				D78704D329AE59380023B129 /* Request */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		D78704D329AE59380023B129 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				D78704DA29AE59B50023B129 /* Request.swift */,
+				D78704DC29AE59DC0023B129 /* TasksRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		D78704D429AE593C0023B129 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		D78704D529AE594F0023B129 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D78704D629AE595F0023B129 /* APIError.swift */,
+				D78704D829AE59810023B129 /* HTTPClient.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D78704DE29AE87C20023B129 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D78704DF29AE87CE0023B129 /* Tasks.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D78704E229AE8EC20023B129 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D78704E329AE8ED60023B129 /* Task.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D78704E529AE91C10023B129 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		D7B7FA012989BEA4006EC7D8 /* View */ = {
@@ -366,6 +439,7 @@
 		D7F3B47C29884D2000FF15C1 /* AddTask */ = {
 			isa = PBXGroup;
 			children = (
+				D78704E229AE8EC20023B129 /* Model */,
 				D7B7FA022989BEB1006EC7D8 /* SubViews */,
 				D7B7FA012989BEA4006EC7D8 /* View */,
 			);
@@ -557,13 +631,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				D73736992992A51600821219 /* AddCategoryStackView.swift in Sources */,
+				D78704DB29AE59B50023B129 /* Request.swift in Sources */,
 				D7B7FA042989BECB006EC7D8 /* AddItemStackView.swift in Sources */,
 				D7F19F4829831DDF0099B2BC /* HomeViewController+CollectionView.swift in Sources */,
 				D724A71329804B8300FC38F4 /* Coordinator.swift in Sources */,
+				D78704DD29AE59DC0023B129 /* TasksRequest.swift in Sources */,
 				D7F19F372982F47D0099B2BC /* GlobalConstants.swift in Sources */,
-				D724A72129805EB200FC38F4 /* TasksListViewController.swift in Sources */,
+				D724A72129805EB200FC38F4 /* TasksListTableViewController.swift in Sources */,
 				D73736942992A49D00821219 /* AddNewCategoryViewController.swift in Sources */,
 				D724A71B2980553200FC38F4 /* MainCoordinator.swift in Sources */,
+				D78704E029AE87CE0023B129 /* Tasks.swift in Sources */,
 				D724A6E4298047E200FC38F4 /* HomeViewController.swift in Sources */,
 				D737369129928B1100821219 /* CategoriesListTableViewController.swift in Sources */,
 				D7F19F4229831D430099B2BC /* CarrosselCollectionCell.swift in Sources */,
@@ -576,7 +653,10 @@
 				D724A717298051BC00FC38F4 /* HomeBaseCoordinator.swift in Sources */,
 				D7F3B47E29884D3600FF15C1 /* AddNewTaskViewController.swift in Sources */,
 				D7F19F3A2982F8650099B2BC /* PresentationStackView.swift in Sources */,
+				D78704D929AE59810023B129 /* HTTPClient.swift in Sources */,
 				D72B0B362989755C00414E93 /* FloatingTextField.swift in Sources */,
+				D78704E429AE8ED60023B129 /* Task.swift in Sources */,
+				D78704D729AE595F0023B129 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

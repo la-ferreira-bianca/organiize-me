@@ -10,6 +10,7 @@ import UIKit
 class AddNewTaskViewController: UIViewController {
     
     var viewModel: CarrosselModel?
+    var tasks = UserDefaults.standard.array(forKey: "UserTasksArray") as? [String]
     
     //MARK: - Views
     var stackView = AddItemStackView(frame: .zero)
@@ -24,7 +25,6 @@ class AddNewTaskViewController: UIViewController {
         let label = UILabel(frame: .zero)
         label.textColor = .white
         label.font = UIFont.boldSystemFont(ofSize: 25)
-        label.frame = CGRect(x: -30, y: 0, width: 230, height: 70)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -39,6 +39,7 @@ class AddNewTaskViewController: UIViewController {
         button.layer.shadowRadius = 0.5
         button.layer.masksToBounds = false
         button.backgroundColor = #colorLiteral(red: 0.2549019608, green: 0.7490196078, blue: 0.7019607843, alpha: 1)
+        button.addTarget(self, action: #selector(didTapAdd), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -69,6 +70,22 @@ class AddNewTaskViewController: UIViewController {
         view.addSubview(addButton)
         stackView.layer.cornerRadius = 10
         stackView.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    @objc func didTapAdd() {
+        if let text = stackView.taskNameTextField.text, !text.isEmpty {
+            tasks?.append(text)
+            self.dismiss(animated: true)
+        }
+        let alert = UIAlertController(
+            title: "Não foi possivel concluir",
+            message: "Por favor, revise os campos e tente novamente",
+            preferredStyle: .alert)
+        alert.addAction(UIAlertAction(
+            title: "OK",
+            style: .cancel
+        ))
+        self.present(alert, animated: true)
     }
     
     //MARK: - Private Functions
