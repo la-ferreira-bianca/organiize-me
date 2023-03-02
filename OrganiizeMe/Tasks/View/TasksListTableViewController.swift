@@ -8,10 +8,23 @@
 import UIKit
 import Alamofire
 
+fileprivate func makeRepository() -> TasksModelRepository {
+    TasksModelRemoteRepository(httpClient: URLSessionHTTPClient(), api: .dev)
+}
+
+fileprivate func makeViewModel(
+    repository: TasksModelRepository,
+    onSuccess: @escaping (_ factValue: [TaskModel]) -> Void,
+    onError: @escaping (_ errorMessage: String) -> Void
+) -> TasksViewModel {
+    TasksViewModel(repository: repository, onSuccess: onSuccess, onError: onError)
+}
+
 class TasksListTableViewController: UITableViewController {
     
     //MARK: - Variables
-    var tasks: [Task] = []
+    private var viewModel: TasksViewModel!
+    var tasks = [TaskModel]()
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
@@ -22,7 +35,10 @@ class TasksListTableViewController: UITableViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
         setupViews()
         setupConstraints()
-        fetchTasks()
+        self.viewModel = makeViewModel(repository: makeRepository(),
+                                       onSuccess: { [weak self] in self?.onSuccess(data: $0) },
+                                       onError: { [weak self] in self?.onError(errorMessage: $0) })
+        viewModel.fetchTasks()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,6 +61,16 @@ class TasksListTableViewController: UITableViewController {
     //MARK: - Private Functions
     private func setupConstraints() {
     }
+    
+    // MARK: - Binding
+    func onSuccess(data: [TaskModel]) {
+        self.tasks = data
+        tableView.reloadData()
+    }
+    
+    func onError(errorMessage: String) {
+        print(Self.self, #function, errorMessage)
+    }
 }
 
 extension TasksListTableViewController {
@@ -62,23 +88,6 @@ extension TasksListTableViewController {
         cell.backgroundColor = .white
         cell.textLabel?.text = task.title
         cell.textLabel?.textColor = .black
-        print(task.title)
-        
-        
-        //        cell.textLabel?.text = userTasks?[indexPath.row] as? String
         return cell
-    }
-}
-
-//TODO: CHANGE THIS METHOD TO THE VIEW MODEL AND THE CONTROLLER, AND PUT IN THE RIGHT FOLDERS REQUEST AND RESPONSE
-extension TasksListTableViewController {
-    func fetchTasks() {
-        AF.request("http://34.30.232.59/tasks")
-            .validate()
-            .responseDecodable(of: Tasks.self) { (response) in
-                guard let tasks = response.value else { return }
-                self.tasks = tasks.allTasks
-                self.tableView.reloadData()
-            }
     }
 }

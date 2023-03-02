@@ -1,0 +1,13 @@
+//
+//  URLSessionHTTPClientError.swift
+//  OrganiizeMe
+//
+//  Created by Bianca Ferreira on 01/03/23.
+//
+
+import Foundation
+
+public enum URLSessionHTTPClientError: Error {
+    case error(Error)
+    case unknown(Data?, URLResponse?, Error?)
+}
