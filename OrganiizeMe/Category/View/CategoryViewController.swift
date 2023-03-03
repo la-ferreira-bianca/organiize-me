@@ -1,19 +1,19 @@
 //
-//  TaskViewController.swift
+//  CategoryViewController.swift
 //  OrganiizeMe
 //
-//  Created by Bianca Ferreira on 02/03/23.
+//  Created by Bianca Ferreira on 03/03/23.
 //
 
 import Foundation
 import UIKit
 
-class TaskViewController: UIViewController {
+class CategoryViewController: UIViewController {
     
-    private var viewModel = TaskViewModel()
-    private var taskID: String = ""
+    private var viewModel = CategoryViewModel()
+    private var categoryID: String = ""
     
-    lazy var taskTitle: UITextView = {
+    lazy var categoryTitle: UITextView = {
         let textView = UITextView(frame: CGRect(x: 20.0, y: 90.0, width: 250.0, height: 100.0))
         textView.contentInsetAdjustmentBehavior = .automatic
         textView.center = self.view.center
@@ -23,11 +23,11 @@ class TaskViewController: UIViewController {
         return textView
     }()
     
-    init(taskID: String) {
+    init(categoryID: String) {
         super.init(nibName: nil, bundle: nil)
         view.backgroundColor = .white
-        self.taskID = taskID
-        viewModel.fetchTask(with: taskID)
+        self.categoryID = categoryID
+        viewModel.fetchCategories(with: categoryID)
     }
     
     required init?(coder: NSCoder) {
@@ -37,26 +37,17 @@ class TaskViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        setupConstraints()
         setupBinders()
     }
     
     func setupViews() {
-        view.addSubview(taskTitle)
-    }
-    
-    func setupConstraints() {
-        NSLayoutConstraint.activate([
-            taskTitle.heightAnchor.constraint(equalToConstant: 50),
-            taskTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            taskTitle.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-        ])
+        view.addSubview(categoryTitle)
     }
     
     private func setupBinders() {
-        viewModel.task.bind { [weak self] taskTitle in
-            self?.title = taskTitle
-            self?.taskTitle.text = taskTitle
+        viewModel.category.bind { [weak self] categoryTitle in
+            self?.title = categoryTitle
+            self?.categoryTitle.text = categoryTitle
         }
     }
 }

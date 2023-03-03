@@ -27,3 +27,9 @@ extension CategoriesModelAPI {
         CategoriesModelAPI(environment: APIEnvironment())
     }
 }
+
+extension CateogoryModelAPI {
+    static var dev: Self {
+        CateogoryModelAPI(environment: APIEnvironment())
+    }
+}

@@ -15,6 +15,10 @@
 		D71FEB5C29B2438C00389D1D /* CategoriesModelRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71FEB5B29B2438C00389D1D /* CategoriesModelRemoteRepository.swift */; };
 		D71FEB5E29B243D200389D1D /* CategoriesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71FEB5D29B243D200389D1D /* CategoriesAPI.swift */; };
 		D71FEB6129B2450C00389D1D /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71FEB6029B2450C00389D1D /* CategoriesViewModel.swift */; };
+		D71FEB6429B249FF00389D1D /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71FEB6329B249FF00389D1D /* CategoryViewController.swift */; };
+		D71FEB6729B24AEE00389D1D /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71FEB6629B24AEE00389D1D /* CategoryViewModel.swift */; };
+		D71FEB6A29B24B1800389D1D /* CategoryModelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71FEB6929B24B1800389D1D /* CategoryModelRepository.swift */; };
+		D71FEB6C29B24B5D00389D1D /* CategoryModelRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71FEB6B29B24B5D00389D1D /* CategoryModelRemoteRepository.swift */; };
 		D724A6E0298047E200FC38F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724A6DF298047E200FC38F4 /* AppDelegate.swift */; };
 		D724A6E2298047E200FC38F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724A6E1298047E200FC38F4 /* SceneDelegate.swift */; };
 		D724A6E4298047E200FC38F4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724A6E3298047E200FC38F4 /* HomeViewController.swift */; };
@@ -88,6 +92,10 @@
 		D71FEB5B29B2438C00389D1D /* CategoriesModelRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesModelRemoteRepository.swift; sourceTree = "<group>"; };
 		D71FEB5D29B243D200389D1D /* CategoriesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesAPI.swift; sourceTree = "<group>"; };
 		D71FEB6029B2450C00389D1D /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
+		D71FEB6329B249FF00389D1D /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		D71FEB6629B24AEE00389D1D /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		D71FEB6929B24B1800389D1D /* CategoryModelRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModelRepository.swift; sourceTree = "<group>"; };
+		D71FEB6B29B24B5D00389D1D /* CategoryModelRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModelRemoteRepository.swift; sourceTree = "<group>"; };
 		D724A6DC298047E200FC38F4 /* OrganiizeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrganiizeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D724A6DF298047E200FC38F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D724A6E1298047E200FC38F4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -186,6 +194,9 @@
 		D71FEB5129B23EBB00389D1D /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				D71FEB6829B24B0600389D1D /* Repository */,
+				D71FEB6529B24AE100389D1D /* ViewModel */,
+				D71FEB6229B249EE00389D1D /* View */,
 				D71FEB5229B23EC500389D1D /* Model */,
 			);
 			path = Category;
@@ -222,6 +233,31 @@
 				D71FEB6029B2450C00389D1D /* CategoriesViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D71FEB6229B249EE00389D1D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D71FEB6329B249FF00389D1D /* CategoryViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D71FEB6529B24AE100389D1D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D71FEB6629B24AEE00389D1D /* CategoryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D71FEB6829B24B0600389D1D /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				D71FEB6929B24B1800389D1D /* CategoryModelRepository.swift */,
+				D71FEB6B29B24B5D00389D1D /* CategoryModelRemoteRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		D724A6D3298047E200FC38F4 = {
@@ -810,7 +846,9 @@
 				D73736942992A49D00821219 /* AddNewCategoryViewController.swift in Sources */,
 				D71FEB5E29B243D200389D1D /* CategoriesAPI.swift in Sources */,
 				D71FEB5429B23ED200389D1D /* CategoryModel.swift in Sources */,
+				D71FEB6A29B24B1800389D1D /* CategoryModelRepository.swift in Sources */,
 				D73AFB9129B14E78007C3A36 /* TaskModelRepository.swift in Sources */,
+				D71FEB6C29B24B5D00389D1D /* CategoryModelRemoteRepository.swift in Sources */,
 				D72F8F5C29AED1DF000D3DB4 /* TasksViewModel.swift in Sources */,
 				D793779129B00B4A0026CBFE /* URLSessionHTTPClient.swift in Sources */,
 				D724A71B2980553200FC38F4 /* MainCoordinator.swift in Sources */,
@@ -819,6 +857,7 @@
 				D724A6E4298047E200FC38F4 /* HomeViewController.swift in Sources */,
 				D737369129928B1100821219 /* CategoriesListTableViewController.swift in Sources */,
 				D7EFA9B729B121E40026975B /* TasksModelRemoteRepository.swift in Sources */,
+				D71FEB6729B24AEE00389D1D /* CategoryViewModel.swift in Sources */,
 				D71FEB6129B2450C00389D1D /* CategoriesViewModel.swift in Sources */,
 				D7F19F4229831D430099B2BC /* CarrosselCollectionCell.swift in Sources */,
 				D7F19F3F2982FA5A0099B2BC /* String+Extensions.swift in Sources */,
@@ -834,6 +873,7 @@
 				D78704D929AE59810023B129 /* HTTPClient.swift in Sources */,
 				D71FEB5C29B2438C00389D1D /* CategoriesModelRemoteRepository.swift in Sources */,
 				D72B0B362989755C00414E93 /* FloatingTextField.swift in Sources */,
+				D71FEB6429B249FF00389D1D /* CategoryViewController.swift in Sources */,
 				D71FEB5729B23F3E00389D1D /* CategoriesModel.swift in Sources */,
 				D78704E429AE8ED60023B129 /* TaskModel.swift in Sources */,
 				D78704D729AE595F0023B129 /* APIError.swift in Sources */,

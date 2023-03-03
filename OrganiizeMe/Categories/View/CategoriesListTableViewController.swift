@@ -72,6 +72,11 @@ extension CategoriesListTableViewController {
         cell.textLabel?.textColor = .black
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let category = categories[indexPath.row]
+        navigationController?.pushViewController(CategoryViewController(categoryID: category.id), animated: true)
+    }
 }
 
 
