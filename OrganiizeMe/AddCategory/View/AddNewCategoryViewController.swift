@@ -9,7 +9,7 @@ import UIKit
 
 class AddNewCategoryViewController: UIViewController {
     
-    var viewModel: CarrosselModel?
+    private var viewModel = AddCategoryViewModel()
     
     //MARK: - Views
     var stackView = AddCategoryStackView(frame: .zero)
@@ -39,6 +39,7 @@ class AddNewCategoryViewController: UIViewController {
         button.layer.shadowRadius = 0.5
         button.layer.masksToBounds = false
         button.backgroundColor = #colorLiteral(red: 0.2549019608, green: 0.7490196078, blue: 0.7019607843, alpha: 1)
+        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -53,10 +54,17 @@ class AddNewCategoryViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.viewTitleLabel.text = viewModel?.title
     }
     
     //MARK: - Functions
+    @objc func didTapButton(sender: UIButton) {
+        guard let title = stackView.taskNameTextField.text else { return }
+        let description = stackView.taskDescriptionTextField.text ?? ""
+        if stackView.taskNameTextField.text != nil {
+            viewModel.addCategory(with: title, and: description)
+            self.dismiss(animated: true)
+        }
+    }
 //    func setupView(with title: String) {
 //        self.viewTitleLabel.text = title.uppercased()
 //    }

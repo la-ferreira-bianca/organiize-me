@@ -41,6 +41,7 @@
 		D73AFB9329B14F39007C3A36 /* TaskModelRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73AFB9229B14F39007C3A36 /* TaskModelRemoteRepository.swift */; };
 		D73AFB9729B1523E007C3A36 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73AFB9629B1523E007C3A36 /* TaskViewModel.swift */; };
 		D73AFB9A29B1542E007C3A36 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73AFB9929B1542E007C3A36 /* TaskViewController.swift */; };
+		D7572EAA29B26BF8001E52B4 /* AddCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7572EA929B26BF8001E52B4 /* AddCategoryViewModel.swift */; };
 		D78704D729AE595F0023B129 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78704D629AE595F0023B129 /* APIError.swift */; };
 		D78704D929AE59810023B129 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78704D829AE59810023B129 /* HTTPClient.swift */; };
 		D78704DB29AE59B50023B129 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78704DA29AE59B50023B129 /* Request.swift */; };
@@ -122,6 +123,7 @@
 		D73AFB9229B14F39007C3A36 /* TaskModelRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModelRemoteRepository.swift; sourceTree = "<group>"; };
 		D73AFB9629B1523E007C3A36 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		D73AFB9929B1542E007C3A36 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		D7572EA929B26BF8001E52B4 /* AddCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewModel.swift; sourceTree = "<group>"; };
 		D78704D629AE595F0023B129 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		D78704D829AE59810023B129 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		D78704DA29AE59B50023B129 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
@@ -285,17 +287,17 @@
 		D724A6DE298047E200FC38F4 /* OrganiizeMe */ = {
 			isa = PBXGroup;
 			children = (
-				D71FEB5129B23EBB00389D1D /* Category */,
-				D73AFB9429B1520F007C3A36 /* Task */,
-				D78704D229AE592A0023B129 /* Networking */,
-				D724A6ED298047E400FC38F4 /* Info.plist */,
 				D73736952992A4E600821219 /* AddCategory */,
 				D7F3B47C29884D2000FF15C1 /* AddTask */,
 				D737368E29928ADD00821219 /* Categories */,
+				D71FEB5129B23EBB00389D1D /* Category */,
 				D724A71129804B7000FC38F4 /* Coordinators */,
 				D724A71029804A1400FC38F4 /* Home */,
+				D724A6ED298047E400FC38F4 /* Info.plist */,
 				D724A6EA298047E400FC38F4 /* LaunchScreen.storyboard */,
+				D78704D229AE592A0023B129 /* Networking */,
 				D724A70F29804A0500FC38F4 /* Resources */,
+				D73AFB9429B1520F007C3A36 /* Task */,
 				D724A71E29805E8B00FC38F4 /* Tasks */,
 			);
 			path = OrganiizeMe;
@@ -436,6 +438,7 @@
 		D73736952992A4E600821219 /* AddCategory */ = {
 			isa = PBXGroup;
 			children = (
+				D7572EA829B26BEA001E52B4 /* ViewModel */,
 				D73736972992A50800821219 /* SubViews */,
 				D73736962992A4FF00821219 /* View */,
 			);
@@ -492,6 +495,14 @@
 				D73AFB9929B1542E007C3A36 /* TaskViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D7572EA829B26BEA001E52B4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D7572EA929B26BF8001E52B4 /* AddCategoryViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		D78704D229AE592A0023B129 /* Networking */ = {
@@ -851,6 +862,7 @@
 				D71FEB6C29B24B5D00389D1D /* CategoryModelRemoteRepository.swift in Sources */,
 				D72F8F5C29AED1DF000D3DB4 /* TasksViewModel.swift in Sources */,
 				D793779129B00B4A0026CBFE /* URLSessionHTTPClient.swift in Sources */,
+				D7572EAA29B26BF8001E52B4 /* AddCategoryViewModel.swift in Sources */,
 				D724A71B2980553200FC38F4 /* MainCoordinator.swift in Sources */,
 				D78704E029AE87CE0023B129 /* TasksModel.swift in Sources */,
 				D793779429B0152F0026CBFE /* TasksModelRepository.swift in Sources */,

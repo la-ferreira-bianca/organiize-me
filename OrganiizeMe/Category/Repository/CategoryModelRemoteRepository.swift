@@ -38,6 +38,30 @@ final internal class CategoryModelRemoteRepository: CategoryModelRepository {
         }
     }
     
+    func postCategory(with title: String, and description: String? = "", handler: @escaping (CategoryModelResult) -> Void) {
+        guard let url = URL(string: "\(api.categoriesURL)/") else { return }
+        let json: [String: Any] = ["title": title,
+                                   "description": description]
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        
+        // create post request
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("\(String(describing: jsonData?.count))", forHTTPHeaderField: "Content-Length")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        // insert json data to the request
+        request.httpBody = jsonData
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let _ = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+        }
+        task.resume()
+    }
+    
     //MARK: - Helpers - todo change this to use only from one place
     private static func parse<T: Decodable>(type: T.Type, data: Data) -> T? {
         return try? JSONDecoder().decode(T.self, from: data)

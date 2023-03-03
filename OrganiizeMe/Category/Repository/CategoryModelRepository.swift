@@ -11,4 +11,5 @@ protocol CategoryModelRepository {
     typealias CategoryModelResult = Result<CategoryModel, CategoryModelError>
     
     func getCategory(with identifier: String, handler: @escaping (CategoryModelResult) -> Void)
+    func postCategory(with title: String, and description: String?, handler: @escaping (CategoryModelResult) -> Void) 
 }
