@@ -7,7 +7,7 @@
 import Foundation
 
 //MARK: - Model from JSON
-internal struct TasksModel: Decodable {
+struct TasksModel: Decodable {
     let allTasks: [TaskModel]
     
     enum CodingKeys: String, CodingKey {

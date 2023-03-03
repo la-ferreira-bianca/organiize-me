@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		9D82D8CB2D5667EC86C9A32E /* Pods_OrganiizeMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBD9FC8CB0D57C82471FF667 /* Pods_OrganiizeMe.framework */; };
 		D71FEB4629B2136200389D1D /* ObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71FEB4529B2136200389D1D /* ObservableObject.swift */; };
+		D71FEB5429B23ED200389D1D /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71FEB5329B23ED200389D1D /* CategoryModel.swift */; };
+		D71FEB5729B23F3E00389D1D /* CategoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71FEB5629B23F3E00389D1D /* CategoriesModel.swift */; };
+		D71FEB5A29B2433C00389D1D /* CategoriesModelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71FEB5929B2433C00389D1D /* CategoriesModelRepository.swift */; };
+		D71FEB5C29B2438C00389D1D /* CategoriesModelRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71FEB5B29B2438C00389D1D /* CategoriesModelRemoteRepository.swift */; };
+		D71FEB5E29B243D200389D1D /* CategoriesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71FEB5D29B243D200389D1D /* CategoriesAPI.swift */; };
+		D71FEB6129B2450C00389D1D /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71FEB6029B2450C00389D1D /* CategoriesViewModel.swift */; };
 		D724A6E0298047E200FC38F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724A6DF298047E200FC38F4 /* AppDelegate.swift */; };
 		D724A6E2298047E200FC38F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724A6E1298047E200FC38F4 /* SceneDelegate.swift */; };
 		D724A6E4298047E200FC38F4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724A6E3298047E200FC38F4 /* HomeViewController.swift */; };
@@ -41,7 +47,7 @@
 		D793779129B00B4A0026CBFE /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D793779029B00B4A0026CBFE /* URLSessionHTTPClient.swift */; };
 		D793779429B0152F0026CBFE /* TasksModelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D793779329B0152F0026CBFE /* TasksModelRepository.swift */; };
 		D793779729B015D00026CBFE /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D793779629B015D00026CBFE /* Environment.swift */; };
-		D793779929B016090026CBFE /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D793779829B016090026CBFE /* API.swift */; };
+		D793779929B016090026CBFE /* TasksAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D793779829B016090026CBFE /* TasksAPI.swift */; };
 		D7B7FA042989BECB006EC7D8 /* AddItemStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B7FA032989BECB006EC7D8 /* AddItemStackView.swift */; };
 		D7E2DB95298C385300FF02C2 /* TextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E2DB94298C385300FF02C2 /* TextField+Extensions.swift */; };
 		D7EFA9B729B121E40026975B /* TasksModelRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EFA9B629B121E30026975B /* TasksModelRemoteRepository.swift */; };
@@ -76,6 +82,12 @@
 /* Begin PBXFileReference section */
 		A6C1FC8C16B0888804BAE6EA /* Pods-OrganiizeMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrganiizeMe.debug.xcconfig"; path = "Target Support Files/Pods-OrganiizeMe/Pods-OrganiizeMe.debug.xcconfig"; sourceTree = "<group>"; };
 		D71FEB4529B2136200389D1D /* ObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableObject.swift; sourceTree = "<group>"; };
+		D71FEB5329B23ED200389D1D /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		D71FEB5629B23F3E00389D1D /* CategoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesModel.swift; sourceTree = "<group>"; };
+		D71FEB5929B2433C00389D1D /* CategoriesModelRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesModelRepository.swift; sourceTree = "<group>"; };
+		D71FEB5B29B2438C00389D1D /* CategoriesModelRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesModelRemoteRepository.swift; sourceTree = "<group>"; };
+		D71FEB5D29B243D200389D1D /* CategoriesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesAPI.swift; sourceTree = "<group>"; };
+		D71FEB6029B2450C00389D1D /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
 		D724A6DC298047E200FC38F4 /* OrganiizeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrganiizeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D724A6DF298047E200FC38F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D724A6E1298047E200FC38F4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,7 +124,7 @@
 		D793779029B00B4A0026CBFE /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		D793779329B0152F0026CBFE /* TasksModelRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksModelRepository.swift; sourceTree = "<group>"; };
 		D793779629B015D00026CBFE /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
-		D793779829B016090026CBFE /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		D793779829B016090026CBFE /* TasksAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksAPI.swift; sourceTree = "<group>"; };
 		D7B7FA032989BECB006EC7D8 /* AddItemStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemStackView.swift; sourceTree = "<group>"; };
 		D7E2DB94298C385300FF02C2 /* TextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extensions.swift"; sourceTree = "<group>"; };
 		D7EFA9B629B121E30026975B /* TasksModelRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksModelRemoteRepository.swift; sourceTree = "<group>"; };
@@ -171,6 +183,47 @@
 			path = Observable;
 			sourceTree = "<group>";
 		};
+		D71FEB5129B23EBB00389D1D /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				D71FEB5229B23EC500389D1D /* Model */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		D71FEB5229B23EC500389D1D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D71FEB5329B23ED200389D1D /* CategoryModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D71FEB5529B23F2E00389D1D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D71FEB5629B23F3E00389D1D /* CategoriesModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D71FEB5829B2432700389D1D /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				D71FEB5929B2433C00389D1D /* CategoriesModelRepository.swift */,
+				D71FEB5B29B2438C00389D1D /* CategoriesModelRemoteRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		D71FEB5F29B244FF00389D1D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D71FEB6029B2450C00389D1D /* CategoriesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		D724A6D3298047E200FC38F4 = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +249,7 @@
 		D724A6DE298047E200FC38F4 /* OrganiizeMe */ = {
 			isa = PBXGroup;
 			children = (
+				D71FEB5129B23EBB00389D1D /* Category */,
 				D73AFB9429B1520F007C3A36 /* Task */,
 				D78704D229AE592A0023B129 /* Networking */,
 				D724A6ED298047E400FC38F4 /* Info.plist */,
@@ -319,6 +373,9 @@
 		D737368E29928ADD00821219 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				D71FEB5F29B244FF00389D1D /* ViewModel */,
+				D71FEB5829B2432700389D1D /* Repository */,
+				D71FEB5529B23F2E00389D1D /* Model */,
 				D73736922992A47600821219 /* SubViews */,
 				D737368F29928AF600821219 /* View */,
 			);
@@ -426,8 +483,9 @@
 			children = (
 				D78704D629AE595F0023B129 /* APIError.swift */,
 				D793779629B015D00026CBFE /* Environment.swift */,
-				D793779829B016090026CBFE /* API.swift */,
+				D793779829B016090026CBFE /* TasksAPI.swift */,
 				D7EFA9B929B125E20026975B /* APIEnvironment.swift */,
+				D71FEB5D29B243D200389D1D /* CategoriesAPI.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -737,6 +795,7 @@
 				D7EFA9BA29B125E20026975B /* APIEnvironment.swift in Sources */,
 				D73736992992A51600821219 /* AddCategoryStackView.swift in Sources */,
 				D793779729B015D00026CBFE /* Environment.swift in Sources */,
+				D71FEB5A29B2433C00389D1D /* CategoriesModelRepository.swift in Sources */,
 				D78704DB29AE59B50023B129 /* Request.swift in Sources */,
 				D71FEB4629B2136200389D1D /* ObservableObject.swift in Sources */,
 				D7B7FA042989BECB006EC7D8 /* AddItemStackView.swift in Sources */,
@@ -749,6 +808,8 @@
 				D73AFB9729B1523E007C3A36 /* TaskViewModel.swift in Sources */,
 				D724A72129805EB200FC38F4 /* TasksListTableViewController.swift in Sources */,
 				D73736942992A49D00821219 /* AddNewCategoryViewController.swift in Sources */,
+				D71FEB5E29B243D200389D1D /* CategoriesAPI.swift in Sources */,
+				D71FEB5429B23ED200389D1D /* CategoryModel.swift in Sources */,
 				D73AFB9129B14E78007C3A36 /* TaskModelRepository.swift in Sources */,
 				D72F8F5C29AED1DF000D3DB4 /* TasksViewModel.swift in Sources */,
 				D793779129B00B4A0026CBFE /* URLSessionHTTPClient.swift in Sources */,
@@ -758,11 +819,12 @@
 				D724A6E4298047E200FC38F4 /* HomeViewController.swift in Sources */,
 				D737369129928B1100821219 /* CategoriesListTableViewController.swift in Sources */,
 				D7EFA9B729B121E40026975B /* TasksModelRemoteRepository.swift in Sources */,
+				D71FEB6129B2450C00389D1D /* CategoriesViewModel.swift in Sources */,
 				D7F19F4229831D430099B2BC /* CarrosselCollectionCell.swift in Sources */,
 				D7F19F3F2982FA5A0099B2BC /* String+Extensions.swift in Sources */,
 				D724A6E0298047E200FC38F4 /* AppDelegate.swift in Sources */,
 				D724A6E2298047E200FC38F4 /* SceneDelegate.swift in Sources */,
-				D793779929B016090026CBFE /* API.swift in Sources */,
+				D793779929B016090026CBFE /* TasksAPI.swift in Sources */,
 				D7E2DB95298C385300FF02C2 /* TextField+Extensions.swift in Sources */,
 				D7F19F4629831D9C0099B2BC /* CarrosselModel.swift in Sources */,
 				D724A71D29805CB700FC38F4 /* HomeCoordinator.swift in Sources */,
@@ -770,7 +832,9 @@
 				D7F3B47E29884D3600FF15C1 /* AddNewTaskViewController.swift in Sources */,
 				D7F19F3A2982F8650099B2BC /* PresentationStackView.swift in Sources */,
 				D78704D929AE59810023B129 /* HTTPClient.swift in Sources */,
+				D71FEB5C29B2438C00389D1D /* CategoriesModelRemoteRepository.swift in Sources */,
 				D72B0B362989755C00414E93 /* FloatingTextField.swift in Sources */,
+				D71FEB5729B23F3E00389D1D /* CategoriesModel.swift in Sources */,
 				D78704E429AE8ED60023B129 /* TaskModel.swift in Sources */,
 				D78704D729AE595F0023B129 /* APIError.swift in Sources */,
 			);

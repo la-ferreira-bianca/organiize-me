@@ -9,7 +9,19 @@ import UIKit
 
 class CategoriesListTableViewController: UITableViewController {
     
+    private var viewModel = CategoriesViewModel()
+    var categories = [CategoryModel]()
+    
     //MARK: - LifeCycle
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        viewModel.fetchCategories()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.5529411765, green: 0.9490196078, blue: 0.9098039216, alpha: 1)
@@ -17,8 +29,7 @@ class CategoriesListTableViewController: UITableViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrowshape.turn.up.backward.circle.fill"), style: .done, target: self, action: #selector(addTapped))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(cancelTapped))
 
-        setupViews()
-        setupConstraints()
+        setupBinders()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -26,9 +37,6 @@ class CategoriesListTableViewController: UITableViewController {
     }
     
     //MARK: - Functions
-    func setupViews() {
-    }
-    
     @objc func cancelTapped() {
         navigationController?.present(AddNewCategoryViewController(), animated: true)
     }
@@ -38,7 +46,12 @@ class CategoriesListTableViewController: UITableViewController {
     }
     
     //MARK: - Private Functions
-    private func setupConstraints() {
+    private func setupBinders() {
+        viewModel.categories.bind { [weak self] value in
+            guard let category = value else { return }
+            self?.categories = category
+            self?.tableView.reloadData()
+        }
     }
 }
 
@@ -48,11 +61,15 @@ extension CategoriesListTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return categories.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
+        let category = categories[indexPath.row]
+        cell.backgroundColor = .white
+        cell.textLabel?.text = category.title
+        cell.textLabel?.textColor = .black
         return cell
     }
 }
