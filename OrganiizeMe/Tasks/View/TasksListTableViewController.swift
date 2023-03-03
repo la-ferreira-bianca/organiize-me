@@ -6,8 +6,8 @@
 //
 
 import UIKit
-import Alamofire
 
+//TODO: - MAKE THIS FUNCTIONS GLOBAL
 fileprivate func makeRepository() -> TasksModelRepository {
     TasksModelRemoteRepository(httpClient: URLSessionHTTPClient(), api: .dev)
 }
@@ -89,5 +89,10 @@ extension TasksListTableViewController {
         cell.textLabel?.text = task.title
         cell.textLabel?.textColor = .black
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let task = tasks[indexPath.row]
+        navigationController?.pushViewController(TaskViewController(taskID: task.id), animated: true)
     }
 }

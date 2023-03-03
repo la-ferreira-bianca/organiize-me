@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9D82D8CB2D5667EC86C9A32E /* Pods_OrganiizeMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBD9FC8CB0D57C82471FF667 /* Pods_OrganiizeMe.framework */; };
+		D71FEB4629B2136200389D1D /* ObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71FEB4529B2136200389D1D /* ObservableObject.swift */; };
 		D724A6E0298047E200FC38F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724A6DF298047E200FC38F4 /* AppDelegate.swift */; };
 		D724A6E2298047E200FC38F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724A6E1298047E200FC38F4 /* SceneDelegate.swift */; };
 		D724A6E4298047E200FC38F4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724A6E3298047E200FC38F4 /* HomeViewController.swift */; };
@@ -26,6 +27,10 @@
 		D737369129928B1100821219 /* CategoriesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D737369029928B1100821219 /* CategoriesListTableViewController.swift */; };
 		D73736942992A49D00821219 /* AddNewCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73736932992A49D00821219 /* AddNewCategoryViewController.swift */; };
 		D73736992992A51600821219 /* AddCategoryStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73736982992A51500821219 /* AddCategoryStackView.swift */; };
+		D73AFB9129B14E78007C3A36 /* TaskModelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73AFB9029B14E78007C3A36 /* TaskModelRepository.swift */; };
+		D73AFB9329B14F39007C3A36 /* TaskModelRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73AFB9229B14F39007C3A36 /* TaskModelRemoteRepository.swift */; };
+		D73AFB9729B1523E007C3A36 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73AFB9629B1523E007C3A36 /* TaskViewModel.swift */; };
+		D73AFB9A29B1542E007C3A36 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73AFB9929B1542E007C3A36 /* TaskViewController.swift */; };
 		D78704D729AE595F0023B129 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78704D629AE595F0023B129 /* APIError.swift */; };
 		D78704D929AE59810023B129 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78704D829AE59810023B129 /* HTTPClient.swift */; };
 		D78704DB29AE59B50023B129 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78704DA29AE59B50023B129 /* Request.swift */; };
@@ -70,6 +75,7 @@
 
 /* Begin PBXFileReference section */
 		A6C1FC8C16B0888804BAE6EA /* Pods-OrganiizeMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrganiizeMe.debug.xcconfig"; path = "Target Support Files/Pods-OrganiizeMe/Pods-OrganiizeMe.debug.xcconfig"; sourceTree = "<group>"; };
+		D71FEB4529B2136200389D1D /* ObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableObject.swift; sourceTree = "<group>"; };
 		D724A6DC298047E200FC38F4 /* OrganiizeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrganiizeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D724A6DF298047E200FC38F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D724A6E1298047E200FC38F4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +98,10 @@
 		D737369029928B1100821219 /* CategoriesListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesListTableViewController.swift; sourceTree = "<group>"; };
 		D73736932992A49D00821219 /* AddNewCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCategoryViewController.swift; sourceTree = "<group>"; };
 		D73736982992A51500821219 /* AddCategoryStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryStackView.swift; sourceTree = "<group>"; };
+		D73AFB9029B14E78007C3A36 /* TaskModelRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModelRepository.swift; sourceTree = "<group>"; };
+		D73AFB9229B14F39007C3A36 /* TaskModelRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModelRemoteRepository.swift; sourceTree = "<group>"; };
+		D73AFB9629B1523E007C3A36 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
+		D73AFB9929B1542E007C3A36 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		D78704D629AE595F0023B129 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		D78704D829AE59810023B129 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		D78704DA29AE59B50023B129 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
@@ -153,6 +163,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D71FEB4429B2134A00389D1D /* Observable */ = {
+			isa = PBXGroup;
+			children = (
+				D71FEB4529B2136200389D1D /* ObservableObject.swift */,
+			);
+			path = Observable;
+			sourceTree = "<group>";
+		};
 		D724A6D3298047E200FC38F4 = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +196,7 @@
 		D724A6DE298047E200FC38F4 /* OrganiizeMe */ = {
 			isa = PBXGroup;
 			children = (
+				D73AFB9429B1520F007C3A36 /* Task */,
 				D78704D229AE592A0023B129 /* Networking */,
 				D724A6ED298047E400FC38F4 /* Info.plist */,
 				D73736952992A4E600821219 /* AddCategory */,
@@ -219,6 +238,7 @@
 				D724A6E8298047E400FC38F4 /* Assets.xcassets */,
 				D72B0B34298974F800414E93 /* CustomViews */,
 				D7F19F3D2982FA3E0099B2BC /* Extensions */,
+				D71FEB4429B2134A00389D1D /* Observable */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -343,6 +363,42 @@
 				D73736982992A51500821219 /* AddCategoryStackView.swift */,
 			);
 			path = SubViews;
+			sourceTree = "<group>";
+		};
+		D73AFB8F29B14E68007C3A36 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				D73AFB9029B14E78007C3A36 /* TaskModelRepository.swift */,
+				D73AFB9229B14F39007C3A36 /* TaskModelRemoteRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		D73AFB9429B1520F007C3A36 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				D73AFB9829B15419007C3A36 /* View */,
+				D73AFB9529B15233007C3A36 /* ViewModel */,
+				D73AFB8F29B14E68007C3A36 /* Repository */,
+				D78704E229AE8EC20023B129 /* Model */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		D73AFB9529B15233007C3A36 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D73AFB9629B1523E007C3A36 /* TaskViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D73AFB9829B15419007C3A36 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D73AFB9929B1542E007C3A36 /* TaskViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D78704D229AE592A0023B129 /* Networking */ = {
@@ -487,7 +543,6 @@
 		D7F3B47C29884D2000FF15C1 /* AddTask */ = {
 			isa = PBXGroup;
 			children = (
-				D78704E229AE8EC20023B129 /* Model */,
 				D7B7FA022989BEB1006EC7D8 /* SubViews */,
 				D7B7FA012989BEA4006EC7D8 /* View */,
 			);
@@ -678,18 +733,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D73AFB9329B14F39007C3A36 /* TaskModelRemoteRepository.swift in Sources */,
 				D7EFA9BA29B125E20026975B /* APIEnvironment.swift in Sources */,
 				D73736992992A51600821219 /* AddCategoryStackView.swift in Sources */,
 				D793779729B015D00026CBFE /* Environment.swift in Sources */,
 				D78704DB29AE59B50023B129 /* Request.swift in Sources */,
+				D71FEB4629B2136200389D1D /* ObservableObject.swift in Sources */,
 				D7B7FA042989BECB006EC7D8 /* AddItemStackView.swift in Sources */,
 				D7F19F4829831DDF0099B2BC /* HomeViewController+CollectionView.swift in Sources */,
 				D793778F29B00B3A0026CBFE /* URLSessionHTTPClientError.swift in Sources */,
 				D724A71329804B8300FC38F4 /* Coordinator.swift in Sources */,
 				D78704DD29AE59DC0023B129 /* TasksRequest.swift in Sources */,
 				D7F19F372982F47D0099B2BC /* GlobalConstants.swift in Sources */,
+				D73AFB9A29B1542E007C3A36 /* TaskViewController.swift in Sources */,
+				D73AFB9729B1523E007C3A36 /* TaskViewModel.swift in Sources */,
 				D724A72129805EB200FC38F4 /* TasksListTableViewController.swift in Sources */,
 				D73736942992A49D00821219 /* AddNewCategoryViewController.swift in Sources */,
+				D73AFB9129B14E78007C3A36 /* TaskModelRepository.swift in Sources */,
 				D72F8F5C29AED1DF000D3DB4 /* TasksViewModel.swift in Sources */,
 				D793779129B00B4A0026CBFE /* URLSessionHTTPClient.swift in Sources */,
 				D724A71B2980553200FC38F4 /* MainCoordinator.swift in Sources */,

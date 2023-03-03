@@ -1,5 +1,5 @@
 //
-//  TasksModelEnvironment.swift
+//  APIEnvironment.swift
 //  OrganiizeMe
 //
 //  Created by Bianca Ferreira on 02/03/23.
@@ -13,5 +13,11 @@ struct APIEnvironment: Environment {
 extension TasksModelAPI {
     static var dev: Self {
         TasksModelAPI(environment: APIEnvironment())
+    }
+}
+
+extension TaskModelAPI {
+    static var dev: Self {
+        TaskModelAPI(environment: APIEnvironment())
     }
 }
