@@ -9,25 +9,18 @@ import Foundation
 
 class TasksViewModel {
     //MARK: - Private Variables
-    private let repository: TasksModelRepository
-    private let onSuccess: (_ tasksValues: [TaskModel]) -> Void
-    private let onError: (_ errorMessage: String) -> Void
-    
-    //MARK: - Private Variables
-    init(repository: TasksModelRepository, onSuccess: @escaping (_ taskValue: [TaskModel]) -> Void, onError: @escaping (_ errorMessage: String) -> Void) {
-        self.repository = repository
-        self.onSuccess = onSuccess
-        self.onError = onError
-    }
+    private let repository: TasksModelRepository = TasksModelRemoteRepository(httpClient: URLSessionHTTPClient(), api: .dev)
+    var error: ObservableObject<String?> = ObservableObject(value: nil)
+    var tasks: ObservableObject<[TaskModel]?> = ObservableObject(value: nil)
     
     //MARK: - Functions
     func fetchTasks() {
         repository.getTasks { [unowned self] result in
             switch result {
             case .success(let tasksData):
-                self.onSuccess(tasksData.allTasks)
+                self.tasks.value = tasksData.allTasks
             case .failure(let error):
-                self.onError(error.localizedDescription)
+                self.error.value = error.localizedDescription
             }
         }
     }
