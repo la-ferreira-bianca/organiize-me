@@ -24,19 +24,6 @@ class PresentationStackView: UIStackView {
         return image
     }()
     
-    lazy var pictureStackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [
-            alarmImage,
-            profilePicture
-        ])
-        stack.axis = .horizontal
-        stack.alignment = .center
-        stack.distribution = .equalSpacing
-        stack.isLayoutMarginsRelativeArrangement = true
-        stack.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0)
-        
-        return stack
-    }()
     
     lazy var greetingLabel: UILabel = {
         let label = UILabel()
@@ -62,39 +49,32 @@ class PresentationStackView: UIStackView {
     //MARK: - Functions
     func setupStackView() {
         self.axis = .vertical
-        self.alignment = .trailing
+        self.alignment = .leading
         self.distribution = .fill
         self.backgroundColor = .purple
+        self.layer.shadowColor = #colorLiteral(red: 0.1529411765, green: 0.3490196078, blue: 0.3137254902, alpha: 1)
         
         self.spacing = 3
-        self.preservesSuperviewLayoutMargins = true
-        self.layer.cornerRadius = Constants.Home.tenValue
-        self.layer.shadowColor = #colorLiteral(red: 0.1529411765, green: 0.3490196078, blue: 0.3137254902, alpha: 1)
-        self.layer.shadowOpacity = 0.5
-        self.layer.shadowOffset = CGSize(width: 6, height: 5)
-        self.layer.shadowRadius = 4
-        self.isLayoutMarginsRelativeArrangement = true
+        self.layer.cornerRadius = 25
+        self.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         self.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 20)
+        
+        self.preservesSuperviewLayoutMargins = true
+        self.clipsToBounds = true
+        self.isLayoutMarginsRelativeArrangement = true
         
         self.layoutSubviews()
     }
     
     func setupConstraints() {
-        self.addArrangedSubview(pictureStackView)
+        self.addArrangedSubview(profilePicture)
         self.addArrangedSubview(greetingLabel)
         
         //MARK: - Views
         NSLayoutConstraint.activate([
             profilePicture.heightAnchor.constraint(equalToConstant: 50),
             profilePicture.widthAnchor.constraint(equalToConstant: 50),
-            alarmImage.heightAnchor.constraint(equalToConstant: 30),
-            alarmImage.widthAnchor.constraint(equalToConstant: 30),
-            
-        ])
-        
-        NSLayoutConstraint.activate([
-            pictureStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            pictureStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            greetingLabel.heightAnchor.constraint(equalToConstant: 50),
         ])
     }
 }

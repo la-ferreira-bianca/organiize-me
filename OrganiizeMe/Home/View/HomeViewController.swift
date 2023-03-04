@@ -98,7 +98,7 @@ class HomeViewController: UIViewController {
     
     private func setupCollectionView() {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 222, height: 64)
+        layout.itemSize = CGSize(width: 144, height: 64)
         layout.scrollDirection = .horizontal
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -121,9 +121,9 @@ class HomeViewController: UIViewController {
         
         //MARK: - Views
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.Home.tenValue),
-            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.Home.tenValue),
+            stackView.topAnchor.constraint(equalTo: view.topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
         ])
         
         NSLayoutConstraint.activate([
@@ -148,23 +148,3 @@ class HomeViewController: UIViewController {
         ])
     }
 }
-
-//#if DEBUG
-//import SwiftUI
-//
-//struct HomeViewControllerRepresentable: UIViewControllerRepresentable {
-//    func makeUIViewController(context: Context) -> some UIViewController {
-//        return HomeViewController()
-//    }
-//
-//    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
-//}
-//
-//struct HomeViewController_Preview: PreviewProvider {
-//    static var previews: some View {
-//        HomeViewControllerRepresentable()
-//            .previewDevice("iPhone SE (3rd generation)")
-//    }
-//}
-//
-//#endif

@@ -76,7 +76,7 @@ class CarrosselCollectionCell: UICollectionViewCell {
         
         NSLayoutConstraint.activate([
             stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-            stackView.heightAnchor.constraint(equalToConstant: 64)
+            stackView.heightAnchor.constraint(equalToConstant: 64),
         ])
     }
 }
