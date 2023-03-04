@@ -38,7 +38,7 @@ class CategoriesListTableViewController: UITableViewController {
     
     //MARK: - Functions
     @objc func cancelTapped() {
-        navigationController?.present(AddNewCategoryViewController(), animated: true)
+        navigationController?.pushViewController(AddNewCategoryViewController(), animated: true)
     }
     
     @objc func addTapped() {

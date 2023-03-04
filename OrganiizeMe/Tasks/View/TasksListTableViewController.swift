@@ -31,14 +31,9 @@ class TasksListTableViewController: UITableViewController {
         setupBinders()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        reloadInputViews()
-    }
-    
     //MARK: - Functions
     @objc func addTapped() {
-        navigationController?.present(AddNewTaskViewController(), animated: true)
+        navigationController?.pushViewController(AddNewTaskViewController(), animated: true)
     }
     
     @objc func cancelTapped() {

@@ -9,8 +9,7 @@ import UIKit
 
 class AddNewTaskViewController: UIViewController {
     
-    var viewModel: CarrosselModel?
-    var tasks = UserDefaults.standard.array(forKey: "UserTasksArray") as? [String]
+    private var viewModel = AddTaskViewModel()
     
     //MARK: - Views
     var stackView = AddItemStackView(frame: .zero)
@@ -39,7 +38,7 @@ class AddNewTaskViewController: UIViewController {
         button.layer.shadowRadius = 0.5
         button.layer.masksToBounds = false
         button.backgroundColor = #colorLiteral(red: 0.2549019608, green: 0.7490196078, blue: 0.7019607843, alpha: 1)
-        button.addTarget(self, action: #selector(didTapAdd), for: .touchUpInside)
+        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -48,20 +47,35 @@ class AddNewTaskViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.5529411765, green: 0.9490196078, blue: 0.9098039216, alpha: 1)
+//        view.endEditing(true)
         setupViews()
         setupConstraints()
+        view.initializeHideKeyboard()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.viewTitleLabel.text = viewModel?.title
+        
+    }
+    
+    @objc func didTapButton(sender: UIButton) {
+        if let title = stackView.taskNameTextField.text {
+            viewModel.addTask(with: title)
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            let alert = UIAlertController(
+                title: "Não foi possivel concluir",
+                message: "Por favor, revise os campos e tente novamente",
+                preferredStyle: .alert)
+            alert.addAction(UIAlertAction(
+                title: "OK",
+                style: .cancel
+            ))
+            self.present(alert, animated: true)
+        }
     }
     
     //MARK: - Functions
-//    func setupView(with title: String) {
-//        self.viewTitleLabel.text = title.uppercased()
-//    }
-//    
     func setupViews() {
         //MARK: Setup StackView
         view.addSubview(titleImage)
@@ -70,22 +84,6 @@ class AddNewTaskViewController: UIViewController {
         view.addSubview(addButton)
         stackView.layer.cornerRadius = 10
         stackView.translatesAutoresizingMaskIntoConstraints = false
-    }
-    
-    @objc func didTapAdd() {
-        if let text = stackView.taskNameTextField.text, !text.isEmpty {
-            tasks?.append(text)
-            self.dismiss(animated: true)
-        }
-        let alert = UIAlertController(
-            title: "Não foi possivel concluir",
-            message: "Por favor, revise os campos e tente novamente",
-            preferredStyle: .alert)
-        alert.addAction(UIAlertAction(
-            title: "OK",
-            style: .cancel
-        ))
-        self.present(alert, animated: true)
     }
     
     //MARK: - Private Functions
@@ -114,22 +112,3 @@ class AddNewTaskViewController: UIViewController {
         ])
     }
 }
-
-//#if DEBUG
-//import SwiftUI
-//
-//struct AddNewTaskViewControllerRepresentable: UIViewControllerRepresentable {
-//    func makeUIViewController(context: Context) -> some UIViewController {
-//        return AddNewTaskViewController()
-//    }
-//
-//    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
-//}
-//
-//struct AddNewTaskViewController_Preview: PreviewProvider {
-//    static var previews: some View {
-//        AddNewTaskViewControllerRepresentable()
-//            .previewDevice("iPhone SE (3rd generation)")
-//    }
-//}
-//#endif

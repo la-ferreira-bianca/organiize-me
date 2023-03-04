@@ -42,6 +42,8 @@
 		D73AFB9729B1523E007C3A36 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73AFB9629B1523E007C3A36 /* TaskViewModel.swift */; };
 		D73AFB9A29B1542E007C3A36 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73AFB9929B1542E007C3A36 /* TaskViewController.swift */; };
 		D7572EAA29B26BF8001E52B4 /* AddCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7572EA929B26BF8001E52B4 /* AddCategoryViewModel.swift */; };
+		D76BF27029B3AD2100FA357E /* AddTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76BF26F29B3AD2100FA357E /* AddTaskViewModel.swift */; };
+		D76BF27229B3BB3600FA357E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76BF27129B3BB3600FA357E /* UIView+Extensions.swift */; };
 		D78704D729AE595F0023B129 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78704D629AE595F0023B129 /* APIError.swift */; };
 		D78704D929AE59810023B129 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78704D829AE59810023B129 /* HTTPClient.swift */; };
 		D78704DB29AE59B50023B129 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78704DA29AE59B50023B129 /* Request.swift */; };
@@ -124,6 +126,8 @@
 		D73AFB9629B1523E007C3A36 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		D73AFB9929B1542E007C3A36 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		D7572EA929B26BF8001E52B4 /* AddCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewModel.swift; sourceTree = "<group>"; };
+		D76BF26F29B3AD2100FA357E /* AddTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewModel.swift; sourceTree = "<group>"; };
+		D76BF27129B3BB3600FA357E /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		D78704D629AE595F0023B129 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		D78704D829AE59810023B129 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		D78704DA29AE59B50023B129 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
@@ -505,6 +509,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		D76BF26E29B3AD1100FA357E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D76BF26F29B3AD2100FA357E /* AddTaskViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		D78704D229AE592A0023B129 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -616,6 +628,7 @@
 			children = (
 				D7F19F3E2982FA5A0099B2BC /* String+Extensions.swift */,
 				D7E2DB94298C385300FF02C2 /* TextField+Extensions.swift */,
+				D76BF27129B3BB3600FA357E /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -648,6 +661,7 @@
 		D7F3B47C29884D2000FF15C1 /* AddTask */ = {
 			isa = PBXGroup;
 			children = (
+				D76BF26E29B3AD1100FA357E /* ViewModel */,
 				D7B7FA022989BEB1006EC7D8 /* SubViews */,
 				D7B7FA012989BEA4006EC7D8 /* View */,
 			);
@@ -848,6 +862,7 @@
 				D7B7FA042989BECB006EC7D8 /* AddItemStackView.swift in Sources */,
 				D7F19F4829831DDF0099B2BC /* HomeViewController+CollectionView.swift in Sources */,
 				D793778F29B00B3A0026CBFE /* URLSessionHTTPClientError.swift in Sources */,
+				D76BF27229B3BB3600FA357E /* UIView+Extensions.swift in Sources */,
 				D724A71329804B8300FC38F4 /* Coordinator.swift in Sources */,
 				D78704DD29AE59DC0023B129 /* TasksRequest.swift in Sources */,
 				D7F19F372982F47D0099B2BC /* GlobalConstants.swift in Sources */,
@@ -879,6 +894,7 @@
 				D7E2DB95298C385300FF02C2 /* TextField+Extensions.swift in Sources */,
 				D7F19F4629831D9C0099B2BC /* CarrosselModel.swift in Sources */,
 				D724A71D29805CB700FC38F4 /* HomeCoordinator.swift in Sources */,
+				D76BF27029B3AD2100FA357E /* AddTaskViewModel.swift in Sources */,
 				D724A717298051BC00FC38F4 /* HomeBaseCoordinator.swift in Sources */,
 				D7F3B47E29884D3600FF15C1 /* AddNewTaskViewController.swift in Sources */,
 				D7F19F3A2982F8650099B2BC /* PresentationStackView.swift in Sources */,

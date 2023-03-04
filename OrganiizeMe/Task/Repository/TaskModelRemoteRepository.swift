@@ -39,6 +39,35 @@ final internal class TaskModelRemoteRepository: TaskModelRepository {
         }
     }
     
+    func postTask(with title: String, handler: @escaping (TaskModelResult) -> Void) {
+        guard let url = URL(string: "\(api.taskURL)/") else { return }
+        let json: [String: Any] = [
+            "title": title,
+//            "description": model.description,
+//            "category": model.category?.id,
+//            "initialDate": model.initialDate,
+//            "finalDate": model.finalDate
+        ]
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        
+        // create post request
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("\(String(describing: jsonData?.count))", forHTTPHeaderField: "Content-Length")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        // insert json data to the request
+        request.httpBody = jsonData
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let _ = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+        }
+        task.resume()
+    }
+    
     //MARK: - Helpers - todo change this to use only from one place
     private static func parse<T: Decodable>(type: T.Type, data: Data) -> T? {
         return try? JSONDecoder().decode(T.self, from: data)

@@ -50,6 +50,7 @@ class AddNewCategoryViewController: UIViewController {
         view.backgroundColor = #colorLiteral(red: 0.5529411765, green: 0.9490196078, blue: 0.9098039216, alpha: 1)
         setupViews()
         setupConstraints()
+        view.initializeHideKeyboard()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -63,12 +64,19 @@ class AddNewCategoryViewController: UIViewController {
         if stackView.taskNameTextField.text != nil {
             viewModel.addCategory(with: title, and: description)
             self.dismiss(animated: true)
+        } else {
+            let alert = UIAlertController(
+                title: "Não foi possivel concluir",
+                message: "Por favor, revise os campos e tente novamente",
+                preferredStyle: .alert)
+            alert.addAction(UIAlertAction(
+                title: "OK",
+                style: .cancel
+            ))
+            self.present(alert, animated: true)
         }
     }
-//    func setupView(with title: String) {
-//        self.viewTitleLabel.text = title.uppercased()
-//    }
-//
+
     func setupViews() {
         //MARK: Setup StackView
         view.addSubview(titleImage)

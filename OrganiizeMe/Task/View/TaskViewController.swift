@@ -11,7 +11,6 @@ import UIKit
 class TaskViewController: UIViewController {
     
     private var viewModel = TaskViewModel()
-    private var taskID: String = ""
     
     lazy var taskTitle: UITextView = {
         let textView = UITextView(frame: CGRect(x: 20.0, y: 90.0, width: 250.0, height: 100.0))
@@ -26,7 +25,6 @@ class TaskViewController: UIViewController {
     init(taskID: String) {
         super.init(nibName: nil, bundle: nil)
         view.backgroundColor = .white
-        self.taskID = taskID
         viewModel.fetchTask(with: taskID)
     }
     
