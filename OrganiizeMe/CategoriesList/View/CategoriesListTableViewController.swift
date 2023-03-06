@@ -42,11 +42,8 @@ class CategoriesListTableViewController: UITableViewController {
     }
     
     //MARK: - Functions
-    @objc func cancelTapped() {
-        navigationController?.pushViewController(AddNewCategoryViewController(), animated: true)
-    }
     
-    @objc func addTapped() {
+    @objc func cancelTapped() {
         navigationController?.popViewController(animated: true)
     }
     
@@ -60,8 +57,7 @@ class CategoriesListTableViewController: UITableViewController {
     }
     
     private func setupNavigation() {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrowshape.turn.up.backward.circle.fill"), style: .done, target: self, action: #selector(addTapped))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(cancelTapped))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrowshape.turn.up.backward.circle.fill"), style: .done, target: self, action: #selector(cancelTapped))
     }
     
     private func setupViews() {

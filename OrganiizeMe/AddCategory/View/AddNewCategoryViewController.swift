@@ -9,16 +9,11 @@ import UIKit
 
 class AddNewCategoryViewController: UIViewController {
     
+    //MARK: - Variables
     private var viewModel = AddCategoryViewModel()
     
     //MARK: - Views
     var stackView = AddCategoryStackView(frame: .zero)
-    
-    lazy var titleImage: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "task-retangle"))
-        imageView.frame = CGRect(x: -30, y: 0, width: 230, height: 70)
-        return imageView
-    }()
     
     lazy var viewTitleLabel: UILabel = {
         let label = UILabel(frame: .zero)
@@ -48,9 +43,10 @@ class AddNewCategoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.5529411765, green: 0.9490196078, blue: 0.9098039216, alpha: 1)
+        view.initializeHideKeyboard()
+        
         setupViews()
         setupConstraints()
-        view.initializeHideKeyboard()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -76,10 +72,13 @@ class AddNewCategoryViewController: UIViewController {
             self.present(alert, animated: true)
         }
     }
+    
+    @objc func cancelTapped() {
+        navigationController?.popViewController(animated: true)
+    }
 
     func setupViews() {
         //MARK: Setup StackView
-        view.addSubview(titleImage)
         view.addSubview(viewTitleLabel)
         view.addSubview(stackView)
         view.addSubview(addButton)
@@ -88,19 +87,19 @@ class AddNewCategoryViewController: UIViewController {
     }
     
     //MARK: - Private Functions
+    private func setupNavigation() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrowshape.turn.up.backward.circle.fill"), style: .done, target: self, action: #selector(cancelTapped))
+    }
+    
     private func setupConstraints() {
-        NSLayoutConstraint.activate([
-            titleImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: -20),
-            titleImage.heightAnchor.constraint(equalToConstant: 55)
-        ])
-        
         NSLayoutConstraint.activate([
             viewTitleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             viewTitleLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20)
         ])
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: titleImage.bottomAnchor, constant: 50),
+            stackView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
             stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
             stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
         ])

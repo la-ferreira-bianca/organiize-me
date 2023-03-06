@@ -16,9 +16,7 @@ class CarrosselModel {
     static func fetchCarrossel() -> [CarrosselModel] {
         return [
             CarrosselModel(title: "Tarefas"),
-            CarrosselModel(title: "TurboList"),
-            CarrosselModel(title: "Lembretes"),
-            CarrosselModel(title: "Outros"),
+            CarrosselModel(title: "Categorias"),
         ]
     }
 }

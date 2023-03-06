@@ -7,9 +7,6 @@
 
 import UIKit
 class TasksListTableViewController: UITableViewController {
-    //MARK: - Views
-    let loadingView = CustomLoadingView()
-    
     //MARK: - Variables
     private var viewModel = TasksViewModel()
     var tasks = [TaskModel]() {
@@ -17,6 +14,9 @@ class TasksListTableViewController: UITableViewController {
             self.stopLoading()
         }
     }
+    
+    //MARK: - Views
+    let loadingView = CustomLoadingView()
     
     //MARK: - LifeCycle
     init() {
@@ -42,10 +42,6 @@ class TasksListTableViewController: UITableViewController {
     }
     
     //MARK: - Functions
-    @objc func addTapped() {
-        navigationController?.pushViewController(AddNewTaskViewController(), animated: true)
-    }
-    
     @objc func cancelTapped() {
         navigationController?.popViewController(animated: true)
     }
@@ -65,22 +61,8 @@ class TasksListTableViewController: UITableViewController {
         tableView.register(TaskListTableViewCell.self, forCellReuseIdentifier: "Cell")
     }
     
-    private func setupConstraints() {
-        view.addSubview(loadingView)
-        view.layoutSubviews()
-        
-        NSLayoutConstraint.activate([
-            loadingView.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor),
-            loadingView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor),
-            loadingView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            loadingView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor)
-        ])
-        
-    }
-    
     private func setupNavigation() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrowshape.turn.up.backward.circle.fill"), style: .done, target: self, action: #selector(cancelTapped))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
     }
     
     private func startLoading() {
@@ -97,5 +79,18 @@ class TasksListTableViewController: UITableViewController {
         tabBarController?.tabBar.isHidden = false
         tableView.isUserInteractionEnabled = true
         loadingView.isHidden = true
+    }
+    
+    private func setupConstraints() {
+        view.addSubview(loadingView)
+        view.layoutSubviews()
+        
+        NSLayoutConstraint.activate([
+            loadingView.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor),
+            loadingView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor),
+            loadingView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            loadingView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor)
+        ])
+        
     }
 }
