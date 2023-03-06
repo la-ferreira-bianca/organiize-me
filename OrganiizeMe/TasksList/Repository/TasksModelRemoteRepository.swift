@@ -26,6 +26,7 @@ final internal class TasksModelRemoteRepository: TasksModelRepository {
             self.execute {
                 switch result {
                 case .success(let data):
+
                     if let dto = Self.parse(type: TasksModel.self, data: data) {
                         handler(.success(dto))
                     } else {
@@ -42,6 +43,7 @@ final internal class TasksModelRemoteRepository: TasksModelRepository {
     //MARK: - Helpers
     private static func parse<T: Decodable>(type: T.Type, data: Data) -> T? {
         return try? JSONDecoder().decode(T.self, from: data)
+        
     }
     
     private func execute(action: @escaping () -> Void) {

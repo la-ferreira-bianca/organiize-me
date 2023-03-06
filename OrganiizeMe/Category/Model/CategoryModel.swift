@@ -19,6 +19,16 @@ struct CategoryModel: Decodable {
     }
 }
 
+extension CategoryModel {
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        
+        id = try values.decode(String.self, forKey: .id)
+        title = try values.decode(String.self, forKey: .title)
+        description = try values.decode(String.self, forKey: .description)
+    }
+}
+
 enum CategoryModelError: Error {
     case notParsable(Data)
     case fetchError(Error)

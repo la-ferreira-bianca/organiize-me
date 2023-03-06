@@ -49,7 +49,7 @@ final internal class CategoryModelRemoteRepository: CategoryModelRepository {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("\(String(describing: jsonData?.count))", forHTTPHeaderField: "Content-Length")
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         // insert json data to the request
         request.httpBody = jsonData
         

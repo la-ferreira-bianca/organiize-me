@@ -15,6 +15,14 @@ struct TasksModel: Decodable {
     }
 }
 
+extension TasksModel {
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        
+        allTasks = try values.decode([TaskModel].self, forKey: .allTasks)
+    }
+}
+
 enum TasksModelError: Error {
     case notParsable(Data)
     case fetchError(Error)

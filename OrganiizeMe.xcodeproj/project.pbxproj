@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9D82D8CB2D5667EC86C9A32E /* Pods_OrganiizeMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBD9FC8CB0D57C82471FF667 /* Pods_OrganiizeMe.framework */; };
+		D7150AB329B3C47D00E5997E /* TaskListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7150AB229B3C47D00E5997E /* TaskListTableViewCell.swift */; };
 		D71FEB4629B2136200389D1D /* ObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71FEB4529B2136200389D1D /* ObservableObject.swift */; };
 		D71FEB5429B23ED200389D1D /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71FEB5329B23ED200389D1D /* CategoryModel.swift */; };
 		D71FEB5729B23F3E00389D1D /* CategoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71FEB5629B23F3E00389D1D /* CategoriesModel.swift */; };
@@ -88,6 +89,7 @@
 
 /* Begin PBXFileReference section */
 		A6C1FC8C16B0888804BAE6EA /* Pods-OrganiizeMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrganiizeMe.debug.xcconfig"; path = "Target Support Files/Pods-OrganiizeMe/Pods-OrganiizeMe.debug.xcconfig"; sourceTree = "<group>"; };
+		D7150AB229B3C47D00E5997E /* TaskListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListTableViewCell.swift; sourceTree = "<group>"; };
 		D71FEB4529B2136200389D1D /* ObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableObject.swift; sourceTree = "<group>"; };
 		D71FEB5329B23ED200389D1D /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		D71FEB5629B23F3E00389D1D /* CategoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesModel.swift; sourceTree = "<group>"; };
@@ -293,7 +295,7 @@
 			children = (
 				D73736952992A4E600821219 /* AddCategory */,
 				D7F3B47C29884D2000FF15C1 /* AddTask */,
-				D737368E29928ADD00821219 /* Categories */,
+				D737368E29928ADD00821219 /* CategoriesList */,
 				D71FEB5129B23EBB00389D1D /* Category */,
 				D724A71129804B7000FC38F4 /* Coordinators */,
 				D724A71029804A1400FC38F4 /* Home */,
@@ -302,7 +304,7 @@
 				D78704D229AE592A0023B129 /* Networking */,
 				D724A70F29804A0500FC38F4 /* Resources */,
 				D73AFB9429B1520F007C3A36 /* Task */,
-				D724A71E29805E8B00FC38F4 /* Tasks */,
+				D724A71E29805E8B00FC38F4 /* TasksList */,
 			);
 			path = OrganiizeMe;
 			sourceTree = "<group>";
@@ -376,7 +378,7 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
-		D724A71E29805E8B00FC38F4 /* Tasks */ = {
+		D724A71E29805E8B00FC38F4 /* TasksList */ = {
 			isa = PBXGroup;
 			children = (
 				D78704DE29AE87C20023B129 /* Model */,
@@ -385,7 +387,7 @@
 				D724A71F29805EA100FC38F4 /* View */,
 				D72F8F5A29AED1C3000D3DB4 /* ViewModel */,
 			);
-			path = Tasks;
+			path = TasksList;
 			sourceTree = "<group>";
 		};
 		D724A71F29805EA100FC38F4 /* View */ = {
@@ -412,7 +414,7 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		D737368E29928ADD00821219 /* Categories */ = {
+		D737368E29928ADD00821219 /* CategoriesList */ = {
 			isa = PBXGroup;
 			children = (
 				D71FEB5F29B244FF00389D1D /* ViewModel */,
@@ -421,7 +423,7 @@
 				D73736922992A47600821219 /* SubViews */,
 				D737368F29928AF600821219 /* View */,
 			);
-			path = Categories;
+			path = CategoriesList;
 			sourceTree = "<group>";
 		};
 		D737368F29928AF600821219 /* View */ = {
@@ -568,6 +570,7 @@
 		D78704E529AE91C10023B129 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				D7150AB229B3C47D00E5997E /* TaskListTableViewCell.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -854,6 +857,7 @@
 			files = (
 				D73AFB9329B14F39007C3A36 /* TaskModelRemoteRepository.swift in Sources */,
 				D7EFA9BA29B125E20026975B /* APIEnvironment.swift in Sources */,
+				D7150AB329B3C47D00E5997E /* TaskListTableViewCell.swift in Sources */,
 				D73736992992A51600821219 /* AddCategoryStackView.swift in Sources */,
 				D793779729B015D00026CBFE /* Environment.swift in Sources */,
 				D71FEB5A29B2433C00389D1D /* CategoriesModelRepository.swift in Sources */,

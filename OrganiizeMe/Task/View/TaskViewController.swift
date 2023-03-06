@@ -52,9 +52,8 @@ class TaskViewController: UIViewController {
     }
     
     private func setupBinders() {
-        viewModel.task.bind { [weak self] taskTitle in
-            self?.title = taskTitle
-            self?.taskTitle.text = taskTitle
+        viewModel.task.bind { [weak self] task in
+            self?.taskTitle.text = task?.title
         }
     }
 }

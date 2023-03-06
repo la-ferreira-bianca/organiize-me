@@ -63,7 +63,7 @@ class AddNewCategoryViewController: UIViewController {
         let description = stackView.taskDescriptionTextField.text ?? ""
         if stackView.taskNameTextField.text != nil {
             viewModel.addCategory(with: title, and: description)
-            self.dismiss(animated: true)
+            self.navigationController?.popViewController(animated: true)
         } else {
             let alert = UIAlertController(
                 title: "Não foi possivel concluir",

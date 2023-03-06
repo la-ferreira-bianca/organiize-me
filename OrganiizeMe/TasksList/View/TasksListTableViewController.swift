@@ -26,9 +26,10 @@ class TasksListTableViewController: UITableViewController {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.5529411765, green: 0.9490196078, blue: 0.9098039216, alpha: 1)
         title = "Minhas Tarefas"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrowshape.turn.up.backward.circle.fill"), style: .done, target: self, action: #selector(cancelTapped))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
+        
         setupBinders()
+        setupViews()
+        setupNavigation()
     }
     
     //MARK: - Functions
@@ -48,6 +49,18 @@ class TasksListTableViewController: UITableViewController {
             self?.tableView.reloadData()
         }
     }
+    
+    private func setupViews() {
+        tableView.rowHeight = 80
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.register(TaskListTableViewCell.self, forCellReuseIdentifier: "Cell")
+        
+    }
+    
+    private func setupNavigation() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrowshape.turn.up.backward.circle.fill"), style: .done, target: self, action: #selector(cancelTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
+    }
 }
 
 extension TasksListTableViewController {
@@ -60,11 +73,9 @@ extension TasksListTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? TaskListTableViewCell else { return UITableViewCell() }
         let task = tasks[indexPath.row]
-        cell.backgroundColor = .white
-        cell.textLabel?.text = task.title
-        cell.textLabel?.textColor = .black
+        cell.task = task
         return cell
     }
     
