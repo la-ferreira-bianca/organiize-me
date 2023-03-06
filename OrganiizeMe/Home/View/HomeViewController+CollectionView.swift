@@ -25,9 +25,9 @@ extension HomeViewController: UICollectionViewDataSource {
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let carrossel = carrossel[indexPath.item]
-        let vc = carrossel.title == "Tarefas" ? AddNewTaskViewController() : AddNewCategoryViewController()
+        let vc = carrossel.title == "Tarefas" ? AddTaskViewController() : AddCategoryViewController()
         
-        navigationController?.pushViewController(vc, animated: true)
+        navigationController?.present(vc, animated: true)
     }
 }
 
