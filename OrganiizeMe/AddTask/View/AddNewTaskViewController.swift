@@ -14,12 +14,6 @@ class AddNewTaskViewController: UIViewController {
     //MARK: - Views
     var stackView = AddItemStackView(frame: .zero)
     
-    lazy var titleImage: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "task-retangle"))
-        imageView.frame = CGRect(x: -30, y: 0, width: 230, height: 70)
-        return imageView
-    }()
-    
     lazy var viewTitleLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.textColor = .white
@@ -47,10 +41,10 @@ class AddNewTaskViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.5529411765, green: 0.9490196078, blue: 0.9098039216, alpha: 1)
-//        view.endEditing(true)
+        view.initializeHideKeyboard()
+        
         setupViews()
         setupConstraints()
-        view.initializeHideKeyboard()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -59,10 +53,7 @@ class AddNewTaskViewController: UIViewController {
     }
     
     @objc func didTapButton(sender: UIButton) {
-        if let title = stackView.taskNameTextField.text, let description = stackView.taskDescriptionTextField.text {
-            viewModel.addTask(with: title, description)
-            self.navigationController?.popViewController(animated: true)
-        } else {
+        guard let title = stackView.taskTitle.text, !title.isEmpty else {
             let alert = UIAlertController(
                 title: "Não foi possivel concluir",
                 message: "Por favor, revise os campos e tente novamente",
@@ -71,17 +62,19 @@ class AddNewTaskViewController: UIViewController {
                 title: "OK",
                 style: .cancel
             ))
-            self.present(alert, animated: true)
+            return self.present(alert, animated: true)
         }
+        
+        viewModel.addTask(with: title, stackView.taskDescription.text ?? "")
+        self.navigationController?.popViewController(animated: true)
     }
     
     //MARK: - Functions
     func setupViews() {
-        //MARK: Setup StackView
-        view.addSubview(titleImage)
         view.addSubview(viewTitleLabel)
         view.addSubview(stackView)
         view.addSubview(addButton)
+        
         stackView.layer.cornerRadius = 10
         stackView.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -89,17 +82,13 @@ class AddNewTaskViewController: UIViewController {
     //MARK: - Private Functions
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            titleImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: -20),
-            titleImage.heightAnchor.constraint(equalToConstant: 55)
-        ])
-        
-        NSLayoutConstraint.activate([
             viewTitleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             viewTitleLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20)
         ])
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: titleImage.bottomAnchor, constant: 50),
+            stackView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
             stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
             stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
         ])

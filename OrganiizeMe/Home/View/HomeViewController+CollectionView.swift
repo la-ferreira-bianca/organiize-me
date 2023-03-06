@@ -27,7 +27,7 @@ extension HomeViewController: UICollectionViewDelegate {
         let carrossel = carrossel[indexPath.item]
         let vc = carrossel.title == "Tarefas" ? AddNewTaskViewController() : AddNewCategoryViewController()
         
-        navigationController?.present(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

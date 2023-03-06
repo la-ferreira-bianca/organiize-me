@@ -62,6 +62,7 @@ class CategoriesListTableViewController: UITableViewController {
     
     private func setupViews() {
         tableView.rowHeight = 80
+        tableView.separatorStyle = .none
         tableView.register(CategoryListTableViewCell.self, forCellReuseIdentifier: "Cell")
     }
     

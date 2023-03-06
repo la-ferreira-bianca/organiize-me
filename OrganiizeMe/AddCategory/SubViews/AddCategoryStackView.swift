@@ -9,7 +9,7 @@ import UIKit
 
 class AddCategoryStackView: UIStackView {
     //MARK: - Views
-    lazy var taskNameTextField: UITextField = {
+    lazy var categoryName: UITextField = {
         let textField = UITextField(frame: .zero)
         textField.placeholder = "Nome da Categoria"
         textField.textColor = .black
@@ -23,7 +23,7 @@ class AddCategoryStackView: UIStackView {
         return textField
     }()
     
-    lazy var taskDescriptionTextField: UITextField = {
+    lazy var categoryDescription: UITextField = {
         let textField = UITextField(frame: .zero)
         textField.placeholder = "Descrição"
         textField.textColor = .black
@@ -65,16 +65,16 @@ class AddCategoryStackView: UIStackView {
     }
     
     private func addSubviews() {
-        self.addArrangedSubview(taskNameTextField)
-        self.addArrangedSubview(taskDescriptionTextField)
+        self.addArrangedSubview(categoryName)
+        self.addArrangedSubview(categoryDescription)
     }
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            taskDescriptionTextField.heightAnchor.constraint(equalToConstant: 100),
-            taskDescriptionTextField.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -20),
+            categoryDescription.heightAnchor.constraint(equalToConstant: 100),
+            categoryDescription.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -20),
             
-            taskNameTextField.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -20),
+            categoryName.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -20),
         ])
     }
 }

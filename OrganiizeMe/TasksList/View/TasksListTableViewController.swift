@@ -58,6 +58,7 @@ class TasksListTableViewController: UITableViewController {
     //MARK: - Private Functions
     private func setupViews() {
         tableView.rowHeight = 80
+        tableView.separatorStyle = .none
         tableView.register(TaskListTableViewCell.self, forCellReuseIdentifier: "Cell")
     }
     

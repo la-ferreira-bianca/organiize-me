@@ -12,7 +12,7 @@ class AddItemStackView: UIStackView {
     //MARK: - Views
     let categoriesDropDown = DropDown()
     
-    lazy var taskNameTextField: UITextField = {
+    lazy var taskTitle: UITextField = {
         let textField = UITextField(frame: .zero)
         textField.placeholder = "TaskNamePlaceholder".localized
         textField.textColor = .black
@@ -26,7 +26,7 @@ class AddItemStackView: UIStackView {
         return textField
     }()
     
-    lazy var taskDescriptionTextField: UITextField = {
+    lazy var taskDescription: UITextField = {
         let textField = UITextField(frame: .zero)
         textField.placeholder = "Descrição"
         textField.textColor = .black
@@ -184,8 +184,8 @@ class AddItemStackView: UIStackView {
     }
     
     private func addSubviews() {
-        self.addArrangedSubview(taskNameTextField)
-        self.addArrangedSubview(taskDescriptionTextField)
+        self.addArrangedSubview(taskTitle)
+        self.addArrangedSubview(taskDescription)
         self.addArrangedSubview(categoriesButton)
         self.addArrangedSubview(initalDateTextField)
         self.addArrangedSubview(finalDateTextField)
@@ -193,10 +193,10 @@ class AddItemStackView: UIStackView {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            taskDescriptionTextField.heightAnchor.constraint(equalToConstant: 100),
-            taskDescriptionTextField.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -20),
+            taskDescription.heightAnchor.constraint(equalToConstant: 100),
+            taskDescription.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -20),
             
-            taskNameTextField.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -20),
+            taskTitle.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -20),
             
             categoriesButton.heightAnchor.constraint(equalToConstant: 40),
             categoriesButton.widthAnchor.constraint(equalToConstant: 200),

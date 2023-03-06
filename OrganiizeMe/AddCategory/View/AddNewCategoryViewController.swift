@@ -55,12 +55,7 @@ class AddNewCategoryViewController: UIViewController {
     
     //MARK: - Functions
     @objc func didTapButton(sender: UIButton) {
-        guard let title = stackView.taskNameTextField.text else { return }
-        let description = stackView.taskDescriptionTextField.text ?? ""
-        if stackView.taskNameTextField.text != nil {
-            viewModel.addCategory(with: title, and: description)
-            self.navigationController?.popViewController(animated: true)
-        } else {
+        guard let title = stackView.categoryName.text, !title.isEmpty else {
             let alert = UIAlertController(
                 title: "Não foi possivel concluir",
                 message: "Por favor, revise os campos e tente novamente",
@@ -69,8 +64,11 @@ class AddNewCategoryViewController: UIViewController {
                 title: "OK",
                 style: .cancel
             ))
-            self.present(alert, animated: true)
+            return self.present(alert, animated: true)
         }
+        
+        viewModel.addCategory(with: title, and: stackView.categoryDescription.text ?? "")
+        self.navigationController?.popViewController(animated: true)
     }
     
     @objc func cancelTapped() {
