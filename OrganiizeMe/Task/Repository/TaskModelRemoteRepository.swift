@@ -39,11 +39,11 @@ final internal class TaskModelRemoteRepository: TaskModelRepository {
         }
     }
     
-    func postTask(with title: String, handler: @escaping (TaskModelResult) -> Void) {
+    func postTask(with title: String, _ description: String, handler: @escaping (TaskModelResult) -> Void) {
         guard let url = URL(string: "\(api.taskURL)/") else { return }
         let json: [String: Any] = [
             "title": title,
-//            "description": model.description,
+            "description": description,
 //            "category": model.category?.id,
 //            "initialDate": model.initialDate,
 //            "finalDate": model.finalDate

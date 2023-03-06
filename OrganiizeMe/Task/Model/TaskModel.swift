@@ -45,6 +45,8 @@ struct TaskModel: Decodable {
 //        finalDate = try values.decode(String.self, forKey: .finalDate)
 //        modelVersion = try values.decode(Int.self, forKey: .modelVersion)
     }
+    
+    
 }
 
 enum TaskModelError: Error {

@@ -11,5 +11,5 @@ protocol TaskModelRepository {
     typealias TaskModelResult = Result<TaskModel, TaskModelError>
     
     func getTask(with identifier: String, handler: @escaping (TaskModelResult) -> Void)
-    func postTask(with title: String, handler: @escaping (TaskModelResult) -> Void)
+    func postTask(with title: String, _ description: String, handler: @escaping (TaskModelResult) -> Void)
 }

@@ -13,8 +13,8 @@ final class AddTaskViewModel {
     var error: ObservableObject<String?> = ObservableObject(value: nil)
     var task: ObservableObject<TaskModel?> = ObservableObject(value: nil)
     
-    func addTask(with title: String) {
-        repository.postTask(with: title) { [unowned self] result in
+    func addTask(with title: String, _ description: String) {
+        repository.postTask(with: title, description) { [unowned self] result in
             switch result {
             case .success(let taskData):
                 self.task.value = taskData

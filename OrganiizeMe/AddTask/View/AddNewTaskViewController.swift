@@ -59,8 +59,8 @@ class AddNewTaskViewController: UIViewController {
     }
     
     @objc func didTapButton(sender: UIButton) {
-        if let title = stackView.taskNameTextField.text {
-            viewModel.addTask(with: title)
+        if let title = stackView.taskNameTextField.text, let description = stackView.taskDescriptionTextField.text {
+            viewModel.addTask(with: title, description)
             self.navigationController?.popViewController(animated: true)
         } else {
             let alert = UIAlertController(
