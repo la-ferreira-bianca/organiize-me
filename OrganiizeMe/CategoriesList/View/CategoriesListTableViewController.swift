@@ -29,6 +29,7 @@ class CategoriesListTableViewController: UITableViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrowshape.turn.up.backward.circle.fill"), style: .done, target: self, action: #selector(addTapped))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(cancelTapped))
 
+        setupViews()
         setupBinders()
     }
     
@@ -53,23 +54,24 @@ class CategoriesListTableViewController: UITableViewController {
             self?.tableView.reloadData()
         }
     }
+    
+    private func setupViews() {
+        tableView.rowHeight = 80
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.register(CategoryListTableViewCell.self, forCellReuseIdentifier: "Cell")
+        
+    }
 }
 
 extension CategoriesListTableViewController {
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categories.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? CategoryListTableViewCell else { return UITableViewCell() }
         let category = categories[indexPath.row]
-        cell.backgroundColor = .white
-        cell.textLabel?.text = category.title
-        cell.textLabel?.textColor = .black
+        cell.category = category
         return cell
     }
     
