@@ -8,9 +8,16 @@
 import UIKit
 
 class CategoriesListTableViewController: UITableViewController {
+    //MARK: - Views
+    let loadingView = CustomLoadingView()
     
+    //MARK: - Variables
     private var viewModel = CategoriesViewModel()
-    var categories = [CategoryModel]()
+    var categories = [CategoryModel]() {
+        didSet {
+            self.stopLoading()
+        }
+    }
     
     //MARK: - LifeCycle
     init() {
@@ -26,15 +33,12 @@ class CategoriesListTableViewController: UITableViewController {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.5529411765, green: 0.9490196078, blue: 0.9098039216, alpha: 1)
         title = "Minhas Categorias"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrowshape.turn.up.backward.circle.fill"), style: .done, target: self, action: #selector(addTapped))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(cancelTapped))
 
+        setupNavigation()
         setupViews()
+        setupConstraints()
+        startLoading()
         setupBinders()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
     }
     
     //MARK: - Functions
@@ -55,48 +59,42 @@ class CategoriesListTableViewController: UITableViewController {
         }
     }
     
+    private func setupNavigation() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrowshape.turn.up.backward.circle.fill"), style: .done, target: self, action: #selector(addTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(cancelTapped))
+    }
+    
     private func setupViews() {
         tableView.rowHeight = 80
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(CategoryListTableViewCell.self, forCellReuseIdentifier: "Cell")
+    }
+    
+    private func setupConstraints() {
+        view.addSubview(loadingView)
+        view.layoutSubviews()
+        
+        NSLayoutConstraint.activate([
+            loadingView.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor),
+            loadingView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor),
+            loadingView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            loadingView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor)
+        ])
         
     }
-}
-
-extension CategoriesListTableViewController {
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories.count
+    
+    private func startLoading() {
+        loadingView.activityIndicator.startAnimating()
+        navigationController?.isNavigationBarHidden = true
+        tabBarController?.tabBar.isHidden = true
+        tableView.isUserInteractionEnabled = false
+        loadingView.isHidden = false
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? CategoryListTableViewCell else { return UITableViewCell() }
-        let category = categories[indexPath.row]
-        cell.category = category
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let category = categories[indexPath.row]
-        navigationController?.pushViewController(CategoryViewController(categoryID: category.id), animated: true)
+    private func stopLoading() {
+        loadingView.activityIndicator.stopAnimating()
+        navigationController?.isNavigationBarHidden = false
+        tabBarController?.tabBar.isHidden = false
+        tableView.isUserInteractionEnabled = true
+        loadingView.isHidden = true
     }
 }
-
-
-//#if DEBUG
-//import SwiftUI
-//
-//struct CategoriesListTableViewControllerRepresentable: UIViewControllerRepresentable {
-//    func makeUIViewController(context: Context) -> some UIViewController {
-//        return CategoriesListTableViewController()
-//    }
-//
-//    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
-//}
-//
-//struct CategoriesListTableViewController_Preview: PreviewProvider {
-//    static var previews: some View {
-//        CategoriesListTableViewControllerRepresentable()
-//            .previewDevice("iPhone SE (3rd generation)")
-//    }
-//}
-//#endif

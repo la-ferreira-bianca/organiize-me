@@ -7,11 +7,18 @@
 
 import UIKit
 class TasksListTableViewController: UITableViewController {
+    //MARK: - Views
+    let loadingView = CustomLoadingView()
     
     //MARK: - Variables
     private var viewModel = TasksViewModel()
-    var tasks = [TaskModel]()
+    var tasks = [TaskModel]() {
+        didSet {
+            self.stopLoading()
+        }
+    }
     
+    //MARK: - LifeCycle
     init() {
         super.init(nibName: nil, bundle: nil)
         viewModel.fetchTasks()
@@ -27,9 +34,11 @@ class TasksListTableViewController: UITableViewController {
         view.backgroundColor = #colorLiteral(red: 0.5529411765, green: 0.9490196078, blue: 0.9098039216, alpha: 1)
         title = "Minhas Tarefas"
         
-        setupBinders()
-        setupViews()
         setupNavigation()
+        setupViews()
+        setupConstraints()
+        startLoading()
+        setupBinders()
     }
     
     //MARK: - Functions
@@ -50,10 +59,22 @@ class TasksListTableViewController: UITableViewController {
         }
     }
     
+    //MARK: - Private Functions
     private func setupViews() {
         tableView.rowHeight = 80
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(TaskListTableViewCell.self, forCellReuseIdentifier: "Cell")
+    }
+    
+    private func setupConstraints() {
+        view.addSubview(loadingView)
+        view.layoutSubviews()
+        
+        NSLayoutConstraint.activate([
+            loadingView.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor),
+            loadingView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor),
+            loadingView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            loadingView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor)
+        ])
         
     }
     
@@ -61,22 +82,20 @@ class TasksListTableViewController: UITableViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrowshape.turn.up.backward.circle.fill"), style: .done, target: self, action: #selector(cancelTapped))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
     }
-}
-
-extension TasksListTableViewController {
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tasks.count
+    
+    private func startLoading() {
+        loadingView.activityIndicator.startAnimating()
+        navigationController?.isNavigationBarHidden = true
+        tabBarController?.tabBar.isHidden = true
+        tableView.isUserInteractionEnabled = false
+        loadingView.isHidden = false
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? TaskListTableViewCell else { return UITableViewCell() }
-        let task = tasks[indexPath.row]
-        cell.task = task
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let task = tasks[indexPath.row]
-        navigationController?.pushViewController(TaskViewController(taskID: task.id), animated: true)
+    private func stopLoading() {
+        loadingView.activityIndicator.stopAnimating()
+        navigationController?.isNavigationBarHidden = false
+        tabBarController?.tabBar.isHidden = false
+        tableView.isUserInteractionEnabled = true
+        loadingView.isHidden = true
     }
 }

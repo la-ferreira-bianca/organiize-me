@@ -43,6 +43,9 @@
 		D73AFB9729B1523E007C3A36 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73AFB9629B1523E007C3A36 /* TaskViewModel.swift */; };
 		D73AFB9A29B1542E007C3A36 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73AFB9929B1542E007C3A36 /* TaskViewController.swift */; };
 		D749F09729B6312100AF504D /* CategoryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D749F09629B6312100AF504D /* CategoryListTableViewCell.swift */; };
+		D749F09929B65A6200AF504D /* CustomLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D749F09829B65A6200AF504D /* CustomLoadingView.swift */; };
+		D749F09B29B65C9400AF504D /* TaskListTableViewController+DataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = D749F09A29B65C9400AF504D /* TaskListTableViewController+DataSources.swift */; };
+		D749F09D29B65D3100AF504D /* CategoriesListTableViewController+DataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = D749F09C29B65D3100AF504D /* CategoriesListTableViewController+DataSources.swift */; };
 		D7572EAA29B26BF8001E52B4 /* AddCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7572EA929B26BF8001E52B4 /* AddCategoryViewModel.swift */; };
 		D76BF27029B3AD2100FA357E /* AddTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76BF26F29B3AD2100FA357E /* AddTaskViewModel.swift */; };
 		D76BF27229B3BB3600FA357E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76BF27129B3BB3600FA357E /* UIView+Extensions.swift */; };
@@ -129,6 +132,9 @@
 		D73AFB9629B1523E007C3A36 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		D73AFB9929B1542E007C3A36 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		D749F09629B6312100AF504D /* CategoryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListTableViewCell.swift; sourceTree = "<group>"; };
+		D749F09829B65A6200AF504D /* CustomLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoadingView.swift; sourceTree = "<group>"; };
+		D749F09A29B65C9400AF504D /* TaskListTableViewController+DataSources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskListTableViewController+DataSources.swift"; sourceTree = "<group>"; };
+		D749F09C29B65D3100AF504D /* CategoriesListTableViewController+DataSources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoriesListTableViewController+DataSources.swift"; sourceTree = "<group>"; };
 		D7572EA929B26BF8001E52B4 /* AddCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewModel.swift; sourceTree = "<group>"; };
 		D76BF26F29B3AD2100FA357E /* AddTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewModel.swift; sourceTree = "<group>"; };
 		D76BF27129B3BB3600FA357E /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -396,6 +402,7 @@
 			isa = PBXGroup;
 			children = (
 				D724A72029805EB200FC38F4 /* TasksListTableViewController.swift */,
+				D749F09A29B65C9400AF504D /* TaskListTableViewController+DataSources.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -404,6 +411,7 @@
 			isa = PBXGroup;
 			children = (
 				D72B0B352989755C00414E93 /* FloatingTextField.swift */,
+				D749F09829B65A6200AF504D /* CustomLoadingView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -432,6 +440,7 @@
 			isa = PBXGroup;
 			children = (
 				D737369029928B1100821219 /* CategoriesListTableViewController.swift */,
+				D749F09C29B65D3100AF504D /* CategoriesListTableViewController+DataSources.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -868,10 +877,12 @@
 				D71FEB4629B2136200389D1D /* ObservableObject.swift in Sources */,
 				D7B7FA042989BECB006EC7D8 /* AddItemStackView.swift in Sources */,
 				D7F19F4829831DDF0099B2BC /* HomeViewController+CollectionView.swift in Sources */,
+				D749F09D29B65D3100AF504D /* CategoriesListTableViewController+DataSources.swift in Sources */,
 				D793778F29B00B3A0026CBFE /* URLSessionHTTPClientError.swift in Sources */,
 				D76BF27229B3BB3600FA357E /* UIView+Extensions.swift in Sources */,
 				D724A71329804B8300FC38F4 /* Coordinator.swift in Sources */,
 				D78704DD29AE59DC0023B129 /* TasksRequest.swift in Sources */,
+				D749F09929B65A6200AF504D /* CustomLoadingView.swift in Sources */,
 				D7F19F372982F47D0099B2BC /* GlobalConstants.swift in Sources */,
 				D73AFB9A29B1542E007C3A36 /* TaskViewController.swift in Sources */,
 				D73AFB9729B1523E007C3A36 /* TaskViewModel.swift in Sources */,
@@ -890,6 +901,7 @@
 				D793779429B0152F0026CBFE /* TasksModelRepository.swift in Sources */,
 				D724A6E4298047E200FC38F4 /* HomeViewController.swift in Sources */,
 				D737369129928B1100821219 /* CategoriesListTableViewController.swift in Sources */,
+				D749F09B29B65C9400AF504D /* TaskListTableViewController+DataSources.swift in Sources */,
 				D749F09729B6312100AF504D /* CategoryListTableViewCell.swift in Sources */,
 				D7EFA9B729B121E40026975B /* TasksModelRemoteRepository.swift in Sources */,
 				D71FEB6729B24AEE00389D1D /* CategoryViewModel.swift in Sources */,

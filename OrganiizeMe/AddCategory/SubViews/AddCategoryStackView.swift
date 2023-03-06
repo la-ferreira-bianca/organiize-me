@@ -50,8 +50,6 @@ class AddCategoryStackView: UIStackView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Ojbc Functions
-    
     //MARK: - Private Functions
     private func setupStackView() {
         self.axis = .vertical
