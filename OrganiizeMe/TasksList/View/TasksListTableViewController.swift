@@ -11,7 +11,7 @@ class TasksListTableViewController: UITableViewController {
     private var viewModel = TasksViewModel()
     var tasks = [TaskModel]() {
         didSet {
-            self.stopLoading()
+            self.setupLoading(isEnable: false)
         }
     }
     
@@ -28,22 +28,24 @@ class TasksListTableViewController: UITableViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.5529411765, green: 0.9490196078, blue: 0.9098039216, alpha: 1)
         title = "Minhas Tarefas"
-        
-        setupNavigation()
+        view.backgroundColor = #colorLiteral(red: 0.191467334, green: 0.6420556003, blue: 0.7067605558, alpha: 1)
         setupViews()
         setupConstraints()
-        startLoading()
+        setupLoading(isEnable: true)
         setupBinders()
     }
     
-    //MARK: - Functions
-    @objc func cancelTapped() {
-        navigationController?.popViewController(animated: true)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigation()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        resetNavigation()
     }
     
     // MARK: - Binding
@@ -63,23 +65,23 @@ class TasksListTableViewController: UITableViewController {
     }
     
     private func setupNavigation() {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrowshape.turn.up.backward.circle.fill"), style: .done, target: self, action: #selector(cancelTapped))
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.191467334, green: 0.6420556003, blue: 0.7067605558, alpha: 1)
+        tabBarController?.tabBar.backgroundColor = #colorLiteral(red: 0.191467334, green: 0.6420556003, blue: 0.7067605558, alpha: 1)
+        tabBarController?.tabBar.barTintColor = #colorLiteral(red: 0.191467334, green: 0.6420556003, blue: 0.7067605558, alpha: 1)
     }
     
-    private func startLoading() {
-        loadingView.activityIndicator.startAnimating()
-        navigationController?.isNavigationBarHidden = true
-        tabBarController?.tabBar.isHidden = true
-        tableView.isUserInteractionEnabled = false
-        loadingView.isHidden = false
+    private func resetNavigation() {
+        navigationController?.navigationBar.barTintColor = .purple
+        tabBarController?.tabBar.backgroundColor = .purple
+        tabBarController?.tabBar.barTintColor = .purple
     }
     
-    private func stopLoading() {
-        loadingView.activityIndicator.stopAnimating()
-        navigationController?.isNavigationBarHidden = false
-        tabBarController?.tabBar.isHidden = false
-        tableView.isUserInteractionEnabled = true
-        loadingView.isHidden = true
+    private func setupLoading(isEnable: Bool) {
+        isEnable ? loadingView.activityIndicator.startAnimating() : loadingView.activityIndicator.stopAnimating()
+        navigationController?.isNavigationBarHidden = isEnable ? true : false
+        tabBarController?.tabBar.isHidden = isEnable ? true : false
+        tableView.isUserInteractionEnabled = isEnable ? false : true
+        loadingView.isHidden = isEnable ? false : true
     }
     
     private func setupConstraints() {

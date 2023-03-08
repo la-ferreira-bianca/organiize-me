@@ -16,6 +16,7 @@ extension CategoriesListTableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? CategoryListTableViewCell else { return UITableViewCell() }
         let category = categories[indexPath.row]
         cell.category = category
+        cell.backgroundColor = #colorLiteral(red: 0.2549019608, green: 0.7490196078, blue: 0.7019607843, alpha: 1)
         return cell
     }
     

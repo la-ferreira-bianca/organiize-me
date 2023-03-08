@@ -16,6 +16,7 @@ extension TasksListTableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? TaskListTableViewCell else { return UITableViewCell() }
         let task = tasks[indexPath.row]
         cell.task = task
+        cell.backgroundColor = #colorLiteral(red: 0.2549019608, green: 0.7490196078, blue: 0.7019607843, alpha: 1)
         cell.selectionStyle = .none
         return cell
     }

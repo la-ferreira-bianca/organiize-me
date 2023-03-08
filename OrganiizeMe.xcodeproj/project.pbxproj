@@ -50,6 +50,7 @@
 		D76BF27029B3AD2100FA357E /* AddTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76BF26F29B3AD2100FA357E /* AddTaskViewModel.swift */; };
 		D76BF27229B3BB3600FA357E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76BF27129B3BB3600FA357E /* UIView+Extensions.swift */; };
 		D780FDBA29B7CD9700AC951A /* AddCategoryViewController+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780FDB929B7CD9700AC951A /* AddCategoryViewController+Functions.swift */; };
+		D780FDBC29B7D89500AC951A /* HomeViewController+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780FDBB29B7D89500AC951A /* HomeViewController+Functions.swift */; };
 		D78704D729AE595F0023B129 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78704D629AE595F0023B129 /* APIError.swift */; };
 		D78704D929AE59810023B129 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78704D829AE59810023B129 /* HTTPClient.swift */; };
 		D78704DB29AE59B50023B129 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78704DA29AE59B50023B129 /* Request.swift */; };
@@ -139,6 +140,7 @@
 		D76BF26F29B3AD2100FA357E /* AddTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewModel.swift; sourceTree = "<group>"; };
 		D76BF27129B3BB3600FA357E /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		D780FDB929B7CD9700AC951A /* AddCategoryViewController+Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddCategoryViewController+Functions.swift"; sourceTree = "<group>"; };
+		D780FDBB29B7D89500AC951A /* HomeViewController+Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+Functions.swift"; sourceTree = "<group>"; };
 		D78704D629AE595F0023B129 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		D78704D829AE59810023B129 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		D78704DA29AE59B50023B129 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 			children = (
 				D724A6E3298047E200FC38F4 /* HomeViewController.swift */,
 				D7F19F4729831DDE0099B2BC /* HomeViewController+CollectionView.swift */,
+				D780FDBB29B7D89500AC951A /* HomeViewController+Functions.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -857,6 +860,7 @@
 				D793779729B015D00026CBFE /* Environment.swift in Sources */,
 				D71FEB5A29B2433C00389D1D /* CategoriesModelRepository.swift in Sources */,
 				D78704DB29AE59B50023B129 /* Request.swift in Sources */,
+				D780FDBC29B7D89500AC951A /* HomeViewController+Functions.swift in Sources */,
 				D71FEB4629B2136200389D1D /* ObservableObject.swift in Sources */,
 				D7F19F4829831DDF0099B2BC /* HomeViewController+CollectionView.swift in Sources */,
 				D749F09D29B65D3100AF504D /* CategoriesListTableViewController+DataSources.swift in Sources */,

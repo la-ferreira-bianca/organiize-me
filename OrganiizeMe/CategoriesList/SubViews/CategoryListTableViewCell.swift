@@ -20,7 +20,7 @@ class CategoryListTableViewCell: UITableViewCell {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.textColor =  .black
+        label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -29,7 +29,7 @@ class CategoryListTableViewCell: UITableViewCell {
         let label = UILabel()
         label.font = UIFont.italicSystemFont(ofSize: 14)
         label.textColor =  .white
-        label.backgroundColor = .gray.withAlphaComponent(0.9)
+        label.backgroundColor = .gray.withAlphaComponent(0.4)
         label.layer.cornerRadius = 5
         label.clipsToBounds = true
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -57,7 +57,6 @@ class CategoryListTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupViews()
-        setupConstraints()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -65,15 +64,7 @@ class CategoryListTableViewCell: UITableViewCell {
     }
     
     func setupViews() {
-        backgroundColor = .white
         addSubview(stackView)
-    }
-    
-    func setupConstraints() {
-//        NSLayoutConstraint.activate([
-//            titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
-//            titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-//        ])
     }
 }
 

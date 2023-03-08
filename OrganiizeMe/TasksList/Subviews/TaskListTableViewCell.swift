@@ -20,7 +20,7 @@ class TaskListTableViewCell: UITableViewCell {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.textColor =  .black
+        label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -29,7 +29,7 @@ class TaskListTableViewCell: UITableViewCell {
         let label = UILabel()
         label.font = UIFont.italicSystemFont(ofSize: 14)
         label.textColor =  .white
-        label.backgroundColor = .gray.withAlphaComponent(0.9)
+        label.backgroundColor = .gray.withAlphaComponent(0.4)
         label.layer.cornerRadius = 5
         label.clipsToBounds = true
         label.translatesAutoresizingMaskIntoConstraints = false

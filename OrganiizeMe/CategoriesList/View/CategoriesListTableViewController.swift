@@ -15,7 +15,7 @@ class CategoriesListTableViewController: UITableViewController {
     private var viewModel = CategoriesViewModel()
     var categories = [CategoryModel]() {
         didSet {
-            self.stopLoading()
+            self.setupLoading(isEnable: false)
         }
     }
     
@@ -31,14 +31,19 @@ class CategoriesListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.5529411765, green: 0.9490196078, blue: 0.9098039216, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0.191467334, green: 0.6420556003, blue: 0.7067605558, alpha: 1)
         title = "Minhas Categorias"
 
         setupNavigation()
         setupViews()
         setupConstraints()
-        startLoading()
+        setupLoading(isEnable: true)
         setupBinders()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        resetNavigation()
     }
     
     //MARK: - Functions
@@ -56,8 +61,17 @@ class CategoriesListTableViewController: UITableViewController {
         }
     }
     
+    //TODO: - Change this functions to coordinator
     private func setupNavigation() {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrowshape.turn.up.backward.circle.fill"), style: .done, target: self, action: #selector(cancelTapped))
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.191467334, green: 0.6420556003, blue: 0.7067605558, alpha: 1)
+        tabBarController?.tabBar.backgroundColor = #colorLiteral(red: 0.191467334, green: 0.6420556003, blue: 0.7067605558, alpha: 1)
+        tabBarController?.tabBar.barTintColor = #colorLiteral(red: 0.191467334, green: 0.6420556003, blue: 0.7067605558, alpha: 1)
+    }
+    
+    private func resetNavigation() {
+        navigationController?.navigationBar.barTintColor = .purple
+        tabBarController?.tabBar.backgroundColor = .purple
+        tabBarController?.tabBar.barTintColor = .purple
     }
     
     private func setupViews() {
@@ -79,19 +93,11 @@ class CategoriesListTableViewController: UITableViewController {
         
     }
     
-    private func startLoading() {
-        loadingView.activityIndicator.startAnimating()
-        navigationController?.isNavigationBarHidden = true
-        tabBarController?.tabBar.isHidden = true
-        tableView.isUserInteractionEnabled = false
-        loadingView.isHidden = false
-    }
-    
-    private func stopLoading() {
-        loadingView.activityIndicator.stopAnimating()
-        navigationController?.isNavigationBarHidden = false
-        tabBarController?.tabBar.isHidden = false
-        tableView.isUserInteractionEnabled = true
-        loadingView.isHidden = true
+    private func setupLoading(isEnable: Bool) {
+        isEnable ? loadingView.activityIndicator.startAnimating() : loadingView.activityIndicator.stopAnimating()
+        navigationController?.isNavigationBarHidden = isEnable ? true : false
+        tabBarController?.tabBar.isHidden = isEnable ? true : false
+        tableView.isUserInteractionEnabled = isEnable ? false : true
+        loadingView.isHidden = isEnable ? false : true
     }
 }
