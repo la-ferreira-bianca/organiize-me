@@ -10,7 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
     
     //MARK: - Variables
-    var coordinator: HomeBaseCoordinator?
+//    var coordinator: HomeBaseCoordinator?
     let carrossel = CarrosselModel.fetchCarrossel()
     
     //MARK: - Views
@@ -34,27 +34,27 @@ class HomeViewController: UIViewController {
     }()
     
     //MARK: - LifeCycle
-    init(coordinator: HomeBaseCoordinator) {
-        super.init(nibName: nil, bundle: nil)
-        self.coordinator = coordinator
-        title = "HomeTitle".localized
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    init(coordinator: HomeBaseCoordinator) {
+//        super.init(nibName: nil, bundle: nil)
+//        self.coordinator = coordinator
+//        title = "HomeTitle".localized
+//    }
+//
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.hidesBarsOnSwipe = true
-        navigationController?.navigationBar.barTintColor = .purple
-        navigationController?.navigationBar.tintColor = .white
+//        navigationController?.navigationBar.prefersLargeTitles = true
+//        navigationController?.hidesBarsOnSwipe = true
+//        navigationController?.navigationBar.barTintColor = .purple
+//        navigationController?.navigationBar.tintColor = .white
         
-        tabBarController?.tabBar.tintColor = .white
-        tabBarController?.tabBar.backgroundColor = .purple
+//        tabBarController?.tabBar.tintColor = .white
+//        tabBarController?.tabBar.backgroundColor = .purple
         
         setupViews()
         setupConstraints()

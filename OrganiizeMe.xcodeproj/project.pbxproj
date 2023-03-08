@@ -29,7 +29,6 @@
 		D724A701298047E500FC38F4 /* OrganiizeMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724A700298047E500FC38F4 /* OrganiizeMeUITests.swift */; };
 		D724A703298047E500FC38F4 /* OrganiizeMeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724A702298047E500FC38F4 /* OrganiizeMeUITestsLaunchTests.swift */; };
 		D724A71329804B8300FC38F4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724A71229804B8300FC38F4 /* Coordinator.swift */; };
-		D724A717298051BC00FC38F4 /* HomeBaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724A716298051BC00FC38F4 /* HomeBaseCoordinator.swift */; };
 		D724A71B2980553200FC38F4 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724A71A2980553200FC38F4 /* MainCoordinator.swift */; };
 		D724A71D29805CB700FC38F4 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724A71C29805CB700FC38F4 /* HomeCoordinator.swift */; };
 		D724A72129805EB200FC38F4 /* TasksListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724A72029805EB200FC38F4 /* TasksListTableViewController.swift */; };
@@ -47,6 +46,10 @@
 		D749F09D29B65D3100AF504D /* CategoriesListTableViewController+DataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = D749F09C29B65D3100AF504D /* CategoriesListTableViewController+DataSources.swift */; };
 		D749F0A129B687E900AF504D /* AddTaskViewController+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D749F0A029B687E900AF504D /* AddTaskViewController+Functions.swift */; };
 		D7572EAA29B26BF8001E52B4 /* AddCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7572EA929B26BF8001E52B4 /* AddCategoryViewModel.swift */; };
+		D768008C29B913A00054C73A /* TasksCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D768008B29B913A00054C73A /* TasksCalendarViewController.swift */; };
+		D768008E29B914FD0054C73A /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D768008D29B914FD0054C73A /* ApplicationCoordinator.swift */; };
+		D768009129B91A1E0054C73A /* TaskListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D768009029B91A1E0054C73A /* TaskListCoordinator.swift */; };
+		D768009429B91C280054C73A /* CategoriesListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D768009329B91C280054C73A /* CategoriesListCoordinator.swift */; };
 		D76BF27029B3AD2100FA357E /* AddTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76BF26F29B3AD2100FA357E /* AddTaskViewModel.swift */; };
 		D76BF27229B3BB3600FA357E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76BF27129B3BB3600FA357E /* UIView+Extensions.swift */; };
 		D780FDBA29B7CD9700AC951A /* AddCategoryViewController+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780FDB929B7CD9700AC951A /* AddCategoryViewController+Functions.swift */; };
@@ -119,7 +122,6 @@
 		D724A700298047E500FC38F4 /* OrganiizeMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganiizeMeUITests.swift; sourceTree = "<group>"; };
 		D724A702298047E500FC38F4 /* OrganiizeMeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganiizeMeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D724A71229804B8300FC38F4 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		D724A716298051BC00FC38F4 /* HomeBaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBaseCoordinator.swift; sourceTree = "<group>"; };
 		D724A71A2980553200FC38F4 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		D724A71C29805CB700FC38F4 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		D724A72029805EB200FC38F4 /* TasksListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListTableViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +139,10 @@
 		D749F09C29B65D3100AF504D /* CategoriesListTableViewController+DataSources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoriesListTableViewController+DataSources.swift"; sourceTree = "<group>"; };
 		D749F0A029B687E900AF504D /* AddTaskViewController+Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddTaskViewController+Functions.swift"; sourceTree = "<group>"; };
 		D7572EA929B26BF8001E52B4 /* AddCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewModel.swift; sourceTree = "<group>"; };
+		D768008B29B913A00054C73A /* TasksCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksCalendarViewController.swift; sourceTree = "<group>"; };
+		D768008D29B914FD0054C73A /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		D768009029B91A1E0054C73A /* TaskListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListCoordinator.swift; sourceTree = "<group>"; };
+		D768009329B91C280054C73A /* CategoriesListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesListCoordinator.swift; sourceTree = "<group>"; };
 		D76BF26F29B3AD2100FA357E /* AddTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewModel.swift; sourceTree = "<group>"; };
 		D76BF27129B3BB3600FA357E /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		D780FDB929B7CD9700AC951A /* AddCategoryViewController+Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddCategoryViewController+Functions.swift"; sourceTree = "<group>"; };
@@ -303,6 +309,7 @@
 		D724A6DE298047E200FC38F4 /* OrganiizeMe */ = {
 			isa = PBXGroup;
 			children = (
+				D768008A29B9138E0054C73A /* TasksCalendar */,
 				D724A6ED298047E400FC38F4 /* Info.plist */,
 				D724A6EA298047E400FC38F4 /* LaunchScreen.storyboard */,
 				D73736952992A4E600821219 /* AddCategory */,
@@ -366,6 +373,7 @@
 			children = (
 				D724A71229804B8300FC38F4 /* Coordinator.swift */,
 				D724A71A2980553200FC38F4 /* MainCoordinator.swift */,
+				D768008D29B914FD0054C73A /* ApplicationCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -383,7 +391,6 @@
 		D724A719298051FC00FC38F4 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				D724A716298051BC00FC38F4 /* HomeBaseCoordinator.swift */,
 				D724A71C29805CB700FC38F4 /* HomeCoordinator.swift */,
 			);
 			path = Coordinator;
@@ -392,6 +399,7 @@
 		D724A71E29805E8B00FC38F4 /* TasksList */ = {
 			isa = PBXGroup;
 			children = (
+				D768008F29B91A120054C73A /* Coordinator */,
 				D78704DE29AE87C20023B129 /* Model */,
 				D793779229B015130026CBFE /* Repository */,
 				D78704E529AE91C10023B129 /* Subviews */,
@@ -430,6 +438,7 @@
 		D737368E29928ADD00821219 /* CategoriesList */ = {
 			isa = PBXGroup;
 			children = (
+				D768009229B91C1A0054C73A /* Coordinator */,
 				D71FEB5F29B244FF00389D1D /* ViewModel */,
 				D71FEB5829B2432700389D1D /* Repository */,
 				D71FEB5529B23F2E00389D1D /* Model */,
@@ -516,6 +525,30 @@
 				D7572EA929B26BF8001E52B4 /* AddCategoryViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D768008A29B9138E0054C73A /* TasksCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				D768008B29B913A00054C73A /* TasksCalendarViewController.swift */,
+			);
+			path = TasksCalendar;
+			sourceTree = "<group>";
+		};
+		D768008F29B91A120054C73A /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				D768009029B91A1E0054C73A /* TaskListCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		D768009229B91C1A0054C73A /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				D768009329B91C280054C73A /* CategoriesListCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		D76BF26E29B3AD1100FA357E /* ViewModel */ = {
@@ -863,6 +896,7 @@
 				D780FDBC29B7D89500AC951A /* HomeViewController+Functions.swift in Sources */,
 				D71FEB4629B2136200389D1D /* ObservableObject.swift in Sources */,
 				D7F19F4829831DDF0099B2BC /* HomeViewController+CollectionView.swift in Sources */,
+				D768008C29B913A00054C73A /* TasksCalendarViewController.swift in Sources */,
 				D749F09D29B65D3100AF504D /* CategoriesListTableViewController+DataSources.swift in Sources */,
 				D793778F29B00B3A0026CBFE /* URLSessionHTTPClientError.swift in Sources */,
 				D76BF27229B3BB3600FA357E /* UIView+Extensions.swift in Sources */,
@@ -874,6 +908,7 @@
 				D73AFB9729B1523E007C3A36 /* TaskViewModel.swift in Sources */,
 				D724A72129805EB200FC38F4 /* TasksListTableViewController.swift in Sources */,
 				D73736942992A49D00821219 /* AddCategoryViewController.swift in Sources */,
+				D768009429B91C280054C73A /* CategoriesListCoordinator.swift in Sources */,
 				D71FEB5E29B243D200389D1D /* CategoriesAPI.swift in Sources */,
 				D71FEB5429B23ED200389D1D /* CategoryModel.swift in Sources */,
 				D71FEB6A29B24B1800389D1D /* CategoryModelRepository.swift in Sources */,
@@ -886,6 +921,7 @@
 				D78704E029AE87CE0023B129 /* TasksModel.swift in Sources */,
 				D793779429B0152F0026CBFE /* TasksModelRepository.swift in Sources */,
 				D724A6E4298047E200FC38F4 /* HomeViewController.swift in Sources */,
+				D768008E29B914FD0054C73A /* ApplicationCoordinator.swift in Sources */,
 				D737369129928B1100821219 /* CategoriesListTableViewController.swift in Sources */,
 				D749F09B29B65C9400AF504D /* TaskListTableViewController+DataSources.swift in Sources */,
 				D749F09729B6312100AF504D /* CategoryListTableViewCell.swift in Sources */,
@@ -902,7 +938,6 @@
 				D7F19F4629831D9C0099B2BC /* CarrosselModel.swift in Sources */,
 				D724A71D29805CB700FC38F4 /* HomeCoordinator.swift in Sources */,
 				D76BF27029B3AD2100FA357E /* AddTaskViewModel.swift in Sources */,
-				D724A717298051BC00FC38F4 /* HomeBaseCoordinator.swift in Sources */,
 				D7F3B47E29884D3600FF15C1 /* AddTaskViewController.swift in Sources */,
 				D7F19F3A2982F8650099B2BC /* PresentationStackView.swift in Sources */,
 				D78704D929AE59810023B129 /* HTTPClient.swift in Sources */,
@@ -913,6 +948,7 @@
 				D780FDBA29B7CD9700AC951A /* AddCategoryViewController+Functions.swift in Sources */,
 				D78704E429AE8ED60023B129 /* TaskModel.swift in Sources */,
 				D78704D729AE595F0023B129 /* APIError.swift in Sources */,
+				D768009129B91A1E0054C73A /* TaskListCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

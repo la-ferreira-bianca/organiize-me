@@ -30,23 +30,14 @@ class TasksListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Minhas Tarefas"
         view.backgroundColor = #colorLiteral(red: 0.191467334, green: 0.6420556003, blue: 0.7067605558, alpha: 1)
+        
         setupViews()
         setupConstraints()
         setupLoading(isEnable: true)
         setupBinders()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setupNavigation()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        resetNavigation()
-    }
     
     // MARK: - Binding
     private func setupBinders() {
@@ -62,18 +53,6 @@ class TasksListTableViewController: UITableViewController {
         tableView.rowHeight = 80
         tableView.separatorStyle = .none
         tableView.register(TaskListTableViewCell.self, forCellReuseIdentifier: "Cell")
-    }
-    
-    private func setupNavigation() {
-        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.191467334, green: 0.6420556003, blue: 0.7067605558, alpha: 1)
-        tabBarController?.tabBar.backgroundColor = #colorLiteral(red: 0.191467334, green: 0.6420556003, blue: 0.7067605558, alpha: 1)
-        tabBarController?.tabBar.barTintColor = #colorLiteral(red: 0.191467334, green: 0.6420556003, blue: 0.7067605558, alpha: 1)
-    }
-    
-    private func resetNavigation() {
-        navigationController?.navigationBar.barTintColor = .purple
-        tabBarController?.tabBar.backgroundColor = .purple
-        tabBarController?.tabBar.barTintColor = .purple
     }
     
     private func setupLoading(isEnable: Bool) {

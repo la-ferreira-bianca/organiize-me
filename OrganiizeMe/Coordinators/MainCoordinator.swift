@@ -7,58 +7,51 @@
 
 import UIKit
 
-enum AppFlow  {
-    case Home
-    case Categories
-}
+class MainCoordinator: Coordinator {
+    var rootViewController = UITabBarController()
+    
+    var childCoordinators = [Coordinator]()
+    
+    init() {
+        self.rootViewController = UITabBarController()
+        rootViewController.tabBar.isTranslucent = true
+        rootViewController.tabBar.backgroundColor = .purple
+        rootViewController.tabBar.tintColor = .white
+    }
 
-class MainCoordinator: MainBaseCoordinator {
-    //MARK: - Variables
-    var parentCoordinator: MainBaseCoordinator?
-    
-    //MARK: - Lazy Variables
-    lazy var homeCoordinator: HomeBaseCoordinator = HomeCoordinator()
-    lazy var rootViewController: UIViewController = UITabBarController()
-    
     //MARK: - Functions
-    func start() -> UIViewController {
-        let homeViewController = homeCoordinator.start()
-        homeCoordinator.parentCoordinator = self
-        homeViewController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house.circle"), tag: 0)
+    func start() {
+        let homeCoordinator = HomeCoordinator()
+        let homeVC = homeCoordinator.rootViewController
+        homeVC.tabBarItem = UITabBarItem(
+            title: "Inicio",
+            image: UIImage(systemName: "house"),
+            selectedImage: UIImage(systemName: "house.fill"))
+        homeCoordinator.start()
+        self.childCoordinators.append(homeCoordinator)
         
-        (rootViewController as? UITabBarController)?.viewControllers = [homeViewController]
-        return rootViewController
+        let tasksListCoordinator = TaskListCoordinator()
+        let taskslistVc = tasksListCoordinator.rootViewController
+        taskslistVc.tabBarItem = UITabBarItem(
+            title: "Tarefas",
+            image: UIImage(systemName: "newspaper"),
+            selectedImage: UIImage(systemName: "newspaper.fill"))
+        tasksListCoordinator.start()
+        self.childCoordinators.append(tasksListCoordinator)
+        
+        let categoriesListCoordinator = CategoriesListCoordinator()
+        let categoriesListVC = categoriesListCoordinator.rootViewController
+        categoriesListVC.tabBarItem = UITabBarItem(
+            title: "Categorias",
+            image: UIImage(systemName: "folder"),
+            selectedImage: UIImage(systemName: "folder.fill"))
+        categoriesListCoordinator.start()
+        self.childCoordinators.append(categoriesListCoordinator)
+        
+        rootViewController.viewControllers = [
+            homeVC,
+            taskslistVc,
+            categoriesListVC
+        ]
     }
-    
-    func moveTo(flow: AppFlow) {
-        switch flow {
-        case .Home:
-            (rootViewController as? UITabBarController)?.selectedIndex = 0
-        case .Categories:
-            let categoryVC = CategoriesListTableViewController()
-            categoryVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house.circle"), tag: 1)
-            (rootViewController as? UITabBarController)?.viewControllers?.append(categoryVC)
-            (rootViewController as? UITabBarController)?.selectedIndex = 1
-        }
-    }
-    
-    func resetToRoot() -> Self {
-        homeCoordinator.resetToRoot()
-        moveTo(flow: .Home)
-        return self
-    }
-    
-}
-
-//MARK: - Based Coordinators
-protocol MainBaseCoordinator: Coordinator {
-    //MARK: - Variables
-    var homeCoordinator: HomeBaseCoordinator { get }
-    
-    //MARK: - Functions
-    func moveTo(flow: AppFlow)
-}
-
-protocol HomeBaseCoordinated {
-    var coordinator: HomeBaseCoordinator? { get }
 }

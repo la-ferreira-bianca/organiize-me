@@ -7,26 +7,26 @@
 
 import UIKit
 
-class HomeCoordinator: HomeBaseCoordinator {
+class HomeCoordinator: Coordinator {
     //MARK: - Variables
-    var parentCoordinator: MainBaseCoordinator?
-    lazy var rootViewController: UIViewController = UIViewController()
+    var rootViewController = UINavigationController()
+    
+    private lazy var homeViewControoler: HomeViewController = {
+        let vc = HomeViewController()
+        vc.title = "OrganiizeMe"
+        return vc
+    }()
+    
+    init() {
+        self.rootViewController = UINavigationController()
+        rootViewController.hidesBarsOnSwipe = true
+        rootViewController.navigationBar.prefersLargeTitles = true
+        rootViewController.navigationBar.barTintColor = .purple
+    }
     
     //MARK: - Functions
-    func start() -> UIViewController {
-        rootViewController = UINavigationController(rootViewController: HomeViewController(coordinator: self))
-        return rootViewController
+    func start() {
+        rootViewController.setViewControllers([homeViewControoler], animated: false)
     }
-    
-    
-    func gotoTasksList() {
-        print("testes funcionalidade goto task list")
-//        let taskListViewController = TasksListViewController(coordinator: self)
-//        navigationController?.pushViewController(taskListViewController, animated: true)
-    }
-    
-    
-    
-   
     
 }
