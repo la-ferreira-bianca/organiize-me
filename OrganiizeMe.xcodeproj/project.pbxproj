@@ -52,6 +52,9 @@
 		D768009429B91C280054C73A /* CategoriesListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D768009329B91C280054C73A /* CategoriesListCoordinator.swift */; };
 		D76BF27029B3AD2100FA357E /* AddTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76BF26F29B3AD2100FA357E /* AddTaskViewModel.swift */; };
 		D76BF27229B3BB3600FA357E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76BF27129B3BB3600FA357E /* UIView+Extensions.swift */; };
+		D778BA7A29BA4F1F0082C432 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D778BA7929BA4F1F0082C432 /* OnboardingViewController.swift */; };
+		D778BA7C29BA51380082C432 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D778BA7B29BA51380082C432 /* OnboardingViewModel.swift */; };
+		D778BA7E29BA51610082C432 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D778BA7D29BA51610082C432 /* OnboardingCoordinator.swift */; };
 		D780FDBA29B7CD9700AC951A /* AddCategoryViewController+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780FDB929B7CD9700AC951A /* AddCategoryViewController+Functions.swift */; };
 		D780FDBC29B7D89500AC951A /* HomeViewController+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780FDBB29B7D89500AC951A /* HomeViewController+Functions.swift */; };
 		D78704D729AE595F0023B129 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78704D629AE595F0023B129 /* APIError.swift */; };
@@ -147,6 +150,9 @@
 		D768009329B91C280054C73A /* CategoriesListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesListCoordinator.swift; sourceTree = "<group>"; };
 		D76BF26F29B3AD2100FA357E /* AddTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewModel.swift; sourceTree = "<group>"; };
 		D76BF27129B3BB3600FA357E /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		D778BA7929BA4F1F0082C432 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		D778BA7B29BA51380082C432 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		D778BA7D29BA51610082C432 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
 		D780FDB929B7CD9700AC951A /* AddCategoryViewController+Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddCategoryViewController+Functions.swift"; sourceTree = "<group>"; };
 		D780FDBB29B7D89500AC951A /* HomeViewController+Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+Functions.swift"; sourceTree = "<group>"; };
 		D78704D629AE595F0023B129 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
@@ -301,6 +307,7 @@
 		D724A6DE298047E200FC38F4 /* OrganiizeMe */ = {
 			isa = PBXGroup;
 			children = (
+				D778BA7529BA4EEB0082C432 /* Onboarding */,
 				D768008A29B9138E0054C73A /* TasksCalendar */,
 				D724A6ED298047E400FC38F4 /* Info.plist */,
 				D724A6EA298047E400FC38F4 /* LaunchScreen.storyboard */,
@@ -549,6 +556,40 @@
 				D76BF26F29B3AD2100FA357E /* AddTaskViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D778BA7529BA4EEB0082C432 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				D778BA7829BA4EFD0082C432 /* Coordinator */,
+				D778BA7729BA4EF60082C432 /* ViewModel */,
+				D778BA7629BA4EF20082C432 /* View */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		D778BA7629BA4EF20082C432 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D778BA7929BA4F1F0082C432 /* OnboardingViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D778BA7729BA4EF60082C432 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D778BA7B29BA51380082C432 /* OnboardingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D778BA7829BA4EFD0082C432 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				D778BA7D29BA51610082C432 /* OnboardingCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		D78704D229AE592A0023B129 /* Networking */ = {
@@ -890,6 +931,7 @@
 				D73AFB9329B14F39007C3A36 /* TaskModelRemoteRepository.swift in Sources */,
 				D7EFA9BA29B125E20026975B /* APIEnvironment.swift in Sources */,
 				D7150AB329B3C47D00E5997E /* TaskListTableViewCell.swift in Sources */,
+				D778BA7C29BA51380082C432 /* OnboardingViewModel.swift in Sources */,
 				D793779729B015D00026CBFE /* Environment.swift in Sources */,
 				D71FEB5A29B2433C00389D1D /* CategoriesModelRepository.swift in Sources */,
 				D78704DB29AE59B50023B129 /* Request.swift in Sources */,
@@ -912,8 +954,10 @@
 				D71FEB5E29B243D200389D1D /* CategoriesAPI.swift in Sources */,
 				D71FEB5429B23ED200389D1D /* CategoryModel.swift in Sources */,
 				D71FEB6A29B24B1800389D1D /* CategoryModelRepository.swift in Sources */,
+				D778BA7A29BA4F1F0082C432 /* OnboardingViewController.swift in Sources */,
 				D73AFB9129B14E78007C3A36 /* TaskModelRepository.swift in Sources */,
 				D71FEB6C29B24B5D00389D1D /* CategoryModelRemoteRepository.swift in Sources */,
+				D778BA7E29BA51610082C432 /* OnboardingCoordinator.swift in Sources */,
 				D72F8F5C29AED1DF000D3DB4 /* TasksViewModel.swift in Sources */,
 				D793779129B00B4A0026CBFE /* URLSessionHTTPClient.swift in Sources */,
 				D7572EAA29B26BF8001E52B4 /* AddCategoryViewModel.swift in Sources */,

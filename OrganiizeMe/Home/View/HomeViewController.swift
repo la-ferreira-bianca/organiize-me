@@ -47,15 +47,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
-//        navigationController?.navigationBar.prefersLargeTitles = true
-//        navigationController?.hidesBarsOnSwipe = true
-//        navigationController?.navigationBar.barTintColor = .purple
-//        navigationController?.navigationBar.tintColor = .white
-        
-//        tabBarController?.tabBar.tintColor = .white
-//        tabBarController?.tabBar.backgroundColor = .purple
-        
+                
         setupViews()
         setupConstraints()
     }
