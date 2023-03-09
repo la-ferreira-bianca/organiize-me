@@ -17,22 +17,6 @@ class HomeViewController: UIViewController {
     var collectionView: UICollectionView?
     var stackView = PresentationStackView(frame: .zero)
     
-    lazy var myTasksButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Minhas Tarefas", for: .normal)
-        button.addTarget(self, action: #selector(didTapMyTasks), for: .touchUpInside)
-        
-        return getButtonStyle(for: button)
-    }()
-    
-    lazy var myCategoriesButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Minha Categorias", for: .normal)
-        
-        button.addTarget(self, action: #selector(didTapMyCategories), for: .touchUpInside)
-       return getButtonStyle(for: button)
-    }()
-    
     //MARK: - LifeCycle
 //    init(coordinator: HomeBaseCoordinator) {
 //        super.init(nibName: nil, bundle: nil)

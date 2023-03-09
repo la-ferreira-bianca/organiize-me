@@ -8,7 +8,8 @@
 import UIKit
 class TasksListTableViewController: UITableViewController {
     //MARK: - Variables
-    private var viewModel = TasksViewModel()
+    var viewModel: TasksViewModel?
+    
     var tasks = [TaskModel]() {
         didSet {
             self.setupLoading(isEnable: false)
@@ -19,9 +20,10 @@ class TasksListTableViewController: UITableViewController {
     let loadingView = CustomLoadingView()
     
     //MARK: - LifeCycle
-    init() {
+    init(viewModel: TasksViewModel) {
         super.init(nibName: nil, bundle: nil)
-        viewModel.fetchTasks()
+        self.viewModel = viewModel
+        self.viewModel?.fetchTasks()
     }
     
     required init?(coder: NSCoder) {
@@ -41,7 +43,7 @@ class TasksListTableViewController: UITableViewController {
     
     // MARK: - Binding
     private func setupBinders() {
-        viewModel.tasks.bind { [weak self] value in
+        viewModel?.tasks.bind { [weak self] value in
             guard let task = value else { return }
             self?.tasks = task
             self?.tableView.reloadData()

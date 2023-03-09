@@ -23,6 +23,6 @@ extension TasksListTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let task = tasks[indexPath.row]
-        navigationController?.pushViewController(TaskViewController(taskID: task.id), animated: true)
+        viewModel?.didTapTask(with: task.id)
     }
 }

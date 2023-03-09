@@ -12,6 +12,11 @@ class TasksViewModel {
     private let repository: TasksModelRepository = TasksModelRemoteRepository(httpClient: URLSessionHTTPClient(), api: .dev)
     var error: ObservableObject<String?> = ObservableObject(value: nil)
     var tasks: ObservableObject<[TaskModel]?> = ObservableObject(value: nil)
+    var coordinator = TaskListCoordinator()
+    
+    init(coordinator: TaskListCoordinator) {
+        self.coordinator = coordinator
+    }
     
     //MARK: - Functions
     func fetchTasks() {
@@ -23,6 +28,10 @@ class TasksViewModel {
                 self.error.value = error.localizedDescription
             }
         }
+    }
+    
+    func didTapTask(with id: String) {
+        coordinator.didTapTask(with: id)
     }
 }
 

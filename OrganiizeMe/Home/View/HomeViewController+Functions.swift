@@ -9,21 +9,9 @@ import UIKit
 
 extension HomeViewController {
     //MARK: - Functions
-    @objc func didTapMyTasks() {
-        //TODO: CHANGE THIS comportament TO COORDINATOR
-        navigationController?.pushViewController(TasksListTableViewController(), animated: true)
-    }
-    
-    @objc func didTapMyCategories() {
-        //TODO: CHANGE THIS comportament TO COORDINATOR
-        navigationController?.pushViewController(CategoriesListTableViewController(), animated: true)
-    }
-    
     func setupViews() {
         //MARK: - Views
         view.addSubview(stackView)
-        view.addSubview(myTasksButton)
-        view.addSubview(myCategoriesButton)
         
         //MARK: - StackView
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -72,32 +60,5 @@ extension HomeViewController {
             collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.Home.tenValue),
             collectionView.heightAnchor.constraint(equalToConstant: 64)
         ])
-        
-        NSLayoutConstraint.activate([
-            myTasksButton.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 15),
-            myTasksButton.heightAnchor.constraint(equalToConstant: 150),
-            myTasksButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.Home.tenValue),
-            myTasksButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.Home.tenValue),
-        ])
-        
-        NSLayoutConstraint.activate([
-            myCategoriesButton.topAnchor.constraint(equalTo: myTasksButton.bottomAnchor, constant: 10),
-            myCategoriesButton.heightAnchor.constraint(equalToConstant: 150),
-            myCategoriesButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.Home.tenValue),
-            myCategoriesButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.Home.tenValue),
-        ])
-    }
-    
-    func getButtonStyle(for button: UIButton) -> UIButton {
-        button.layer.cornerRadius = 10
-        button.layer.shadowColor = #colorLiteral(red: 0.1529411765, green: 0.3490196078, blue: 0.3137254902, alpha: 1)
-        button.layer.shadowOpacity = 1
-        button.layer.shadowOffset = CGSize(width: 1.5, height: 4)
-        button.layer.shadowRadius = 0.5
-        button.layer.masksToBounds = false
-        button.backgroundColor = #colorLiteral(red: 0.2549019608, green: 0.7490196078, blue: 0.7019607843, alpha: 1)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        
-        return button
     }
 }
