@@ -11,7 +11,6 @@ import UIKit
 class CategoryViewController: UIViewController {
     
     private var viewModel = CategoryViewModel()
-    private var categoryID: String = ""
     
     lazy var categoryTitle: UITextView = {
         let textView = UITextView(frame: CGRect(x: 20.0, y: 90.0, width: 250.0, height: 100.0))
@@ -26,7 +25,6 @@ class CategoryViewController: UIViewController {
     init(categoryID: String) {
         super.init(nibName: nil, bundle: nil)
         view.backgroundColor = .white
-        self.categoryID = categoryID
         viewModel.fetchCategories(with: categoryID)
     }
     

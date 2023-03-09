@@ -27,7 +27,7 @@ class TaskListCoordinator: Coordinator {
         rootViewController.setViewControllers([tasksListViewController], animated: false)
     }
     
-    func didTapTask(with id: String) {
+    func showTaskDetails(with id: String) {
         //todo: when the coordinator for the taskview is completed, change this values
         //to create the coordinator and the view model, the rest the taskcoordinator
         //will handle

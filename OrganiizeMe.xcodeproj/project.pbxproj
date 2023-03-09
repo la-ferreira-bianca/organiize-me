@@ -59,8 +59,6 @@
 		D780FDBC29B7D89500AC951A /* HomeViewController+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780FDBB29B7D89500AC951A /* HomeViewController+Functions.swift */; };
 		D78704D729AE595F0023B129 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78704D629AE595F0023B129 /* APIError.swift */; };
 		D78704D929AE59810023B129 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78704D829AE59810023B129 /* HTTPClient.swift */; };
-		D78704DB29AE59B50023B129 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78704DA29AE59B50023B129 /* Request.swift */; };
-		D78704DD29AE59DC0023B129 /* TasksRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78704DC29AE59DC0023B129 /* TasksRequest.swift */; };
 		D78704E029AE87CE0023B129 /* TasksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78704DF29AE87CE0023B129 /* TasksModel.swift */; };
 		D78704E429AE8ED60023B129 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78704E329AE8ED60023B129 /* TaskModel.swift */; };
 		D793778F29B00B3A0026CBFE /* URLSessionHTTPClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D793778E29B00B3A0026CBFE /* URLSessionHTTPClientError.swift */; };
@@ -157,8 +155,6 @@
 		D780FDBB29B7D89500AC951A /* HomeViewController+Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+Functions.swift"; sourceTree = "<group>"; };
 		D78704D629AE595F0023B129 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		D78704D829AE59810023B129 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
-		D78704DA29AE59B50023B129 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		D78704DC29AE59DC0023B129 /* TasksRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksRequest.swift; sourceTree = "<group>"; };
 		D78704DF29AE87CE0023B129 /* TasksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksModel.swift; sourceTree = "<group>"; };
 		D78704E329AE8ED60023B129 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		D793778E29B00B3A0026CBFE /* URLSessionHTTPClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientError.swift; sourceTree = "<group>"; };
@@ -598,18 +594,8 @@
 				D7EFA9B529B120120026975B /* URLSessionHTTPClient */,
 				D793779529B015A80026CBFE /* HTTPClient */,
 				D78704D529AE594F0023B129 /* Resources */,
-				D78704D329AE59380023B129 /* Request */,
 			);
 			path = Networking;
-			sourceTree = "<group>";
-		};
-		D78704D329AE59380023B129 /* Request */ = {
-			isa = PBXGroup;
-			children = (
-				D78704DA29AE59B50023B129 /* Request.swift */,
-				D78704DC29AE59DC0023B129 /* TasksRequest.swift */,
-			);
-			path = Request;
 			sourceTree = "<group>";
 		};
 		D78704D529AE594F0023B129 /* Resources */ = {
@@ -934,7 +920,6 @@
 				D778BA7C29BA51380082C432 /* OnboardingViewModel.swift in Sources */,
 				D793779729B015D00026CBFE /* Environment.swift in Sources */,
 				D71FEB5A29B2433C00389D1D /* CategoriesModelRepository.swift in Sources */,
-				D78704DB29AE59B50023B129 /* Request.swift in Sources */,
 				D780FDBC29B7D89500AC951A /* HomeViewController+Functions.swift in Sources */,
 				D71FEB4629B2136200389D1D /* ObservableObject.swift in Sources */,
 				D7F19F4829831DDF0099B2BC /* HomeViewController+CollectionView.swift in Sources */,
@@ -943,7 +928,6 @@
 				D793778F29B00B3A0026CBFE /* URLSessionHTTPClientError.swift in Sources */,
 				D76BF27229B3BB3600FA357E /* UIView+Extensions.swift in Sources */,
 				D724A71329804B8300FC38F4 /* Coordinator.swift in Sources */,
-				D78704DD29AE59DC0023B129 /* TasksRequest.swift in Sources */,
 				D749F09929B65A6200AF504D /* CustomLoadingView.swift in Sources */,
 				D7F19F372982F47D0099B2BC /* GlobalConstants.swift in Sources */,
 				D73AFB9A29B1542E007C3A36 /* TaskViewController.swift in Sources */,

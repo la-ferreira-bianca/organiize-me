@@ -12,7 +12,7 @@ class CategoriesListTableViewController: UITableViewController {
     let loadingView = CustomLoadingView()
     
     //MARK: - Variables
-    private var viewModel = CategoriesViewModel()
+    var viewModel: CategoriesViewModel?
     var categories = [CategoryModel]() {
         didSet {
             self.setupLoading(isEnable: false)
@@ -20,9 +20,10 @@ class CategoriesListTableViewController: UITableViewController {
     }
     
     //MARK: - LifeCycle
-    init() {
+    init(viewModel: CategoriesViewModel) {
         super.init(nibName: nil, bundle: nil)
-        viewModel.fetchCategories()
+        self.viewModel = viewModel
+        self.viewModel?.fetchCategories()
     }
     
     required init?(coder: NSCoder) {
@@ -41,7 +42,7 @@ class CategoriesListTableViewController: UITableViewController {
     
     //MARK: - Private Functions
     private func setupBinders() {
-        viewModel.categories.bind { [weak self] value in
+        viewModel?.categories.bind { [weak self] value in
             guard let category = value else { return }
             self?.categories = category
             self?.tableView.reloadData()

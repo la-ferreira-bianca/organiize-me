@@ -16,20 +16,8 @@ extension TasksModelAPI {
     }
 }
 
-extension TaskModelAPI {
-    static var dev: Self {
-        TaskModelAPI(environment: APIEnvironment())
-    }
-}
-
 extension CategoriesModelAPI {
     static var dev: Self {
         CategoriesModelAPI(environment: APIEnvironment())
-    }
-}
-
-extension CateogoryModelAPI {
-    static var dev: Self {
-        CateogoryModelAPI(environment: APIEnvironment())
     }
 }

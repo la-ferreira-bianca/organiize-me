@@ -10,10 +10,10 @@ import Foundation
 final internal class CategoryModelRemoteRepository: CategoryModelRepository {
     
     private let httpClient: HTTPClient
-    private let api: CateogoryModelAPI
+    private let api: CategoriesModelAPI
     private let executionQueue: DispatchQueue
     
-    internal init(httpClient: HTTPClient, api: CateogoryModelAPI, executionQueue: DispatchQueue = .main) {
+    internal init(httpClient: HTTPClient, api: CategoriesModelAPI, executionQueue: DispatchQueue = .main) {
         self.httpClient = httpClient
         self.api = api
         self.executionQueue = executionQueue

@@ -10,6 +10,8 @@ import Foundation
 class TasksViewModel {
     //MARK: - Private Variables
     private let repository: TasksModelRepository = TasksModelRemoteRepository(httpClient: URLSessionHTTPClient(), api: .dev)
+    
+    //MARK: - Variables
     var error: ObservableObject<String?> = ObservableObject(value: nil)
     var tasks: ObservableObject<[TaskModel]?> = ObservableObject(value: nil)
     var coordinator = TaskListCoordinator()
@@ -31,7 +33,7 @@ class TasksViewModel {
     }
     
     func didTapTask(with id: String) {
-        coordinator.didTapTask(with: id)
+        coordinator.showTaskDetails(with: id)
     }
 }
 

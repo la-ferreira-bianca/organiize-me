@@ -11,7 +11,8 @@ class CategoriesListCoordinator: Coordinator {
     var rootViewController = UINavigationController()
     
     lazy var categoriesListTableViewController: CategoriesListTableViewController = {
-        let vc = CategoriesListTableViewController()
+        let viewModel = CategoriesViewModel(coordinator: self)
+        let vc = CategoriesListTableViewController(viewModel: viewModel)
         vc.title = "Minhas Categorias"
         return vc
     }()
@@ -24,5 +25,13 @@ class CategoriesListCoordinator: Coordinator {
     
     func start() {
         rootViewController.setViewControllers([categoriesListTableViewController], animated: false)
+    }
+    
+    func showCategoryDetails(with id: String) {
+        //todo: when the coordinator for the taskview is completed, change this values
+        //to create the coordinator and the view model, the rest the taskcoordinator
+        //will handle
+        let categoryDetails = CategoryViewController(categoryID: id)
+        rootViewController.pushViewController(categoryDetails, animated: true)
     }
 }

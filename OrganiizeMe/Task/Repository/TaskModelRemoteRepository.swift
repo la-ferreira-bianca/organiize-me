@@ -10,18 +10,18 @@ import Foundation
 final internal class TaskModelRemoteRepository: TaskModelRepository {
     //MARK: Private Variables
     private let httpClient: HTTPClient
-    private let api: TaskModelAPI
+    private let api: TasksModelAPI
     private let executionQueue: DispatchQueue
     
     //MARK: Initializer
-    internal init(httpClient: HTTPClient, api: TaskModelAPI, executionQueue: DispatchQueue = .main) {
+    internal init(httpClient: HTTPClient, api: TasksModelAPI, executionQueue: DispatchQueue = .main) {
         self.httpClient = httpClient
         self.api = api
         self.executionQueue = executionQueue
     }
     //MARK: Functions
     func getTask(with taskID: String, handler: @escaping (TaskModelResult) -> Void) {
-        guard let url = URL(string: "\(api.taskURL)/\(taskID)") else { return }
+        guard let url = URL(string: "\(api.tasksURL)/\(taskID)") else { return }
         httpClient.get(url) { [unowned self] result in
             self.execute {
                 switch result {
@@ -40,7 +40,7 @@ final internal class TaskModelRemoteRepository: TaskModelRepository {
     }
     
     func postTask(with title: String, _ description: String, handler: @escaping (TaskModelResult) -> Void) {
-        guard let url = URL(string: "\(api.taskURL)/") else { return }
+        guard let url = URL(string: "\(api.tasksURL)/") else { return }
         let json: [String: Any] = [
             "title": title,
             "description": description,
