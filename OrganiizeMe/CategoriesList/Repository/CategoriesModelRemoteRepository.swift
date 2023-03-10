@@ -37,6 +37,23 @@ final internal class CategoriesModelRemoteRepository: CategoriesModelRepository 
         }
     }
     
+    func deleteCategory(with identifier: String, handler: @escaping (CategoryModelResult) -> Void) {
+        let json: [String: Any] = [
+            "_id": identifier
+        ]
+        guard let url = URL(string: "\(api.categoriesURL)/\(identifier)") else { return }
+        httpClient.delete(json: json, url) { [unowned self] result in
+            self.execute {
+                switch result {
+                case .success(_):
+                    handler(.success(()))
+                case .failure(let error):
+                    handler(.failure(.fetchError(error)))
+                }
+            }
+        }
+    }
+    
     //MARK: - Helpers
     private static func parse<T: Decodable>(type: T.Type, data: Data) -> T? {
         return try? JSONDecoder().decode(T.self, from: data)

@@ -15,6 +15,7 @@ class CategoriesListTableViewController: UITableViewController {
     var viewModel: CategoriesViewModel?
     var categories = [CategoryModel]() {
         didSet {
+            self.tableView.refreshControl?.endRefreshing()
             self.setupLoading(isEnable: false)
         }
     }
@@ -53,6 +54,7 @@ class CategoriesListTableViewController: UITableViewController {
         tableView.rowHeight = 80
         tableView.separatorStyle = .none
         tableView.register(CategoryListTableViewCell.self, forCellReuseIdentifier: "Cell")
+        setupRefreshControl()
     }
     
     private func setupConstraints() {
@@ -74,5 +76,14 @@ class CategoriesListTableViewController: UITableViewController {
         tabBarController?.tabBar.isHidden = isEnable ? true : false
         tableView.isUserInteractionEnabled = isEnable ? false : true
         loadingView.isHidden = isEnable ? false : true
+    }
+    
+    private func setupRefreshControl() {
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(didCallRefresh), for: .valueChanged)
+    }
+    
+    @objc func didCallRefresh() {
+        viewModel?.fetchCategories()
     }
 }

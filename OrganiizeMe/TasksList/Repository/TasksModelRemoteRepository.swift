@@ -26,13 +26,30 @@ final internal class TasksModelRemoteRepository: TasksModelRepository {
             self.execute {
                 switch result {
                 case .success(let data):
-
+                    
                     if let dto = Self.parse(type: TasksModel.self, data: data) {
                         handler(.success(dto))
                     } else {
                         handler(.failure(.notParsable(data)))
                     }
                     
+                case .failure(let error):
+                    handler(.failure(.fetchError(error)))
+                }
+            }
+        }
+    }
+    
+    func deleteTask(with identifier: String, handler: @escaping (TaskModelResult) -> Void) {
+        let json: [String: Any] = [
+            "_id": identifier
+        ]
+        guard let url = URL(string: "\(api.tasksURL)/\(identifier)") else { return }
+        httpClient.delete(json: json, url) { [unowned self] result in
+            self.execute {
+                switch result {
+                case .success(_):
+                    handler(.success(()))
                 case .failure(let error):
                     handler(.failure(.fetchError(error)))
                 }

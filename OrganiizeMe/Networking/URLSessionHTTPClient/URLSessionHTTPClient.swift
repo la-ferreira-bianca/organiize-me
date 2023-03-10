@@ -27,6 +27,28 @@ public final class URLSessionHTTPClient: HTTPClient {
             }
         }.resume()
     }
+    
+    public func delete(json: [String: Any], _ url: URL, responseHandler: @escaping (ResponseResult) -> Void) {
+        var request = URLRequest(url: url)
+        guard let jsonObject = try? JSONSerialization.data(withJSONObject: json) else {
+            print("Error: Cannot convert data to JSON")
+            return
+        }
+        request.httpMethod = "DELETE"
+        
+        request.setValue("\(String(describing: jsonObject.count))", forHTTPHeaderField: "Content-Length")
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        
+        session.dataTask(with: request) { data, response, error in
+            let handleResponse = Self.handle(data: data, error: error, response: response)
+            switch handleResponse {
+            case .success(let _data):
+                responseHandler(.success(_data))
+            case .failure(let _error):
+                responseHandler(.failure(_error))
+            }
+        }.resume()
+    }
 }
 
 //MARK: - Response handlers

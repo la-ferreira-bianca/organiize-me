@@ -14,6 +14,8 @@ class TasksViewModel {
     //MARK: - Variables
     var error: ObservableObject<String?> = ObservableObject(value: nil)
     var tasks: ObservableObject<[TaskModel]?> = ObservableObject(value: nil)
+    var didDeleteTask: ObservableObject<Bool> = ObservableObject(value: false)
+
     var coordinator = TaskListCoordinator()
     
     init(coordinator: TaskListCoordinator) {
@@ -32,8 +34,20 @@ class TasksViewModel {
         }
     }
     
-    func didTapTask(with id: String) {
+    func showTask(with id: String) {
         coordinator.showTaskDetails(with: id)
+    }
+    
+    func deleteTask(with id: String) {
+        repository.deleteTask(with: id) { result in
+            switch result {
+            case .success(_):
+                self.didDeleteTask.value = true
+            case .failure(let error):
+                self.didDeleteTask.value = false
+                self.error.value = error.localizedDescription
+            }
+        }
     }
 }
 

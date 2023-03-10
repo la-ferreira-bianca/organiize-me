@@ -12,6 +12,7 @@ class TasksListTableViewController: UITableViewController {
     
     var tasks = [TaskModel]() {
         didSet {
+            self.tableView.refreshControl?.endRefreshing()
             self.setupLoading(isEnable: false)
         }
     }
@@ -55,6 +56,7 @@ class TasksListTableViewController: UITableViewController {
         tableView.rowHeight = 80
         tableView.separatorStyle = .none
         tableView.register(TaskListTableViewCell.self, forCellReuseIdentifier: "Cell")
+        setupRefreshControl()
     }
     
     private func setupLoading(isEnable: Bool) {
@@ -76,5 +78,14 @@ class TasksListTableViewController: UITableViewController {
             loadingView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor)
         ])
         
+    }
+    
+    private func setupRefreshControl() {
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(didCallRefresh), for: .valueChanged)
+    }
+    
+    @objc func didCallRefresh() {
+        viewModel?.fetchTasks()
     }
 }

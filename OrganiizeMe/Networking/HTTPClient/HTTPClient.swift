@@ -11,4 +11,5 @@ public protocol HTTPClient {
     typealias ResponseResult = Result<Data, Error>
     
     func get(_ url: URL, responseHandler: @escaping (ResponseResult) -> Void)
+    func delete(json: [String: Any], _ url: URL, responseHandler: @escaping (ResponseResult) -> Void)
 }

@@ -23,6 +23,17 @@ extension CategoriesListTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let category = categories[indexPath.row]
-        viewModel?.didTapCategory(with: category.id)
+        viewModel?.showCategory(with: category.id)
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let category = categories[indexPath.row]
+        if editingStyle == .delete {
+            viewModel?.deleteCategory(with: category.id)
+            categories.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+        }
     }
 }
