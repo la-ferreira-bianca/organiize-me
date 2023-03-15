@@ -66,6 +66,7 @@
 		D793779429B0152F0026CBFE /* TasksModelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D793779329B0152F0026CBFE /* TasksModelRepository.swift */; };
 		D793779729B015D00026CBFE /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D793779629B015D00026CBFE /* Environment.swift */; };
 		D793779929B016090026CBFE /* TasksAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D793779829B016090026CBFE /* TasksAPI.swift */; };
+		D7DEB2A029C241C800D74108 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DEB29F29C241C800D74108 /* HomeViewModel.swift */; };
 		D7E2DB95298C385300FF02C2 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E2DB94298C385300FF02C2 /* UITextField+Extensions.swift */; };
 		D7EFA9B729B121E40026975B /* TasksModelRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EFA9B629B121E30026975B /* TasksModelRemoteRepository.swift */; };
 		D7EFA9BA29B125E20026975B /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EFA9B929B125E20026975B /* APIEnvironment.swift */; };
@@ -162,6 +163,7 @@
 		D793779329B0152F0026CBFE /* TasksModelRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksModelRepository.swift; sourceTree = "<group>"; };
 		D793779629B015D00026CBFE /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		D793779829B016090026CBFE /* TasksAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksAPI.swift; sourceTree = "<group>"; };
+		D7DEB29F29C241C800D74108 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		D7E2DB94298C385300FF02C2 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		D7EFA9B629B121E30026975B /* TasksModelRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksModelRemoteRepository.swift; sourceTree = "<group>"; };
 		D7EFA9B929B125E20026975B /* APIEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEnvironment.swift; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 		D724A71029804A1400FC38F4 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				D7DEB2A129C241CC00D74108 /* ViewModel */,
 				D7F19F382982F8530099B2BC /* SubViews */,
 				D724A719298051FC00FC38F4 /* Coordinator */,
 				D724A718298051F400FC38F4 /* View */,
@@ -660,6 +663,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		D7DEB2A129C241CC00D74108 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D7DEB29F29C241C800D74108 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		D7EFA9B529B120120026975B /* URLSessionHTTPClient */ = {
 			isa = PBXGroup;
 			children = (
@@ -917,6 +928,7 @@
 				D73AFB9329B14F39007C3A36 /* TaskModelRemoteRepository.swift in Sources */,
 				D7EFA9BA29B125E20026975B /* APIEnvironment.swift in Sources */,
 				D7150AB329B3C47D00E5997E /* TaskListTableViewCell.swift in Sources */,
+				D7DEB2A029C241C800D74108 /* HomeViewModel.swift in Sources */,
 				D778BA7C29BA51380082C432 /* OnboardingViewModel.swift in Sources */,
 				D793779729B015D00026CBFE /* Environment.swift in Sources */,
 				D71FEB5A29B2433C00389D1D /* CategoriesModelRepository.swift in Sources */,

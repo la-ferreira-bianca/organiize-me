@@ -12,7 +12,8 @@ class HomeCoordinator: Coordinator {
     var rootViewController = UINavigationController()
     
     private lazy var homeViewControoler: HomeViewController = {
-        let vc = HomeViewController()
+        let viewModel = HomeViewModel(coordinator: self)
+        let vc = HomeViewController(viewModel: viewModel)
         vc.title = "OrganiizeMe"
         return vc
     }()

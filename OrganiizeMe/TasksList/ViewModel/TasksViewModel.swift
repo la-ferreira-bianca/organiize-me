@@ -18,7 +18,8 @@ class TasksViewModel {
 
     var coordinator = TaskListCoordinator()
     
-    init(coordinator: TaskListCoordinator) {
+    init(coordinator: TaskListCoordinator?) {
+        guard let coordinator = coordinator else { return }
         self.coordinator = coordinator
     }
     

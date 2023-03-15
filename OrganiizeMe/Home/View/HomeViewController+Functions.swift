@@ -12,9 +12,11 @@ extension HomeViewController {
     func setupViews() {
         //MARK: - Views
         view.addSubview(stackView)
+        view.addSubview(tableView)
         
         //MARK: - StackView
         stackView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         
         //MARK: - CollectionView
         setupCollectionView()
@@ -22,6 +24,9 @@ extension HomeViewController {
         //MARK: - DataSources/Delegates
         collectionView?.dataSource = self
         collectionView?.delegate = self
+        
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     func setupCollectionView() {
@@ -46,6 +51,7 @@ extension HomeViewController {
     
     func setupConstraints() {
         guard let collectionView = collectionView else { return }
+        tableView.addSubview(loadingView)
         
         //MARK: - Views
         NSLayoutConstraint.activate([
@@ -60,5 +66,32 @@ extension HomeViewController {
             collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.Home.tenValue),
             collectionView.heightAnchor.constraint(equalToConstant: 64)
         ])
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 15),
+            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.Home.tenValue),
+            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.Home.tenValue),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            loadingView.heightAnchor.constraint(equalTo: tableView.heightAnchor),
+            loadingView.widthAnchor.constraint(equalTo: tableView.widthAnchor),
+            loadingView.centerXAnchor.constraint(equalTo: tableView.centerXAnchor),
+            loadingView.centerYAnchor.constraint(equalTo: tableView.centerYAnchor)
+        ])
+    }
+}
+
+
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tasks.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = tasks[indexPath.row].title
+        return cell
     }
 }
