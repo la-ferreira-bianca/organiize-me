@@ -11,6 +11,7 @@ import DropDown
 class AddTaskViewController: UIViewController {
     
     var viewModel = AddTaskViewModel()
+    var categoriesViewModel = CategoriesViewModel(coordinator: nil)
     
     //MARK: - Views
     let categoriesDropDown = DropDown()
@@ -63,7 +64,7 @@ class AddTaskViewController: UIViewController {
             cancelAction: #selector(finalCancelAction),
             datePickerMode: .date
         )
-       return getDateTextFieldStyle(for: textField)
+        return getDateTextFieldStyle(for: textField)
     }()
     
     lazy var addButton: UIButton = {
@@ -92,7 +93,13 @@ class AddTaskViewController: UIViewController {
         view.backgroundColor = .clear
         view.initializeHideKeyboard()
         
+        
         setupViews()
         setupConstraints()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        categoriesViewModel.fetchCategories()
     }
 }

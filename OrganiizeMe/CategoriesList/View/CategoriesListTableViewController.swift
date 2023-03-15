@@ -24,7 +24,6 @@ class CategoriesListTableViewController: UITableViewController {
     init(viewModel: CategoriesViewModel) {
         super.init(nibName: nil, bundle: nil)
         self.viewModel = viewModel
-        self.viewModel?.fetchCategories()
     }
     
     required init?(coder: NSCoder) {
@@ -34,7 +33,8 @@ class CategoriesListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.191467334, green: 0.6420556003, blue: 0.7067605558, alpha: 1)
-
+        
+        viewModel?.fetchCategories()
         setupViews()
         setupConstraints()
         setupLoading(isEnable: true)

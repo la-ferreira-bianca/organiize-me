@@ -10,9 +10,8 @@ import UIKit
 extension AddTaskViewController {
     //MARK: - objc Functions
     @objc func tapChooseMenuItem(_ sender: UIButton) {
-        //TODO: Pass categories that will be populated by the user
-        //TODO: Change layout
-        categoriesDropDown.dataSource = ["Tomato soup", "Mini burgers", "Onion rings", "Baked potato", "Salad"]
+        //TODO: REFACTOR, and get the id number for the selected category
+        categoriesDropDown.dataSource = categoriesViewModel.categoriesTitles
         categoriesDropDown.anchorView = sender
         categoriesDropDown.bottomOffset = CGPoint(x: 0, y: sender.frame.size.height)
         categoriesDropDown.show()
@@ -21,7 +20,6 @@ extension AddTaskViewController {
             sender.setTitle(item, for: .normal) //9
         }
     }
-    
     
     @objc func didTapButton(sender: UIButton) {
         guard let title = taskTitle.text, !title.isEmpty else {

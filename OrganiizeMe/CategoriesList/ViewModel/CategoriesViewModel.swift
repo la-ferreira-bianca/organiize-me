@@ -16,9 +16,12 @@ class CategoriesViewModel {
     var categories: ObservableObject<[CategoryModel]?> = ObservableObject(value: nil)
     var didDeleteCategory: ObservableObject<Bool> = ObservableObject(value: false)
     
+    var categoriesTitles: [String] = []
+    
     var coordinator = CategoriesListCoordinator()
     
-    init(coordinator: CategoriesListCoordinator) {
+    init(coordinator: CategoriesListCoordinator?) {
+        guard let coordinator = coordinator else { return }
         self.coordinator = coordinator
     }
     
@@ -28,6 +31,7 @@ class CategoriesViewModel {
             switch result {
             case .success(let categoriesData):
                 self.categories.value = categoriesData.allCategories
+                self.categoriesTitles = categoriesData.allCategories.map({ $0.title })
             case .failure(let error):
                 self.error.value = error.localizedDescription
             }

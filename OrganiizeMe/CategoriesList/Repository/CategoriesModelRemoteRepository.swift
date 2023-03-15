@@ -60,6 +60,6 @@ final internal class CategoriesModelRemoteRepository: CategoriesModelRepository 
     }
     
     private func execute(action: @escaping () -> Void) {
-        executionQueue.asyncAfter(deadline: .now() + 2, execute: action)
+        executionQueue.async(execute: action)
     }
 }
