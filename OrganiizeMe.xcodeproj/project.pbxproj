@@ -66,6 +66,8 @@
 		D793779429B0152F0026CBFE /* TasksModelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D793779329B0152F0026CBFE /* TasksModelRepository.swift */; };
 		D793779729B015D00026CBFE /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D793779629B015D00026CBFE /* Environment.swift */; };
 		D793779929B016090026CBFE /* TasksAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D793779829B016090026CBFE /* TasksAPI.swift */; };
+		D7DE0A0129C8CCE900400672 /* HomeTasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DE0A0029C8CCE900400672 /* HomeTasksTableViewCell.swift */; };
+		D7DE0A0329C8CDF100400672 /* HomeViewController+DataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DE0A0229C8CDF100400672 /* HomeViewController+DataSources.swift */; };
 		D7DEB2A029C241C800D74108 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DEB29F29C241C800D74108 /* HomeViewModel.swift */; };
 		D7E2DB95298C385300FF02C2 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E2DB94298C385300FF02C2 /* UITextField+Extensions.swift */; };
 		D7EFA9B729B121E40026975B /* TasksModelRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EFA9B629B121E30026975B /* TasksModelRemoteRepository.swift */; };
@@ -163,6 +165,8 @@
 		D793779329B0152F0026CBFE /* TasksModelRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksModelRepository.swift; sourceTree = "<group>"; };
 		D793779629B015D00026CBFE /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		D793779829B016090026CBFE /* TasksAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksAPI.swift; sourceTree = "<group>"; };
+		D7DE0A0029C8CCE900400672 /* HomeTasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTasksTableViewCell.swift; sourceTree = "<group>"; };
+		D7DE0A0229C8CDF100400672 /* HomeViewController+DataSources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+DataSources.swift"; sourceTree = "<group>"; };
 		D7DEB29F29C241C800D74108 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		D7E2DB94298C385300FF02C2 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		D7EFA9B629B121E30026975B /* TasksModelRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksModelRemoteRepository.swift; sourceTree = "<group>"; };
@@ -382,6 +386,7 @@
 				D724A6E3298047E200FC38F4 /* HomeViewController.swift */,
 				D7F19F4729831DDE0099B2BC /* HomeViewController+CollectionView.swift */,
 				D780FDBB29B7D89500AC951A /* HomeViewController+Functions.swift */,
+				D7DE0A0229C8CDF100400672 /* HomeViewController+DataSources.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -685,6 +690,7 @@
 			children = (
 				D7F19F4029831D2F0099B2BC /* Carrossel */,
 				D7F19F392982F8650099B2BC /* PresentationStackView.swift */,
+				D7DE0A0029C8CCE900400672 /* HomeTasksTableViewCell.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -949,6 +955,7 @@
 				D768009429B91C280054C73A /* CategoriesListCoordinator.swift in Sources */,
 				D71FEB5E29B243D200389D1D /* CategoriesAPI.swift in Sources */,
 				D71FEB5429B23ED200389D1D /* CategoryModel.swift in Sources */,
+				D7DE0A0329C8CDF100400672 /* HomeViewController+DataSources.swift in Sources */,
 				D71FEB6A29B24B1800389D1D /* CategoryModelRepository.swift in Sources */,
 				D778BA7A29BA4F1F0082C432 /* OnboardingViewController.swift in Sources */,
 				D73AFB9129B14E78007C3A36 /* TaskModelRepository.swift in Sources */,
@@ -964,6 +971,7 @@
 				D768008E29B914FD0054C73A /* ApplicationCoordinator.swift in Sources */,
 				D737369129928B1100821219 /* CategoriesListTableViewController.swift in Sources */,
 				D749F09B29B65C9400AF504D /* TaskListTableViewController+DataSources.swift in Sources */,
+				D7DE0A0129C8CCE900400672 /* HomeTasksTableViewCell.swift in Sources */,
 				D749F09729B6312100AF504D /* CategoryListTableViewCell.swift in Sources */,
 				D7EFA9B729B121E40026975B /* TasksModelRemoteRepository.swift in Sources */,
 				D71FEB6729B24AEE00389D1D /* CategoryViewModel.swift in Sources */,

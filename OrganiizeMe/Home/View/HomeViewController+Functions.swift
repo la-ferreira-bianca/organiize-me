@@ -21,12 +21,23 @@ extension HomeViewController {
         //MARK: - CollectionView
         setupCollectionView()
         
+        //MARK: - TableView
+        setupTableview()
+        
         //MARK: - DataSources/Delegates
         collectionView?.dataSource = self
         collectionView?.delegate = self
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+    }
+    
+    func setupTableview() {
+        tableView.rowHeight = 80
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = .white
+        tableView.register(HomeTasksTableViewCell.self, forCellReuseIdentifier: "Cell")
     }
     
     func setupCollectionView() {
@@ -80,18 +91,5 @@ extension HomeViewController {
             loadingView.centerXAnchor.constraint(equalTo: tableView.centerXAnchor),
             loadingView.centerYAnchor.constraint(equalTo: tableView.centerYAnchor)
         ])
-    }
-}
-
-
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tasks.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = tasks[indexPath.row].title
-        return cell
     }
 }
